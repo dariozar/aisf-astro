@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import Eyebrow from "./Eyebrow.astro";
+import EventDate from "./EventDate.astro";
+import EventType from "./EventType.astro";
 import { Button } from "./starwind/button";
 
 const byDateDesc = (a: any, b: any) => (b.data.dateISO || "").localeCompare(a.data.dateISO || "");
@@ -30,11 +32,11 @@ const cards = upcoming.length > 0 ? upcoming : (await getCollection("events")).s
           style="background: linear-gradient(155deg, #DCE9F7 0%, #B8D4F0 50%, #94B8DA 100%)"
         >
           <span class="self-start rounded-full bg-tangerine px-2.5 py-1 font-mono text-[11px] tracking-[0.12em] text-ink uppercase">
-            {e.data.date}
+            <EventDate iso={e.data.dateISO} fallback={e.data.date} />
           </span>
           <h3 class="font-display text-[24px] leading-[1.1] font-semibold tracking-[-0.015em]">{e.data.title}</h3>
           <div class="mt-auto flex justify-between border-t border-ink/15 pt-4 font-mono text-[11px] tracking-[0.08em] text-ink/70 uppercase">
-            <span>{e.data.type}</span>
+            <span><EventType value={e.data.type} /></span>
             <span>{e.data.location}</span>
           </div>
         </a>

@@ -1,7 +1,10 @@
 ---
 import { getCollection, render } from "astro:content";
+import fs from "node:fs";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Tag from "../../components/Tag.astro";
+import EventDate from "../../components/EventDate.astro";
+import EventType from "../../components/EventType.astro";
 
 export async function getStaticPaths() {
   const events = await getCollection("events");
@@ -10,22 +13,25 @@ export async function getStaticPaths() {
 
 const { event } = Astro.props;
 const { Content } = await render(event);
+const cover = event.data.cover?.startsWith("/") && fs.existsSync(`public${event.data.cover}`)
+  ? event.data.cover
+  : "";
 ---
 
 <BaseLayout title={`${event.data.title} — AISF`}>
   <main>
     <section data-dark class="relative overflow-hidden rounded-b-[28px] bg-ink text-paper">
-      {event.data.cover && (
-        <img src={event.data.cover} alt="" class="absolute inset-0 h-full w-full object-cover" />
+      {cover && (
+        <img src={cover} alt="" class="absolute inset-0 h-full w-full object-cover" />
       )}
       <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(14,24,48,0.55) 0%, rgba(14,24,48,0.9) 100%)"></div>
       <div class="relative mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] pt-[140px] pb-16">
-        <Tag tone="dark">{event.data.date}{event.data.endDate && ` — ${event.data.endDate}`}</Tag>
+        <Tag tone="dark"><EventDate iso={event.data.dateISO} fallback={event.data.date} /></Tag>
         <h1 class="mt-4 max-w-[16ch] font-display font-semibold" style="font-size: clamp(36px, 6vw, 72px); line-height: 1; letter-spacing: -0.02em;">
           {event.data.title}
         </h1>
         <p class="mt-3 font-mono text-[12px] tracking-[0.1em] text-paper/70 uppercase">
-          {event.data.type} · {event.data.location}
+          <EventType value={event.data.type} /> · {event.data.location}
         </p>
       </div>
     </section>

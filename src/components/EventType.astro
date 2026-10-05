@@ -1,0 +1,17 @@
+---
+interface Props {
+  value?: string;
+}
+
+const { value = "" } = Astro.props;
+
+const LABELS: Record<string, string> = {
+  eventonazionale: "Evento nazionale",
+  eventolocale: "Evento locale",
+  conferenza: "Conferenza",
+};
+
+const label = LABELS[value.toLowerCase()] ?? value;
+---
+
+{label}

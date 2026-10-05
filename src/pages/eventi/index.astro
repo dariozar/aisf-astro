@@ -2,6 +2,8 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Tag from "../../components/Tag.astro";
+import EventDate from "../../components/EventDate.astro";
+import EventType from "../../components/EventType.astro";
 
 const all = await getCollection("events");
 const byDateDesc = (a: any, b: any) => (b.data.dateISO || "").localeCompare(a.data.dateISO || "");
@@ -25,10 +27,10 @@ const past = all.filter((e) => e.data.status === "past").sort(byDateDesc);
         {upcoming.length === 0 && <p class="text-ink-soft">Nessun evento in programma — torna presto.</p>}
         {upcoming.map((e) => (
           <a href={`/eventi/${e.id}/`} class="flex min-h-[240px] flex-col gap-4 rounded-[22px] bg-sky p-7 text-ink no-underline">
-            <span class="self-start rounded-full bg-tangerine px-2.5 py-1 font-mono text-[11px] tracking-[0.12em] uppercase">{e.data.date}</span>
+            <span class="self-start rounded-full bg-tangerine px-2.5 py-1 font-mono text-[11px] tracking-[0.12em] uppercase"><EventDate iso={e.data.dateISO} fallback={e.data.date} /></span>
             <h3 class="font-display text-[24px] leading-[1.1] font-semibold">{e.data.title}</h3>
             <div class="mt-auto flex justify-between border-t border-ink/15 pt-4 font-mono text-[11px] tracking-[0.08em] uppercase">
-              <span>{e.data.type}</span><span>{e.data.location}</span>
+              <span><EventType value={e.data.type} /></span><span>{e.data.location}</span>
             </div>
           </a>
         ))}
@@ -37,7 +39,7 @@ const past = all.filter((e) => e.data.status === "past").sort(byDateDesc);
       <div class="mt-6 grid grid-cols-1 gap-4 min-[900px]:grid-cols-3">
         {past.map((e) => (
           <a href={`/eventi/${e.id}/`} class="rounded-[16px] border border-rule-light bg-paper p-5 no-underline">
-            <p class="font-mono text-[11px] tracking-[0.08em] text-ink-soft uppercase">{e.data.date} · {e.data.location}</p>
+            <p class="font-mono text-[11px] tracking-[0.08em] text-ink-soft uppercase"><EventDate iso={e.data.dateISO} fallback={e.data.date} /> · {e.data.location}</p>
             <h3 class="mt-1 font-display text-[18px] font-semibold text-ink">{e.data.title}</h3>
           </a>
         ))}

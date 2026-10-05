@@ -1,0 +1,20 @@
+---
+interface Props {
+  iso?: string;
+  fallback?: string;
+}
+
+const { iso = "", fallback = "" } = Astro.props;
+
+const MONTHS = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"];
+
+function format(isoDate: string): string {
+  const m = isoDate.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!m) return fallback || isoDate;
+  const [, y, mo, d] = m;
+  if (y === "1900") return fallback;
+  return `${parseInt(d, 10)} ${MONTHS[parseInt(mo, 10) - 1]} ${y}`;
+}
+---
+
+{format(iso)}
