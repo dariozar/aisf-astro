@@ -6,7 +6,7 @@ dateISO: '2020-09-17'
 endDate: ''
 location: Online
 type: eventonazionale
-cover: /img/photos/2020-SG/sif20-logo.jpg
+cover: /images/photos/2020-SG/sif20-logo.jpg
 status: past
 ---
 <style>

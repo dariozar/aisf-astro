@@ -10,4 +10,4 @@ Mai ci saremmo aspettati un tale successo e una simile accoglienza da parte dell
 
 Il grande successo non può che far ben sperare per il futuro della nostra giovane Associazione e tutti noi ci riteniamo molto soddisfatti.
 
-![Foto del banchetto AISF a Milano](/img/eventilocali/2015_BanchettoMilano/banchetto01.jpg)
+![Foto del banchetto AISF a Milano](/images/eventilocali/2015_BanchettoMilano/banchetto01.jpg)

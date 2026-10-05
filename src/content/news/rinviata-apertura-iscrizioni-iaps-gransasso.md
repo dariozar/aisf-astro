@@ -10,4 +10,4 @@ Gli organizzatori si scusano per il disagio. Eventuali aggiornamenti saranno pub
 
 Speriamo che questo dia tempo a più studenti di preparare i migliori abstracts possibili.
 
-![](/img/blog/gransasso.jpg)
+![](/images/blog/gransasso.jpg)

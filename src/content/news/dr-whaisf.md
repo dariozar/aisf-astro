@@ -12,5 +12,5 @@ Dopo le prime tre manches (“Storia della Fisica”, “Logica e matematica” 
 
 I presenti sono stati 73, numero che ha permesso di avere una buona quantità di nuovi iscritti al comitato locale. In generale si è avuto un ottimo feedback per l’Associazione e un riscontro positivo per il quiz che ha intrattenuto tutti i partecipanti senza mai annoiare. In seguito alla serata, gli studenti hanno presumibilmente parlato positivamente dell’AISF con coloro che non erano presenti, in quanto sono state ricevute ulteriori richieste di iscrizione. Che dire, un inizio promettente. Arrivederci alla prossima serata di giochi firmata AISF!
 
-![Bohr e Pauli aspettando l'inversione di un'antitrottola. Foto scattata all'apertura del nuovo Dipartimento di Fisica dell'Università di Lund, il 31 maggio 1951](/img/eventilocali/2016_DrWhAISF/antitrottola.jpg)
+![Bohr e Pauli aspettando l'inversione di un'antitrottola. Foto scattata all'apertura del nuovo Dipartimento di Fisica dell'Università di Lund, il 31 maggio 1951](/images/eventilocali/2016_DrWhAISF/antitrottola.jpg)
 

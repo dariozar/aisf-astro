@@ -4,7 +4,7 @@ date: 2015-10-21 15:03
 ---
 ## Su RTC Quarta Rete il programma di intrattenimento scientifico alla portata di tutti
 
-![Manuela Pannullo (sinistra) e Ilenia Apicella (destra) al timone di "Fisicamente"](/img/blog/apicella1.jpg){: class="materialboxed" width="100%" }
+![Manuela Pannullo (sinistra) e Ilenia Apicella (destra) al timone di "Fisicamente"](/images/blog/apicella1.jpg){: class="materialboxed" width="100%" }
 
 “Non hai veramente capito qualcosa finché non sei in grado di spiegarlo a tua nonna” diceva Albert Einstein. Un linguaggio semplice, così come intendeva il famoso fisico, ed esperimenti divertenti sono gli ingredienti di “Fisicamente”, il programma tv ideato e condotto da Ilenia Apicella, una giovane ragazza di Cava de’ Tirreni, laureata in Fisica presso l’Università degli Studi di Salerno e affiancata nella conduzione dalla giornalista e presentatrice cavese Manuela Pannullo.
 
@@ -18,5 +18,5 @@ Vi aspettiamo!
 
 
 
-![](/img/blog/apicella2.jpg)
+![](/images/blog/apicella2.jpg)
 

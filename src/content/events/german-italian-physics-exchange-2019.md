@@ -6,6 +6,6 @@ dateISO: '2019-11-07'
 endDate: '2019-11-10'
 location: Dresden
 type: eventonazionale
-cover: /img/photos/GIPE19.jpg
+cover: /images/photos/GIPE19.jpg
 status: past
 ---

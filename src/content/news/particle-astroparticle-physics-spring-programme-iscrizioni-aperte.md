@@ -4,7 +4,7 @@ date: 2015-02-14 10:46
 ---
 IAPS e AISF sono orgogliose di annunciare che la prima edizione dell'iaps@GranSasso- Particle & Astroparticle Physics Spring Programme si terrà in Italia nel maggio 2015!
 
-![](/img/blog/iapsGranSasso_logos.png)
+![](/images/blog/iapsGranSasso_logos.png)
 
 I **Laboratori Nazionali del Gran Sasso (LNGS)** in Italia sono il più grande laboratorio sotterraneo di fisica delle particelle al mondo. Si trovano nel il monte Gran Sasso, sotto 1400 m di roccia, a protezione dai raggi cosmici.
 

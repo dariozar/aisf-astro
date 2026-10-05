@@ -35,13 +35,27 @@ const cover = event.data.cover?.startsWith("/") && fs.existsSync(`public${event.
         </p>
       </div>
     </section>
-    <article class="prose mx-auto max-w-[720px] px-[clamp(16px,4vw,24px)] py-14 font-display text-[17px] leading-[1.65]">
-      <Content />
-    </article>
+    <div class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-14">
+      <article class="prose mx-auto max-w-[780px] rounded-[28px] border border-rule-light bg-paper px-[clamp(20px,4vw,48px)] py-[clamp(28px,4vw,52px)] font-display text-[17px] leading-[1.65] shadow-card">
+        <Content />
+      </article>
+    </div>
   </main>
 </BaseLayout>
 
 <style>
   .prose :global(p) { margin-bottom: 1.2em; }
   .prose :global(a) { color: var(--color-tangerine-deep); }
+  .prose :global(h2) { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.015em; margin: 1.6em 0 0.6em; }
+  .prose :global(h3) { font-size: 1.2rem; font-weight: 600; margin: 1.4em 0 0.5em; }
+  .prose :global(ul), .prose :global(ol) { margin: 0 0 1.2em 1.2em; }
+  .prose :global(ul) { list-style: disc; }
+  .prose :global(ol) { list-style: decimal; }
+  .prose :global(li) { margin-bottom: 0.4em; }
+  .prose :global(li::marker) { color: var(--color-tangerine-deep); }
+  .prose :global(strong) { font-weight: 600; }
+  .prose :global(em) { font-family: var(--font-serif); }
+  .prose :global(blockquote) { border-left: 4px solid var(--color-tangerine); padding-left: 1em; margin: 0 0 1.2em; color: var(--color-ink-soft); }
+  .prose :global(img) { border-radius: 16px; margin: 1.5em auto; }
+  .prose :global(hr) { border-color: var(--color-rule-light); margin: 2em 0; }
 </style>

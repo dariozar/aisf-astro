@@ -14,10 +14,10 @@ Nonostante il meteo avverso, chi non ha desistito é stato ripagato con una bell
 
 Ecco alcune foto dell'evento:
 
-![](/img/photos/2016-osservatorio-milano/IMG_20160614_221145.jpg){: class="materialboxed" width="100%"}
+![](/images/photos/2016-osservatorio-milano/IMG_20160614_221145.jpg){: class="materialboxed" width="100%"}
 
-![](/img/photos/2016-osservatorio-milano/IMG_2016-06-25 19:10:00.jpg){: class="materialboxed" width="100%"}
+![](/images/photos/2016-osservatorio-milano/IMG_2016-06-25 19:10:00.jpg){: class="materialboxed" width="100%"}
 
-![](/img/photos/2016-osservatorio-milano/IMG_20160614_215330.jpg){: class="materialboxed" width="100%"}
+![](/images/photos/2016-osservatorio-milano/IMG_20160614_215330.jpg){: class="materialboxed" width="100%"}
 
 Foto: Daniele Oriani e Alessia Rabaioli

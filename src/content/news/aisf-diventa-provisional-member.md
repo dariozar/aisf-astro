@@ -4,7 +4,7 @@ date: 2014-12-09 20:36
 ---
 Oggi, martedì 7 dicembre 2014 ore 7:57 del mattino, l'AISF e' stato accettato come "Provisional Member" dall'International Association of Physics Students (IAPS).
 
-![](/img/blog/iaps-map_2014-12.png)
+![](/images/blog/iaps-map_2014-12.png)
 
 Appena pagata la membership (per cui ci e' stato accordato uno sconto del 50% per il primo anno) saremo membri a tutti gli effetti!
 

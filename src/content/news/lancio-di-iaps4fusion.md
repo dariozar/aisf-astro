@@ -2,7 +2,7 @@
 title: Lancio di iaps4fusion
 date: 2015-07-30 21:26
 ---
-![](/img/blog/iaps4fusion_header.jpg)
+![](/images/blog/iaps4fusion_header.jpg)
 
 IAPS è finalmente pronta a lanciare l'evento iaps4fusion!
 

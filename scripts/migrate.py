@@ -38,6 +38,7 @@ def split_frontmatter(text):
 
 def dump(path, front, body):
     os.makedirs(os.path.dirname(path), exist_ok=True)
+    body = body.replace("/img/", "/images/")
     with open(path, "w") as f:
         f.write("---\n" + yaml.safe_dump(front, allow_unicode=True,
                                          sort_keys=False) + "---\n" + body.lstrip())
@@ -75,7 +76,7 @@ def migrate_events():
             "endDate": str(front.get("endingdate") or ""),
             "location": front.get("place") or "",
             "type": front.get("categories") or "evento",
-            "cover": front.get("cover") or "",
+            "cover": (front.get("cover") or "").replace("/img/", "/images/"),
             "status": "past",
         }, body)
         n += 1
@@ -110,6 +111,8 @@ def migrate_committees():
             "founded": str(c.get("fondazione") or ""),
             "email": ((c.get("mail") or "") + "@ai-sf.it") if c.get("mail") else "",
             "status": "frozen" if frozen else "active",
+            "photo": (c.get("img") or "").replace("/img/", "/images/"),
+            "logo": (c.get("logo") or "").replace("/img/", "/images/"),
             "past_presidents": str(c.get("ex") or ""),
             "link": c.get("fb") or "",
             "rules": c.get("regolamento") or "",
@@ -129,7 +132,7 @@ def migrate_executive():
         "role": m.get("ruolo", ""),
         "bio": m.get("descr") or "",
         "email": ((m.get("mail") or "") + "@ai-sf.it") if m.get("mail") else "",
-        "photo": m.get("img") or "",
+        "photo": (m.get("img") or "").replace("/img/", "/images/"),
     } for m in current.get("membri", [])]
     d = os.path.join(HERE, "src", "data")
     os.makedirs(d, exist_ok=True)

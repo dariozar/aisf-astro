@@ -6,7 +6,7 @@ Il [XXIX ICPS](http://www.icps2014.com/location/heidelberg/) ([International Con
 
 La voglia di conoscersi e di creare legami, tuttavia, non si esaurisce in una settimana, per quanto intensa e ricca. Supera le costrizioni temporali e si impone come vera e propria necessità. Per questo motivo, proprio durante l'ICPS in Heidelberg, il gruppo di studenti italiani ha deciso finalmente di mettersi all'opera e di porre le basi di una solida rete fra gli studenti di fisica in Italia. Così è nata, il 15 agosto 2014, l'**Associazione Italiana Studenti di Fisica (AISF)**. 
 
-![](/img/blog/heidelberg.jpeg)
+![](/images/blog/heidelberg.jpeg)
 
 L'obiettivo dell'AISF è costituire un legame solido fra gli studenti di fisica italiani e di rappresentarli ufficialmente presso l'[International Association of Physics Students (IAPS)](http://www.iaps.info/), l'associazione che raggruppa gli studenti di fisica di tutto il mondo. Sotto l'ombrello dell'IAPS si sono da tempo formati, in diverse parti del mondo, Comitati Nazionali e Comitati Locali, costituiti a loro volta da associazioni studentesche nazionali e locali. L'AISF, una volta affiliatasi all'IAPS, rappresenterà il Comitato Nazionale italiano. 
 

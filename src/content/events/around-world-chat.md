@@ -6,7 +6,7 @@ dateISO: '2021-02-01'
 endDate: ''
 location: Online
 type: eventonazionale
-cover: /img/photos/2020_02_01_WorldChat/InfoChat.png
+cover: /images/photos/2020_02_01_WorldChat/InfoChat.png
 status: past
 ---
 <style>

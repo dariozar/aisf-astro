@@ -6,6 +6,6 @@ dateISO: '2019-12-03'
 endDate: '2019-12-06'
 location: Roma, L'Aquila
 type: eventonazionale
-cover: /img/photos/2019-PAPAP/LNGS_home.jpg
+cover: /images/photos/2019-PAPAP/LNGS_home.jpg
 status: past
 ---

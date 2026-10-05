@@ -13,4 +13,4 @@ Aiuta AISF e IAPS a diffondere questo evento: non esitare a contattare il [Comit
 
 Il form per la registrazione può essere trovato [qui](http://www.iaps.info/activities/gransasso-particle-astroparticle-physics-spring-programme/iapslngs-registration).
 
-![](/img/blog/GranSasso2015-locandina.png)
+![](/images/blog/GranSasso2015-locandina.png)

@@ -4,7 +4,7 @@ date: 2016-03-18 12:43
 ---
 Il 2 marzo, in un gruppo di circa quaranta studenti, siamo andati a visitare il centro di ricerca LASA (Laboratorio Acceleratori e Superconduttività Applicata) a Segrate in provincia di Milano.
 
-![](/img/eventilocali/2016_VisitaLASA/01.jpg){: class="materialboxed" width="100%"}
+![](/images/eventilocali/2016_VisitaLASA/01.jpg){: class="materialboxed" width="100%"}
 
 Ci siamo ritrovati dopo pranzo nell’atrio del dipartimento di Fisica e da lì abbiamo raggiunto il centro dove siamo stati calorosamente accolti dal Professore Massimo Sorbi. Per iniziare ci siamo accomodati in sala conferenze e a turno quattro ricercatori del centro: Dario Giove,  Flavia Maria Groppi Garlandini, Paolo Michelato e lo stesso Prof. Sorbi, hanno esposto nella maniera più chiara possibile la loro attività senza tralasciare di riservare spazio a domande e curiosità. Ci hanno parlato dalla scoperta della superconduttività, delle differenze tra i superconduttori di tipo uno e due e delle nanoparticelle e della loro applicazione nella theragnostic medicine per citare solo alcuni degli argomenti trattati. Sono stati mostrati anche i percorsi di studio volti a specializzare gli studenti verso i rispettivi ambiti, le opportunità di lavoro offerte e le collaborazioni del centro. 
 
@@ -15,4 +15,4 @@ Insomma mercoledì è stato possibile soddisfare gli interessi di tutti e ad ave
 Si ringrazia tutto il personale del LASA, tecnici e ricercatori. Un particolare ringraziamento va al Professore Massimo Sorbi che ha reso possibile l’organizzazione di questa visita.
 Si spera in futuro che iniziative come questa siano realizzate in numero sempre crescente e che sempre più studenti desiderino parteciparvi.
 
-![](/img/eventilocali/2016_VisitaLASA/02.jpg){: class="materialboxed" width="100%"}
+![](/images/eventilocali/2016_VisitaLASA/02.jpg){: class="materialboxed" width="100%"}

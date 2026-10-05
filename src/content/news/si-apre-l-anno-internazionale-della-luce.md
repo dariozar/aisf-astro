@@ -2,7 +2,7 @@
 title: Si apre l'anno internazionale della luce
 date: 2015-01-18 22:15
 ---
-![](/img/blog/IYL.jpg)
+![](/images/blog/IYL.jpg)
 
 Inizierà tra poche ore, con la cerimonia di apertura presso i quartieri UNESCO di Parigi, l'**International Year of Light and Light-based Technologies**.
 Come si può leggere sul sito ufficiale:

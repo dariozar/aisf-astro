@@ -6,7 +6,7 @@ dateISO: '2016-12-15'
 endDate: '2016-12-19'
 location: Pisa, Firenze
 type: eventonazionale
-cover: /img/photos/2016-LoT/lot_slide.jpg
+cover: /images/photos/2016-LoT/lot_slide.jpg
 status: past
 ---
 Anche quest'anno l'AISF organizza Lights of Tuscany, un evento internazionale che permetterà a 40 studenti provenienti da tutto il mondo IAPS di visitare e seguire talk nei maggiori centri di ricerca di Pisa e Firenze oltre ad eventi sociali nelle due città compresa una visita opzionale alla Galleria degli Uffizi.

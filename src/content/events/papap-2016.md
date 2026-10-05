@@ -6,7 +6,7 @@ dateISO: '2016-10-02'
 endDate: '2016-10-06'
 location: Gran Sasso
 type: eventonazionale
-cover: /img/photos/2016-PAPAP/groupPAPAP.jpg
+cover: /images/photos/2016-PAPAP/groupPAPAP.jpg
 status: past
 ---
 E' arrivato il gran momento: lanciamo finalmente il Particle & Astroparticle Physics Autumn Programme 2016!

@@ -6,7 +6,7 @@ dateISO: '2017-02-24'
 endDate: '2017-02-24'
 location: ''
 type: eventonazionale
-cover: /img/photos/2017-PLANCKS/graz.jpg
+cover: /images/photos/2017-PLANCKS/graz.jpg
 status: past
 ---
 Venerdì 24 febbraio si sono svolte, in contemporanea con i colleghi olandesi, le preliminaries per il [PLANCKS 2017](http://international.plancks.at/). 

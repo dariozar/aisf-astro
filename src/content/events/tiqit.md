@@ -6,7 +6,7 @@ dateISO: '2018-04-10'
 endDate: '2018-04-13'
 location: Trento, Innsbruck
 type: eventonazionale
-cover: /img/photos/2017_TIQIT/innsbruck.jpg
+cover: /images/photos/2017_TIQIT/innsbruck.jpg
 status: past
 ---
 The Trento-Innsbruck Quantum Information Tour is an event organised by AISF Trento (Local Committee of the Italian Association of Physics Students) for all the members of the association: it will bring 40 students to visit some of the most advanced research facilities in Trento and Innsbruck and is conceived to showcase research mainly in the field of Quantum Information. Scientists and researchers will present their work and will be available to answer any question.

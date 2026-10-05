@@ -6,7 +6,7 @@ dateISO: '2015-09-27'
 endDate: '2015-10-01'
 location: Londra, Oxford
 type: eventonazionale
-cover: /img/photos/2015-iaps4fusion/group02.jpg
+cover: /images/photos/2015-iaps4fusion/group02.jpg
 status: past
 ---
 __IAPS4Fusion__ è stato un evento organizzato dall'[Institute of Physics University Student Network](http://www.iop.org/activity/university-student-network/), il National Committee del Regno Unito e Irlanda di IAPS.

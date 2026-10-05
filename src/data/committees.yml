@@ -4,6 +4,8 @@
   founded: 05/2015
   email: bari@ai-sf.it
   status: active
+  photo: /images/presidenti/bari_lucariello.jpg
+  logo: /images/loghi_LC/bari.jpg
   past_presidents: Beatrice Spano, Chiara Perilli, Gaia de Palma, Fabrizio Corvino,
     Stefania Caragnano, Andrea Lo Sasso, Vincenzo Alberto Sansipersico, Sergio Picella,
     Simona Rossini
@@ -15,6 +17,8 @@
   founded: 06/2016
   email: bologna@ai-sf.it
   status: active
+  photo: /images/presidenti/bologna_grenno.jpg
+  logo: /images/loghi_LC/bologna.jpg
   past_presidents: Giulia Provenzale, Francesco Salvi, Lorenzo Lasagni, Marco De Vito,
     Alessandra Lorenzo
   link: https://www.facebook.com/aisflcbologna
@@ -25,6 +29,8 @@
   founded: 05/2018
   email: calabria@ai-sf.it
   status: active
+  photo: /images/presidenti/calabria_guarascio.jpg
+  logo: /images/loghi_LC/calabria.png
   past_presidents: Edoardo De Rose, Antonietta Olivieri, Alfredo D'Ambrosio
   link: https://www.facebook.com/AISF-UniCal-938404002996014/
   rules: https://drive.google.com/open?id=1ANC0gCzM-Eh2AnvvUhcsLiFuTU193DhE
@@ -34,6 +40,8 @@
   founded: 05/2025
   email: ferrara@ai-sf.it
   status: active
+  photo: /images/presidenti/ferrara_marchi.jpg
+  logo: ''
   past_presidents: ''
   link: ''
   rules: ''
@@ -43,6 +51,8 @@
   founded: 11/2016
   email: firenze@ai-sf.it
   status: active
+  photo: /images/presidenti/firenze_abati.jpg
+  logo: /images/loghi_LC/firenze.png
   past_presidents: Francesco Chiti Tegli, Andrea Santoni, Simone Meoni, Matteo Barbetti,
     Nicolò Antolini
   link: https://www.facebook.com/AISFComitatoLocaleFirenze/
@@ -53,6 +63,8 @@
   founded: 08/2015
   email: genova@ai-sf.it
   status: frozen
+  photo: ''
+  logo: /images/loghi_LC/genova.jpg
   past_presidents: Asia Tiby, Daniele Chioetto, Marco Di Stefano, Lorenzo Ferrari
     Barusso
   link: https://www.facebook.com/geAISF
@@ -63,6 +75,8 @@
   founded: 05/2015
   email: milano@ai-sf.it
   status: active
+  photo: /images/presidenti/milano_perillo.jpg
+  logo: /images/loghi_LC/milano_statale.jpg
   past_presidents: Valentina Raspagni, Gloria Senatore, Matteo Vismara, Elisa Radaelli,
     Luca Teruzzi, Emilio Villa, Daniele Oriani, Valerio Peri
   link: https://www.facebook.com/aisfunimi
@@ -73,6 +87,8 @@
   founded: 05/2018
   email: milano.bicocca@ai-sf.it
   status: active
+  photo: /images/presidenti/milano-bicocca_sparaneo.jpg
+  logo: /images/loghi_LC/milano_bicocca.jpg
   past_presidents: Laura Trombetta, Andrea Parpinel, Chiara Guerini, Lorenzo Stevenazzi,
     Carlo Calissi, Giulia Marcucci
   link: https://www.facebook.com/AISFMilanoBICOCCA/
@@ -83,6 +99,8 @@
   founded: 11/2019
   email: napoli@ai-sf.it
   status: active
+  photo: /images/presidenti/napoli_vinciguerra.png
+  logo: ''
   past_presidents: Alessio Ciro Rapisarda, Salvatore Samuele Sirletti
   link: ''
   rules: ''
@@ -92,6 +110,8 @@
   founded: 05/2016
   email: padova@ai-sf.it
   status: active
+  photo: /images/presidenti/padova_andreacchio.jpg
+  logo: /images/loghi_LC/padova.jpg
   past_presidents: Giorgio Benvegnù, Paolo Lapo Cerni, Alberto Paolini, Giovanna Saleh,
     Valentina Picciano, Federica Lorenzi, Leonardo Pacciani
   link: https://www.facebook.com/AISFPadova
@@ -102,6 +122,8 @@
   founded: 04/2019
   email: palermo@ai-sf.it
   status: active
+  photo: /images/presidenti/palermo_gelsomino.jpg
+  logo: ''
   past_presidents: Mario Lisciandrello, Federico Ticali, Andrea Gerhard Lutz, Giovanni
     Cusimano, Enrico Di Benedetto, Santi Macaluso
   link: https://www.facebook.com/aisfpalermoLC/
@@ -112,6 +134,8 @@
   founded: 11/2016
   email: pavia@ai-sf.it
   status: active
+  photo: /images/presidenti/pavia_oberti.jpg
+  logo: /images/loghi_LC/pavia.png
   past_presidents: "Cecilia Impagliatelli, Diego Dall'Ara, Chiara\tRighini, Marco\
     \ Candido, Federica De Domenico, Federico Sabattoli, Elisabetta Vesconi"
   link: https://www.facebook.com/aisfpavia/
@@ -122,6 +146,8 @@
   founded: 12/2017
   email: perugia@ai-sf.it
   status: active
+  photo: /images/presidenti/perugia_duca.jpg
+  logo: /images/loghi_LC/perugia.png
   past_presidents: Andrea Bruno, Riccardo Pezzetta, Francesco Marzocco, Alessandro
     Pascolini, David Pelosi, Samuele Giuli
   link: https://www.facebook.com/aisfpg/
@@ -132,6 +158,8 @@
   founded: 07/2015
   email: pisa@ai-sf.it
   status: active
+  photo: /images/presidenti/pisa_pianini.jpg
+  logo: /images/loghi_LC/pisa.png
   past_presidents: "Giulia Casti, Alessandro Terranova, Francesco Zeno\tCostanzo,\
     \ Giulio Carotta, Gloria Ciocconofri, Matteo Chiappini, Giacomo Bagnato, Niccolo\
     \ Baldelli, Marco Morrone"
@@ -143,6 +171,8 @@
   founded: 05/2018
   email: roma.sapienza@ai-sf.it
   status: active
+  photo: /images/presidenti/roma-sapienza_silvestri.jpg
+  logo: /images/loghi_LC/roma_sapienza.jpg
   past_presidents: Valerio Tinari, Lorenzo Rocchi, Matteo Cheri, Martina Del Giorno,
     Kun Zhan
   link: https://www.facebook.com/AISF-Comitato-Locale-Roma-Sapienza-1369227109880296
@@ -153,6 +183,8 @@
   founded: 05/2016
   email: romatorvergata@ai-sf.it
   status: frozen
+  photo: ''
+  logo: /images/loghi_LC/roma_tor_vergata.png
   past_presidents: Antonio Evangelista, Simone La Cesa, Manuela Tulli
   link: https://www.facebook.com/AISF-Comitato-Locale-Roma-Tor-Vergata-1116282045100631
   rules: https://drive.google.com/open?id=1LLsoMrB4PcnaE0Z8B4NuPzKZWwvRuRLu
@@ -162,6 +194,8 @@
   founded: 04/2019
   email: roma.tre@ai-sf.it
   status: active
+  photo: /images/presidenti/roma-tre_trudu.jpg
+  logo: ''
   past_presidents: "Marta Giacomet, Stefania Romano, Cristina\tIacomino, Lucrezia\
     \ Bianchi"
   link: https://www.facebook.com/AISFRomaTre/
@@ -172,6 +206,8 @@
   founded: 05/2015
   email: salerno@ai-sf.it
   status: active
+  photo: /images/presidenti/salerno_paduano.jpg
+  logo: ''
   past_presidents: Ludovico Montella, Antonio Gravina, Carlo Pepe, Matteo Crispino,
     Amedeo Ferrentino, Luca Buoninfante
   link: ''
@@ -182,6 +218,8 @@
   founded: 06/2015
   email: torino@ai-sf.it
   status: active
+  photo: /images/presidenti/torino_attina.jpg
+  logo: /images/loghi_LC/torino.jpg
   past_presidents: Federico Canterucci, Stoian Ivanov, Christian Biello, Andrea Barresi,
     Maria Vittoria Zanchettin, Mattia Ivaldi, Riccardo Longo
   link: https://www.facebook.com/AISF-Torino-1642147402727081/
@@ -192,6 +230,8 @@
   founded: 12/2015
   email: trento@ai-sf.it
   status: active
+  photo: /images/presidenti/trento_tognoni.jpg
+  logo: /images/loghi_LC/trento.jpg
   past_presidents: "Nicola Pretto, Anna Do', Nicola Arsenio\tLodi, Giulia Morelli,\
     \ Laura Beghini, Zeno Bacciconi, Roberto Ciccarelli, Luca Lazzizzera, Emily Damiani"
   link: https://www.facebook.com/AISF-Trento-958208697625956/
@@ -202,6 +242,8 @@
   founded: 04/2018
   email: trieste@ai-sf.it
   status: active
+  photo: /images/presidenti/trieste_pregarc.jpg
+  logo: /images/loghi_LC/trieste.png
   past_presidents: Agata de Maria, Riccardo Natale, Youssef Makoudi, Karim Chahine,
     Jacopo De Santis, Federico Loi
   link: https://www.facebook.com/aisftrieste/

@@ -2,7 +2,7 @@
 title: Online il portale dedicato alla CISF
 date: 2015-04-02 11:23
 ---
-![](/img/blog/cisf-portale.png)
+![](/images/blog/cisf-portale.png)
 
 È ora online un portale sul nostro sito interamente dedicato alla Prima Conferenza Italiana Studenti di fisica: [http://www.ai-sf.it/cisf/](http://www.ai-sf.it/cisf/)
 

@@ -6,7 +6,7 @@ dateISO: '2025-05-15'
 endDate: '2025-05-19'
 location: Pisa, Firenze
 type: eventonazionale
-cover: /img/photos/2025-LOT/LOT25-LOGO.webp
+cover: /images/photos/2025-LOT/LOT25-LOGO.webp
 status: past
 ---
 The event is open to all students of the International Association of Physics Students (IAPS). It will bring 40 students to visit some of the most advanced research facilities in Tuscany, with a focus on Photonics and Optics and one key mission: to foster enthusiasm in the minds of young physicists.

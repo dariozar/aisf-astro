@@ -21,4 +21,4 @@ Il pagamento della quota di partecipazione dev'essere effettuato entro e non olt
 
 *Vi aspettiamo a Torino!!*
 
-![](/img/blog/torino2.jpg)
+![](/images/blog/torino2.jpg)

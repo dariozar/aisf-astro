@@ -6,7 +6,7 @@ date: 2015-01-26 22:30
 
 Il programma del primo **Particle & Astroparticle Physics Spring Programme** e' finalmente online! Non perdete quest'opportunità per visitare il Laboratorio Nazionale del Gran Sasso e presentare i vostri progetti di fronte ad un'audience del tutto unica!
 
-![](/img/blog/gransasso1.jpg)
+![](/images/blog/gransasso1.jpg)
 
 Potete trovare informazioni su [questa pagina](/eventi/) del sito AISF e il programma completo sul [sito IAPS](http://www.iaps.info/iapslngs-full-programme-now-published) a questo link.
 

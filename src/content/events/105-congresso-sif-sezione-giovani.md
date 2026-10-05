@@ -6,7 +6,7 @@ dateISO: '2019-09-25'
 endDate: '2019-09-26'
 location: L'Aquila
 type: eventonazionale
-cover: /img/photos/2019-SG/sif19-logo.png
+cover: /images/photos/2019-SG/sif19-logo.png
 status: past
 ---
 <style>
@@ -142,4 +142,4 @@ Sono disponibili connessioni frequenti tramite bus dalla stazione ferroviaria Ro
 
 Per ulteriori informazioni è possibile scrivere al [Comitato Esecutivo](mailto:esecutivo@ai-sf.it) AISF.
 
-[banner]: /img/photos/2019-SG/piazzaduomo.jpg
+[banner]: /images/photos/2019-SG/piazzaduomo.jpg

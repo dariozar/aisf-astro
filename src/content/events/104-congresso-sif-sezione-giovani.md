@@ -158,5 +158,5 @@ L'Università della Calabria si trova in Via Pietro Bucci, 87036 Arcavacata di R
 
 Per ulteriori informazioni è possibile scrivere al [Comitato Esecutivo](mailto:esecutivo@ai-sf.it) AISF.
 
-[banner]: /img/photos/2018-sezione-giovani/banner_cosenza.jpg
-[castello]: /img/photos/2018-sezione-giovani/castello.jpg
+[banner]: /images/photos/2018-sezione-giovani/banner_cosenza.jpg
+[castello]: /images/photos/2018-sezione-giovani/castello.jpg

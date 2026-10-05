@@ -6,7 +6,7 @@ dateISO: '2022-05-13'
 endDate: '2022-05-16'
 location: Pisa, Firenze
 type: eventonazionale
-cover: /img/photos/2022-LOT/LoT2022_logo.png
+cover: /images/photos/2022-LOT/LoT2022_logo.png
 status: past
 ---
 Benvenuti alla quarta edizione di Lights of Tuscany!

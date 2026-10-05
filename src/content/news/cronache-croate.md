@@ -4,7 +4,7 @@ date: 2015-08-20 19:39
 ---
 ## Sette giorni a ICPS 2015 - Zagreb
 
-![Foto di gruppo ICPS2017](/img/photos/2015-ICPS/group01.jpg){: class="materialboxed" width="100%" }
+![Foto di gruppo ICPS2017](/images/photos/2015-ICPS/group01.jpg){: class="materialboxed" width="100%" }
 
 Si è conclusa lo scorso mercoledì l’ICPS di quest’anno. La settimana a Zagabria ha chiamato a raccolta 322 studenti da 31 paesi di tutti i continenti (Oceania esclusa, ancora senza aderenti all’IAPS).
 

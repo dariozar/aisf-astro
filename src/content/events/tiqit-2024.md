@@ -6,7 +6,7 @@ dateISO: '2023-02-18'
 endDate: '2023-02-24'
 location: Trento and Innsbruck
 type: eventonazionale
-cover: /img/photos/2024-TIQIT/TIQIT24-LOGO.jpg
+cover: /images/photos/2024-TIQIT/TIQIT24-LOGO.jpg
 status: past
 ---
 The Trento-Innsbruck Quantum Information Tour is an event organised by TAUT (Tavolo delle Associazioni Universitarie Trentine) and AISF Trento (Local Committee of the Italian Association of Physics Students AISF) in collaboration with AISF: it will bring 35 enthusiast students to visit some of the most advanced research facilities in Trento and Innsbruck and is conceived to showcase research mainly in the field of Quantum Information and Quantum Science.

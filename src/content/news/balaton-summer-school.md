@@ -2,7 +2,7 @@
 title: Balaton Summer School
 date: 2015-04-30 12:55
 ---
-![](/img/blog/Balaton_Summer_School.png)
+![](/images/blog/Balaton_Summer_School.png)
 
 La Società Ungherese di Studenti di Fisica (Mafihe) organizza la Balaton Summer School (BSS), che si terrà dal 20 al 26 luglio 2015 a Balaton, in Ungheria.
 

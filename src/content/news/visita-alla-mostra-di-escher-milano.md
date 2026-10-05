@@ -22,4 +22,4 @@ Il fatto, che sembra quasi miracoloso, è che M.C. Escher non era uno scienziato
 
 Dopo una giornata di lezioni e studio, è stato un modo diverso e stimolante per trascorrere assieme la serata.
 
-![Foto di gruppo](/img/eventilocali/2016-Escher-MI/group.jpg)
+![Foto di gruppo](/images/eventilocali/2016-Escher-MI/group.jpg)

@@ -6,7 +6,7 @@ dateISO: '2018-05-25'
 endDate: '2018-05-27'
 location: Bologna
 type: eventonazionale
-cover: /img/photos/2018-HYPE/bannerhype.jpg
+cover: /images/photos/2018-HYPE/bannerhype.jpg
 status: past
 ---
 Jointly organized by the International Students of History Association (ISHA) and the Italian Association of Physics Students (AISF), National Committee for Italy of the International Association of Physics Students (IAPS),  the first HYPE – HistorY and Physics Experience – will be held in Bologna, Italy, from May 25th to May 27th, 2018.

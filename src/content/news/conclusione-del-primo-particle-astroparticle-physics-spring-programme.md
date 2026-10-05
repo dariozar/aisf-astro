@@ -20,4 +20,4 @@ Speciale riconoscenza però va soprattutto ai ricercatori del Gran Sasso, che ci
 
 E' possibile scaricare il report dell'evento, presentato a CISF 2015, a questo link. 
 
-![](/img/photos/2015-GranSasso/group01.jpg)
+![](/images/photos/2015-GranSasso/group01.jpg)

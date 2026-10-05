@@ -6,7 +6,7 @@ dateISO: '2023-09-14'
 endDate: '2023-09-14'
 location: Fisciano
 type: eventonazionale
-cover: /img/photos/2023-SG/SG2023-LOGO.png
+cover: /images/photos/2023-SG/SG2023-LOGO.png
 status: past
 ---
 ### Chi

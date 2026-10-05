@@ -6,7 +6,7 @@ dateISO: '2021-02-04'
 endDate: '2021-02-04'
 location: Online
 type: eventonazionale
-cover: /img/photos/DEIT.jpg
+cover: /images/photos/DEIT.jpg
 status: past
 ---
 <style>

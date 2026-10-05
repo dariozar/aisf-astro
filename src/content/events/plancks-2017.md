@@ -6,7 +6,7 @@ dateISO: '2017-05-26'
 endDate: '2017-05-28'
 location: Graz
 type: eventonazionale
-cover: /img/photos/2017-PLANCKS/graz.jpg
+cover: /images/photos/2017-PLANCKS/graz.jpg
 status: past
 ---
 PLANCKS stands for Physics League Across Numerous Countries for Kick-ass Students and is an annual international physics contest for bachelor- and master students. Graz, Austria, is the venue of the 2017 tournament, which will be held from the 26th to the 29th May.

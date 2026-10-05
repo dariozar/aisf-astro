@@ -14,8 +14,8 @@ Prima di concludere, non possono mancare i ringraziamenti per i ragazzi del Grup
 
 E adesso? Non crederete che staremo con le mani in mano fino all'anno prossimo? Bolle già in pentola una serie di aperitivi con i professori, ma questa è un'altra storia! A presto!
 
-![Foto 1](/img/eventilocali/2017_MI_divulgazione/img1.png)
+![Foto 1](/images/eventilocali/2017_MI_divulgazione/img1.png)
 
-![Foto 2](/img/eventilocali/2017_MI_divulgazione/img2.png)
+![Foto 2](/images/eventilocali/2017_MI_divulgazione/img2.png)
 
-![Foto 3](/img/eventilocali/2017_MI_divulgazione/img3.png)
+![Foto 3](/images/eventilocali/2017_MI_divulgazione/img3.png)

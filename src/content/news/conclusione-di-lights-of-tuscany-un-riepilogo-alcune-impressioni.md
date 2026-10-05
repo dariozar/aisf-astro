@@ -4,7 +4,7 @@ date: 2015-12-27 22:32
 ---
 Lights of Tuscany 2015 è giunto al termine, e anche chi ha deciso di trascorrere qualche giorno in più in Italia è tornato a casa. Mentre ci godiamo le vacanze di Natale e studiamo per la sessione in arrivo, pensiamo a quei giorni in Toscana. Io ricordo questo viaggio così:
 
-![Partecipanti di LoT al Dipartimento di Fisica dell'Università di Pisa](/img/photos/2015-LoT/group01.jpg){: class="materialboxed" width="100%"}
+![Partecipanti di LoT al Dipartimento di Fisica dell'Università di Pisa](/images/photos/2015-LoT/group01.jpg){: class="materialboxed" width="100%"}
 
 ## Intenso
 
@@ -30,7 +30,7 @@ E le persone: non sembri retorico dire che sono il nucleo degli eventi IAPS. Cos
 La giovane AISF sta facendo un gran lavoro: LoT è il secondo evento internazionale che si chiude in gran successo, e che speriamo di replicare l’anno prossimo; nel frattempo ci prepariamo per ICPS2017.
 Ringraziamenti completi richiederebbero una pagina, ma mi sento in dovere di ringraziare almeno Marco, Francesco, Giulio e tutto il comitato organizzatore per il loro duro lavoro, e tutti i professori ed i ricercatori che hanno investito il loro tempo per noi.
 
-![Foto di gruppo sotto la Torre](/img/photos/2015-LoT/group02.jpg){: class="materialboxed" width="100%"}
+![Foto di gruppo sotto la Torre](/images/photos/2015-LoT/group02.jpg){: class="materialboxed" width="100%"}
 
 Altri ringraziamenti necessari:
 

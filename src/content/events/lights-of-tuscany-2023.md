@@ -6,7 +6,7 @@ dateISO: '2023-04-28'
 endDate: '2023-05-02'
 location: Pisa, Firenze
 type: eventonazionale
-cover: /img/photos/2023-LOT/LogoLOT23.png
+cover: /images/photos/2023-LOT/LogoLOT23.png
 status: past
 ---
 AISF Local committees of Pisa and Florence wait for you at the Lights of Tuscany programme, now at its fifth edition! The event is open to all students of the International Association of Physics Students and will bring 40 students to visit some of the most advanced research facilities in Tuscany, with a focus on Photonics and Optics and one key mission: to foster enthusiasm in the minds of young physicists.

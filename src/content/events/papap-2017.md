@@ -6,7 +6,7 @@ dateISO: '2017-10-09'
 endDate: '2017-10-13'
 location: Gran Sasso
 type: eventonazionale
-cover: /img/photos/2016-PAPAP/groupPAPAP.jpg
+cover: /images/photos/2016-PAPAP/groupPAPAP.jpg
 status: past
 ---
 AISF is welcoming 40 students from all over the world for the third edition of Particle and Astroparticle Physics Autumn Program (PAPAP17)

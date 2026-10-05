@@ -9,4 +9,4 @@ Potete trovare il modulo di iscrizione e tutte le informazioni alla pagina [Memb
 Solamente l'iscrizione effettiva all'AISF consente di godere dei benefici di appartenenza ad un National Committee per tutte le iniziative IAPS. In particolare, solo con l'iscrizione si risparmia la _Individual Membership_ di 10€!
 
 
-![](/img/blog/fermi2.jpg)
+![](/images/blog/fermi2.jpg)

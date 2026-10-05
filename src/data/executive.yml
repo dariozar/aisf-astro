@@ -10,7 +10,7 @@
     del decadente praticando Urbex tra le rovine del Nord Italia, esplorando ciò che
     altri hanno dimenticato.'
   email: federico.canterucci@ai-sf.it
-  photo: /img/esecutivo/canterucci.jpeg
+  photo: /images/esecutivo/canterucci.jpeg
 - id: raimondo-lucariello
   name: Raimondo Lucariello
   role: Segretario
@@ -22,7 +22,7 @@
     Tifoso della squadra di calcio della sua città, “la Bari”, non perde mai occasione
     per sostenerla.
   email: raimondo.lucariello@ai-sf.it
-  photo: /img/esecutivo/lucariello.jpg
+  photo: /images/esecutivo/lucariello.jpg
 - id: valerio-tinari
   name: Valerio Tinari
   role: Tesoriere
@@ -30,7 +30,7 @@
     alte energie e di analisi dati al LHC con tecniche di AI e ML. Nel tempo libero
     ama sciare e stare al mare; la Formula 1 invece preferisce guardarla, non guidarla.
   email: valerio.tinari@ai-sf.it
-  photo: /img/esecutivo/tinari.jpg
+  photo: /images/esecutivo/tinari.jpg
 - id: mario-lisciandrello
   name: Mario Lisciandrello
   role: Responsabile Relazioni con Membri e Comitati Locali
@@ -42,7 +42,7 @@
     passione per lo sport: fa calcio, taekwondo, corre…forse è un po'' iperattivo.
     Nel tempo libero, se ne ha, ama cucinare e bere una birra con gli amici.'
   email: mario.lisciandrello@ai-sf.it
-  photo: /img/esecutivo/lisciandrello.jpg
+  photo: /images/esecutivo/lisciandrello.jpg
 - id: luca-attina
   name: Luca Attinà
   role: Responsabile Eventi
@@ -55,7 +55,7 @@
     spaziando da oggetti della cultura pop a souvenir di viaggio, fino a campioni
     di elementi chimici.
   email: luca.attina@ai-sf.it
-  photo: /img/esecutivo/Attinà.jpg
+  photo: /images/esecutivo/Attinà.jpg
 - id: dario-zarcone
   name: Dario Zarcone
   role: Vicepresidente e IT Manager
@@ -67,7 +67,7 @@
     coltiva entropicamente interessi sempre nuovi, sotto lo sguardo attento del suo
     gatto Goro.
   email: dario.zarcone@ai-sf.it
-  photo: /img/esecutivo/zarcone.jpg
+  photo: /images/esecutivo/zarcone.jpg
 - id: adele-peluso
   name: Adele Peluso
   role: Concept Manager
@@ -78,7 +78,7 @@
     scrive articoli a tema variabile tra arte e scienza. Entra nel Comitato Esecutivo
     dopo aver fatto parte dell’organizzazione di CISF26.
   email: ''
-  photo: /img/esecutivo/peluso.jpeg
+  photo: /images/esecutivo/peluso.jpeg
 - id: maria-rosaria-sivo
   name: Maria Rosaria Sivo
   role: PR Manager
@@ -90,4 +90,4 @@
     che lavorativi. Nel suo tempo libero si divide tra la passione per il canto, l’amore
     per i contenuti di animazione, le serie tv e gli amici.
   email: mariarosaria.sivo@ai-sf.it
-  photo: /img/esecutivo/sivo.jpg
+  photo: /images/esecutivo/sivo.jpg

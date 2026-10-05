@@ -36,15 +36,31 @@ const frozen = committees.filter((c) => c.data.status === "frozen");
         <div class="flex flex-col gap-4">
           {active.map((c) => (
             <Card id={c.id} class="scroll-mt-28 border-rule-light bg-paper p-6">
-              <div class="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 class="font-display text-[20px] font-semibold">{c.data.name}</h3>
-                {c.data.founded && (
-                  <span class="font-mono text-[11px] tracking-[0.08em] text-ink-soft uppercase">dal {c.data.founded}</span>
+              <div class="flex items-start gap-4">
+                {c.data.photo ? (
+                  <img
+                    src={c.data.photo}
+                    alt={c.data.president || c.data.name}
+                    loading="lazy"
+                    class="size-12 shrink-0 rounded-full object-cover object-[center_top]"
+                  />
+                ) : (
+                  <span aria-hidden="true" class="flex size-12 shrink-0 items-center justify-center rounded-full bg-ink font-display text-[16px] font-semibold text-paper">
+                    {c.data.name.slice(0, 1)}
+                  </span>
                 )}
+                <div class="min-w-0">
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <h3 class="font-display text-[20px] font-semibold">{c.data.name}</h3>
+                    {c.data.founded && (
+                      <span class="font-mono text-[11px] tracking-[0.08em] text-ink-soft uppercase">dal {c.data.founded}</span>
+                    )}
+                  </div>
+                  {c.data.president && (
+                    <p class="mt-1 text-sm">Presidente: <strong class="font-medium">{c.data.president}</strong></p>
+                  )}
+                </div>
               </div>
-              {c.data.president && (
-                <p class="mt-1 text-sm">Presidente: <strong class="font-medium">{c.data.president}</strong></p>
-              )}
               {c.data.past_presidents && (
                 <p class="mt-1 text-[13px] text-ink-soft">Già presidenti: {c.data.past_presidents}</p>
               )}

@@ -33,6 +33,8 @@ const committees = defineCollection({
     founded: z.string().optional().default(""),
     email: z.string().optional().default(""),
     status: z.string().optional().default("active"),
+    photo: z.string().optional().default(""),
+    logo: z.string().optional().default(""),
     past_presidents: z.string().optional().default(""),
     link: z.string().optional().default(""),
     rules: z.string().optional().default(""),

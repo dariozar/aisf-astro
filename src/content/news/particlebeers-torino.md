@@ -11,27 +11,27 @@ I quattro speakers sono stati, infatti, magistrali. Il ben noto Riccardo Longo, 
 <div class="slider">
   <ul class="slides">
     <li>
-      <img src="/img/eventilocali/2016_ParticleBeers/1.jpg"> <!-- random image -->
+      <img src="/images/eventilocali/2016_ParticleBeers/1.jpg"> <!-- random image -->
       <div class="caption center-align">
       </div>
     </li>
     <li>
-      <img src="/img/eventilocali/2016_ParticleBeers/2.jpg"> <!-- random image -->
+      <img src="/images/eventilocali/2016_ParticleBeers/2.jpg"> <!-- random image -->
       <div class="caption center-align">
       </div>
     </li>
     <li>
-      <img src="/img/eventilocali/2016_ParticleBeers/3.jpg"> <!-- random image -->
+      <img src="/images/eventilocali/2016_ParticleBeers/3.jpg"> <!-- random image -->
       <div class="caption center-align">
       </div>
     </li>
     <li>
-      <img src="/img/eventilocali/2016_ParticleBeers/4.jpg"> <!-- random image -->
+      <img src="/images/eventilocali/2016_ParticleBeers/4.jpg"> <!-- random image -->
       <div class="caption center-align">
       </div>
     </li>
     <li>
-      <img src="/img/eventilocali/2016_ParticleBeers/5.jpg"> <!-- random image -->
+      <img src="/images/eventilocali/2016_ParticleBeers/5.jpg"> <!-- random image -->
       <div class="caption center-align">
       </div>
     </li>

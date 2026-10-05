@@ -23,26 +23,26 @@ A farci da guida sono stati un fisico – il Dr. Marco Pullia – e un tecnico d
 
 Per  noi che siamo studenti universitari a Fisica, è stato impressionante ascoltare e osservare da vicino applicazioni così avanzate e così delicate della fisica delle particelle. È un settore, inoltre, ancora giovane e in cui ci sarà molto da sviluppare. Sicuramente è stato un pomeriggio densissimo di stimoli e riflessioni.
 
-![Vista dall'alto del sincrotrone](/img/eventilocali/2017-CNAO/ph1.jpg) 
+![Vista dall'alto del sincrotrone](/images/eventilocali/2017-CNAO/ph1.jpg) 
 Vista dall'alto del sincrotrone. In blu sono i dipoli. In fondo alla sala, quattro percorsi portano il fascio nelle tre sale di irraggiamento. Parallelamente alle scale si vede continuare la struttura della macchina verso l'alto: un fascio viene condotto ad un piano rialzato, perchè poi possa arrivare anche verticalmente.
 
-![Vista dall'alto del sincrotrone](/img/eventilocali/2017-CNAO/ph2.jpg)  
+![Vista dall'alto del sincrotrone](/images/eventilocali/2017-CNAO/ph2.jpg)  
 Vista dall'alto del sincrotrone. Le sorgenti sono le due scatole grigie.
 
-![Vista dall'alto del sincrotrone](/img/eventilocali/2017-CNAO/ph3.jpg) 
+![Vista dall'alto del sincrotrone](/images/eventilocali/2017-CNAO/ph3.jpg) 
 Vista dall'alto del sincrotrone. Il LINEAR è il blocco magenta.
 
-![Quadrupoli](/img/eventilocali/2017-CNAO/ph4.jpg) 
+![Quadrupoli](/images/eventilocali/2017-CNAO/ph4.jpg) 
 Quadrupoli in verde…
 
-![Sestupoli](/img/eventilocali/2017-CNAO/ph1.jpg)  
+![Sestupoli](/images/eventilocali/2017-CNAO/ph1.jpg)  
 ...e sestupoli in giallo.
 
-![](/img/eventilocali/2017-CNAO/ph6.jpg) 
+![](/images/eventilocali/2017-CNAO/ph6.jpg) 
 
-![](/img/eventilocali/2017-CNAO/ph7.jpg) 
+![](/images/eventilocali/2017-CNAO/ph7.jpg) 
 
-![Maschera e marcatori](/img/eventilocali/2017-CNAO/ph8.jpg)
+![Maschera e marcatori](/images/eventilocali/2017-CNAO/ph8.jpg)
 Maschera e marcatori.
 
-![Foto di gruppo](/img/eventilocali/2017-CNAO/ph9.jpg)
+![Foto di gruppo](/images/eventilocali/2017-CNAO/ph9.jpg)
