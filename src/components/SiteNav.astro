@@ -1,5 +1,14 @@
 ---
-import { Button } from "./starwind/button";
+import IconMenu from "@tabler/icons/outline/menu-2.svg";
+import { Button } from "@/components/starwind/button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/starwind/sheet";
 
 const links = [
   { label: "Chi siamo", href: "/chi-siamo" },
@@ -11,42 +20,53 @@ const links = [
 ---
 
 <nav id="site-nav" class="fixed inset-x-0 top-0 z-100 transition-all duration-300">
-  <div class="mx-auto flex max-w-[1200px] items-center justify-between gap-6 px-[clamp(16px,4vw,32px)] py-4">
-    <a href="/" aria-label="AISF home" class="flex items-center gap-2.5">
-      <img src="/aisf-logo.png" alt="AISF" class="w-[clamp(36px,4.5vw,48px)]" />
-      <span class="font-display text-[20px] font-semibold tracking-[-0.01em] text-ink" data-wordmark>AISF</span>
+  <div class="mx-auto flex h-[76px] max-w-[1200px] items-center justify-between gap-6 px-[clamp(16px,4vw,32px)]">
+    <a href="/" aria-label="AISF home" class="flex shrink-0 items-center">
+      <img src="/aisf-logo.png" alt="AISF" class="h-12 w-auto" data-logo />
     </a>
     <div class="hidden items-center gap-[clamp(16px,2.2vw,28px)] min-[1100px]:flex" data-nav-links>
       {links.map((l) => (
-        <a href={l.href} class="font-display text-[15px] text-ink no-underline">{l.label}</a>
+        <a href={l.href} class="font-display text-[15px] font-medium text-ink no-underline">{l.label}</a>
       ))}
     </div>
     <div class="flex items-center gap-3">
       <p class="hidden font-mono text-[11px] tracking-[0.1em] text-ink-soft uppercase min-[1100px]:block" data-lang>
         <strong>IT</strong> &middot; EN
       </p>
-      <Button href="/unisciti" size="sm" class="max-[720px]:hidden">Iscriviti &rarr;</Button>
-      <button
-        id="nav-toggle"
-        class="hidden size-11 items-center justify-center rounded-full border border-ink/15 bg-paper/70 max-[1100px]:inline-flex"
-        aria-expanded="false"
-        aria-controls="nav-drawer"
-        aria-label="Apri il menu"
-      >
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
-          <line x1="3" y1="6" x2="17" y2="6"></line>
-          <line x1="3" y1="10" x2="17" y2="10"></line>
-          <line x1="3" y1="14" x2="17" y2="14"></line>
-        </svg>
-      </button>
-    </div>
-  </div>
-  <div id="nav-drawer" class="hidden px-[clamp(16px,4vw,32px)] pb-6" hidden>
-    <div class="flex flex-col gap-1 rounded-[16px] border border-ink/10 bg-paper p-3 shadow-lift">
-      {links.map((l) => (
-        <a href={l.href} class="rounded-[10px] px-4 py-3 font-display text-[17px] font-medium text-ink no-underline hover:bg-paper-2">{l.label}</a>
-      ))}
-      <a href="/unisciti" class="mt-2 rounded-full bg-mint px-4 py-3 text-center font-display text-[16px] font-medium text-ink no-underline">Iscriviti &rarr;</a>
+      <Button href="/unisciti" variant="primary" size="sm" class="max-[720px]:hidden">Iscriviti &rarr;</Button>
+      <span class="min-[1100px]:hidden">
+        <Sheet>
+          <SheetTrigger asChild>
+            <button
+              class="flex size-11 items-center justify-center rounded-full border border-ink/15 bg-paper/70 text-ink"
+              aria-label="Apri il menu"
+            >
+              <IconMenu />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" class="border-rule-light bg-paper">
+            <SheetHeader>
+              <SheetTitle>
+                <img src="/aisf-logo.png" alt="AISF" class="h-10 w-auto" />
+              </SheetTitle>
+            </SheetHeader>
+            <div class="flex flex-col px-4">
+              {links.map((l) => (
+                <SheetClose asChild>
+                  <a href={l.href} class="-mx-3 rounded-[10px] px-3 py-2.5 font-display text-lg font-medium text-ink no-underline hover:bg-paper-2">
+                    {l.label}
+                  </a>
+                </SheetClose>
+              ))}
+            </div>
+            <div class="px-4 pb-4">
+              <SheetClose asChild>
+                <Button href="/unisciti" variant="primary" class="w-full">Iscriviti &rarr;</Button>
+              </SheetClose>
+            </div>
+          </SheetContent>
+        </Sheet>
+      </span>
     </div>
   </div>
 </nav>
@@ -73,41 +93,19 @@ const links = [
   #site-nav.is-floating.over-dark [data-nav-links] a {
     color: rgba(247, 242, 236, 0.9);
   }
-  #site-nav.is-floating.over-dark [data-wordmark] {
-    color: var(--color-paper);
-  }
   #site-nav.is-floating.over-dark [data-lang] {
     color: rgba(247, 242, 236, 0.75);
+  }
+  #site-nav.is-floating.over-dark [data-logo] {
+    filter: brightness(0) invert(1);
   }
 </style>
 
 <script>
   const nav = document.getElementById("site-nav");
-  const toggle = document.getElementById("nav-toggle");
-  const drawer = document.getElementById("nav-drawer");
-
-  const setDrawer = (open: boolean) => {
-    if (!drawer || !toggle) return;
-    drawer.classList.toggle("hidden", !open);
-    drawer.toggleAttribute("hidden", !open);
-    toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "Chiudi il menu" : "Apri il menu");
-    if (nav) nav.classList.add("is-floating");
-  };
-
-  toggle?.addEventListener("click", () => {
-    const open = drawer?.hasAttribute("hidden") ?? false;
-    setDrawer(open);
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") setDrawer(false);
-  });
-  drawer?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setDrawer(false)));
-
   const onScroll = () => {
     if (!nav) return;
-    const drawerOpen = drawer && !drawer.hasAttribute("hidden");
-    nav.classList.toggle("is-floating", window.scrollY > 24 || !!drawerOpen);
+    nav.classList.toggle("is-floating", window.scrollY > 24);
     const dark = document.querySelectorAll("[data-dark]");
     let overDark = false;
     dark.forEach((el) => {
