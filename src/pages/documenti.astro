@@ -1,10 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Tag from "../components/Tag.astro";
+import Eyebrow from "../components/Eyebrow.astro";
 
 const docs = await getCollection("documents");
 const years = [...new Set(docs.map((d) => d.data.year))].sort().reverse();
+const groups = [...new Set(docs.map((d) => d.data.group))].sort();
 const byYear = (y: string) => docs.filter((d) => d.data.year === y);
 ---
 
@@ -12,23 +13,51 @@ const byYear = (y: string) => docs.filter((d) => d.data.year === y);
   <main>
     <section data-dark class="rounded-b-[28px] bg-ink text-paper">
       <div class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] pt-[140px] pb-20">
-        <Tag tone="dark">Documenti</Tag>
+        <Eyebrow dark>Documenti</Eyebrow>
         <h1 class="mt-4 font-display font-semibold" style="font-size: clamp(48px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.03em;">
           Trasparenza<br /><span class="text-tangerine">totale.</span>
         </h1>
+        <p class="mt-4 max-w-[56ch] text-[18px] text-paper/70">
+          Statuto, regolamenti, bilanci e verbali: tutti i documenti ufficiali, liberamente scaricabili.
+        </p>
       </div>
     </section>
-    <section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-16">
+    <section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-12">
+      <div class="flex flex-col gap-3 min-[800px]:flex-row">
+        <input
+          id="doc-search"
+          type="search"
+          placeholder="Cerca per nome…"
+          class="w-full rounded-full border border-rule-light bg-paper px-5 py-3 font-display text-[15px] text-ink outline-none placeholder:text-ink-faint focus:border-tangerine"
+        />
+        <div class="flex gap-3">
+          <select id="doc-year" class="rounded-full border border-rule-light bg-paper px-4 py-3 font-display text-[15px]">
+            <option value="">Tutti gli anni</option>
+            {years.map((y) => <option value={y}>{y}</option>)}
+          </select>
+          <select id="doc-group" class="rounded-full border border-rule-light bg-paper px-4 py-3 font-display text-[15px]">
+            <option value="">Tutti i tipi</option>
+            {groups.map((g) => <option value={g}>{g}</option>)}
+          </select>
+        </div>
+      </div>
+      <p id="doc-count" class="mt-4 font-mono text-[12px] tracking-[0.08em] text-ink-soft uppercase" aria-live="polite"></p>
+      <div id="doc-empty" class="hidden rounded-[16px] bg-paper-2 p-8 text-center">
+        <p class="font-display text-[18px] font-medium">Nessun documento trovato.</p>
+        <p class="mt-1 text-[15px] text-ink-soft">Prova a cercare «statuto» o a cambiare anno.</p>
+      </div>
       {years.map((y) => (
-        <div class="mb-12">
-          <Tag>{y}</Tag>
+        <div class="doc-year-group mb-10" data-year={y}>
+          <h2 class="mt-10 font-display text-[28px] font-semibold tracking-[-0.015em]">{y}</h2>
           <div class="mt-4 flex flex-col gap-2">
             {byYear(y).map((d) => (
               <a
                 href={d.data.url}
                 target="_blank"
                 rel="noopener"
-                class="flex items-center justify-between gap-4 rounded-[16px] border border-rule-light bg-paper px-5 py-4 no-underline transition-shadow hover:shadow-card"
+                class="doc-row flex items-center justify-between gap-4 rounded-[16px] border border-rule-light bg-paper px-5 py-4 no-underline transition-shadow hover:shadow-card"
+                data-name={(d.data.name + " " + d.data.group).toLowerCase()}
+                data-group={d.data.group}
               >
                 <div>
                   <p class="font-display text-[15px] font-medium text-ink">{d.data.name}</p>
@@ -43,3 +72,38 @@ const byYear = (y: string) => docs.filter((d) => d.data.year === y);
     </section>
   </main>
 </BaseLayout>
+
+<script>
+  const q = document.getElementById("doc-search") as HTMLInputElement;
+  const yearSel = document.getElementById("doc-year") as HTMLSelectElement;
+  const groupSel = document.getElementById("doc-group") as HTMLSelectElement;
+  const count = document.getElementById("doc-count")!;
+  const empty = document.getElementById("doc-empty")!;
+  const rows = [...document.querySelectorAll<HTMLElement>(".doc-row")];
+  const groups = [...document.querySelectorAll<HTMLElement>(".doc-year-group")];
+  const total = rows.length;
+
+  function apply() {
+    const needle = q.value.trim().toLowerCase();
+    let visible = 0;
+    rows.forEach((r) => {
+      const ok =
+        (!needle || r.dataset.name!.includes(needle)) &&
+        (!yearSel.value || r.closest(".doc-year-group")!.dataset.year === yearSel.value) &&
+        (!groupSel.value || r.dataset.group === groupSel.value);
+      r.classList.toggle("hidden", !ok);
+      if (ok) visible++;
+    });
+    groups.forEach((g) => {
+      const anyVisible = [...g.querySelectorAll(".doc-row:not(.hidden)")].length > 0;
+      const yearMatch = !yearSel.value || g.dataset.year === yearSel.value;
+      g.classList.toggle("hidden", !anyVisible || !yearMatch);
+    });
+    count.textContent = `${visible} di ${total} documenti`;
+    empty.classList.toggle("hidden", visible > 0);
+  }
+  q.addEventListener("input", apply);
+  yearSel.addEventListener("change", apply);
+  groupSel.addEventListener("change", apply);
+  apply();
+</script>

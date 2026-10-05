@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Eyebrow from "../components/Eyebrow.astro";
+import { Button } from "../components/starwind/button";
+import { Card } from "../components/starwind/card";
+
+const steps = [
+  { title: "Registrati", body: "Compila il modulo di iscrizione online sul portale dei membri e indica il tuo comitato locale — o la sede più vicina se nel tuo ateneo non c'è ancora." },
+  { title: "Paga la quota", body: "Con carta di credito/debito oppure con bonifico bancario entro 15 giorni dalla registrazione. L'anno associativo va dal 1 ottobre al 30 settembre." },
+  { title: "Partecipa", body: "Eventi nazionali, gruppi di studio, rivista, divulgazione nelle scuole: scegli da dove cominciare, o proponi tu un'attività." },
+];
+---
+
+<BaseLayout title="Unisciti — AISF">
+  <main>
+    <section data-dark class="rounded-b-[28px] bg-ink text-paper">
+      <div class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] pt-[140px] pb-20">
+        <Eyebrow dark>Unisciti</Eyebrow>
+        <h1 class="mt-4 font-display font-semibold" style="font-size: clamp(48px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.03em;">
+          Diventa socio<br /><span class="text-tangerine">in tre passi.</span>
+        </h1>
+      </div>
+    </section>
+    <section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-16">
+      <div class="grid grid-cols-1 gap-5 min-[900px]:grid-cols-3">
+        {steps.map((s, i) => (
+          <Card class="border-rule-light bg-paper p-7">
+            <p class="font-display text-[40px] font-semibold text-tangerine">{i + 1}</p>
+            <h3 class="mt-2 font-display text-[22px] font-semibold">{s.title}</h3>
+            <p class="mt-2 text-[15px] leading-[1.6] text-ink-soft">{s.body}</p>
+          </Card>
+        ))}
+      </div>
+      <div class="mt-12 grid grid-cols-1 gap-5 min-[900px]:grid-cols-2">
+        <div class="rounded-[22px] bg-mint p-8">
+          <h3 class="font-display text-[24px] font-semibold">Bonifico bancario</h3>
+          <p class="mt-2 text-[15px] leading-[1.6]">
+            Beneficiario: Associazione Italiana Studenti di Fisica<br />
+            IBAN: IT20J0306909606100000133131 · BIC: BCITITMMXXX<br />
+            Causale: Iscrizione anno 20xx/xx — NOME COGNOME
+          </p>
+        </div>
+        <div class="rounded-[22px] bg-paper-2 p-8">
+          <h3 class="font-display text-[24px] font-semibold">Nessun comitato nel tuo ateneo?</h3>
+          <p class="mt-2 text-[15px] leading-[1.6]">
+            Bastano pochi studenti motivati per avviarne uno: ti seguiamo dalla burocrazia al primo evento.
+          </p>
+          <div class="mt-4"><Button href="mailto:info@ai-sf.it" variant="secondary">Parliamone &rarr;</Button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

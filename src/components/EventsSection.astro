@@ -1,17 +1,18 @@
 ---
 import { getCollection } from "astro:content";
-import Tag from "./Tag.astro";
+import Eyebrow from "./Eyebrow.astro";
 import { Button } from "./starwind/button";
 
-const upcoming = (await getCollection("events", ({ data }) => data.status === "upcoming")).slice(0, 3);
-const cards = upcoming.length > 0 ? upcoming : (await getCollection("events")).slice(0, 3);
+const byDateDesc = (a: any, b: any) => (b.data.dateISO || "").localeCompare(a.data.dateISO || "");
+const upcoming = (await getCollection("events", ({ data }) => data.status === "upcoming")).sort(byDateDesc).slice(0, 3);
+const cards = upcoming.length > 0 ? upcoming : (await getCollection("events")).sort(byDateDesc).slice(0, 3);
 ---
 
 <section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-10">
   <div data-dark class="rounded-[28px] bg-ink px-[clamp(20px,4vw,48px)] py-[clamp(32px,5vw,64px)] text-paper">
     <div class="mb-8 flex flex-wrap items-end justify-between gap-6">
       <div class="max-w-[720px]">
-        <Tag tone="dark">02 &mdash; Eventi</Tag>
+        <Eyebrow dark>Eventi</Eyebrow>
         <h2 class="mt-2 font-display text-[clamp(28px,4vw,40px)] font-semibold tracking-[-0.015em]">
           I nostri eventi,<br />in giro per l'Italia.
         </h2>
@@ -19,7 +20,7 @@ const cards = upcoming.length > 0 ? upcoming : (await getCollection("events")).s
           Sei eventi principali all'anno, oltre agli incontri mensili in ogni sede. Quasi tutti aperti anche ai non soci.
         </p>
       </div>
-      <Button href="/eventi" variant="primary">Tutti gli eventi &rarr;</Button>
+      <Button href="/eventi" variant="secondary">Tutti gli eventi &rarr;</Button>
     </div>
     <div class="grid grid-cols-1 gap-5 min-[900px]:grid-cols-3">
       {cards.map((e) => (

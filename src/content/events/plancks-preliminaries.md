@@ -2,6 +2,7 @@
 id: plancks-preliminaries
 title: PLANCKS Preliminaries
 date: '2017-02-24'
+dateISO: '2017-02-24'
 endDate: '2017-02-24'
 location: ''
 type: eventonazionale

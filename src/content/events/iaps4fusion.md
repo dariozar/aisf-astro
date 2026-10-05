@@ -2,6 +2,7 @@
 id: iaps4fusion
 title: iaps4fusion
 date: '2015-09-27'
+dateISO: '2015-09-27'
 endDate: '2015-10-01'
 location: Londra, Oxford
 type: eventonazionale

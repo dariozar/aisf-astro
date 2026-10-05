@@ -2,6 +2,7 @@
 id: lights-of-tuscany-2015
 title: Lights of Tuscany 2015
 date: '2015-12-17'
+dateISO: '2015-12-17'
 endDate: '2015-12-21'
 location: Pisa
 type: eventonazionale

@@ -2,6 +2,7 @@
 id: sezione-giovani-2023
 title: Sezione Giovani 2023
 date: '2023-09-14'
+dateISO: '2023-09-14'
 endDate: '2023-09-14'
 location: Fisciano
 type: eventonazionale

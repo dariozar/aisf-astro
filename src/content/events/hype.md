@@ -2,6 +2,7 @@
 id: hype
 title: HYPE
 date: '2018-05-25'
+dateISO: '2018-05-25'
 endDate: '2018-05-27'
 location: Bologna
 type: eventonazionale

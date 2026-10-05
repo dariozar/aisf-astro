@@ -2,6 +2,7 @@
 id: papap-2016
 title: PAPAP 2016
 date: '2016-10-02'
+dateISO: '2016-10-02'
 endDate: '2016-10-06'
 location: Gran Sasso
 type: eventonazionale

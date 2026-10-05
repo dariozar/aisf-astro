@@ -1,0 +1,10 @@
+---
+interface Props {
+  dark?: boolean;
+}
+const { dark = false } = Astro.props;
+---
+
+<p class:list={["font-mono text-[12px] tracking-[0.14em] uppercase", dark ? "text-paper/60" : "text-ink-soft"]}>
+  <slot />
+</p>

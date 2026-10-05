@@ -2,6 +2,7 @@
 id: 104-congresso-sif-sezione-giovani
 title: 104° Congresso SIF - Sezione Giovani
 date: '2018-09-19'
+dateISO: '2018-09-19'
 endDate: '2018-09-20'
 location: Arcavacata di Rende
 type: eventonazionale

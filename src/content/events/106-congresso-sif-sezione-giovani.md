@@ -2,6 +2,7 @@
 id: 106-congresso-sif-sezione-giovani
 title: 106° Congresso SIF-Sezione Giovani
 date: '2020-09-17'
+dateISO: '2020-09-17'
 endDate: ''
 location: Online
 type: eventonazionale

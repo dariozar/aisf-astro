@@ -2,6 +2,7 @@
 id: sezione-giovani-2025
 title: Sezione Giovani 2025
 date: '2025-09-25'
+dateISO: '2025-09-25'
 endDate: '2025-09-25'
 location: Palermo
 type: eventonazionale

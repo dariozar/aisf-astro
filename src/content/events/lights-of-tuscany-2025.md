@@ -2,6 +2,7 @@
 id: lights-of-tuscany-2025
 title: Lights of Tuscany 2025
 date: '2025-05-15'
+dateISO: '2025-05-15'
 endDate: '2025-05-19'
 location: Pisa, Firenze
 type: eventonazionale

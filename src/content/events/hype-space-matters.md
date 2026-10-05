@@ -2,6 +2,7 @@
 id: hype-space-matters
 title: HYPE–Space Matters
 date: '2019-05-10'
+dateISO: '2019-05-10'
 endDate: '2019-05-12'
 location: Roma
 type: eventonazionale

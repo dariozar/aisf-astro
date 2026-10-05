@@ -2,6 +2,7 @@
 id: biple
 title: BiPLE
 date: '2018-03-20'
+dateISO: '2018-03-20'
 endDate: '2018-03-24'
 location: Pavia, Milano
 type: eventonazionale

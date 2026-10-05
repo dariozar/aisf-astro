@@ -1,0 +1,61 @@
+---
+interface Props {
+  committees?: Array<{ id: string; name: string; status?: string }>;
+  linkBase?: string;
+}
+
+const { committees = [], linkBase = "/comitati" } = Astro.props;
+
+const dots = [
+    { id: "bari", x: 75.28, y: 52.23 },
+    { id: "bologna", x: 42.84, y: 25.79 },
+    { id: "calabria", x: 71.64, y: 66.04 },
+    { id: "ferrara", x: 44.54, y: 23.05 },
+    { id: "firenze", x: 42.31, y: 31.44 },
+    { id: "genova", x: 28.71, y: 26.42 },
+    { id: "milano", x: 30.05, y: 18.18 },
+    { id: "milano-bicocca", x: 30.47, y: 17.71 },
+    { id: "napoli-e-caserta", x: 60.03, y: 54.35 },
+    { id: "padova", x: 46.01, y: 18.58 },
+    { id: "palermo", x: 54.69, y: 75.76 },
+    { id: "pavia", x: 29.88, y: 20.38 },
+    { id: "perugia", x: 49.0, y: 36.62 },
+    { id: "pisa", x: 37.33, y: 31.83 },
+    { id: "roma-sapienza", x: 49.7, y: 46.11 },
+    { id: "roma-tor-vergata", x: 50.35, y: 46.5 },
+    { id: "roma-tre", x: 49.41, y: 46.42 },
+    { id: "salerno", x: 62.96, y: 55.68 },
+    { id: "torino", x: 21.43, y: 21.24 },
+    { id: "trento", x: 41.55, y: 13.4 },
+    { id: "trieste", x: 57.15, y: 16.69 },
+];
+
+const byId = new Map(committees.map((c) => [c.id, c]));
+---
+
+<div class="relative mx-auto w-full max-w-[520px]">
+  <img src="/italy-map.svg" alt="Italia — comitati locali AISF" class="w-full" />
+  {dots.map((d) => {
+    const c = byId.get(d.id);
+    const frozen = c?.status === "frozen";
+    return (
+      <a
+        href={`${linkBase}#${d.id}`}
+        title={c?.name ?? d.id}
+        aria-label={c?.name ?? d.id}
+        class="group absolute size-[14px] -translate-x-1/2 -translate-y-1/2"
+        style={`left: ${d.x}%; top: ${d.y}%;`}
+      >
+        <span
+          class:list={[
+            "block size-full rounded-full border-2 border-paper shadow",
+            frozen ? "bg-ink-soft" : "bg-tangerine",
+          ]}
+        ></span>
+        <span class="pointer-events-none absolute bottom-full left-1/2 mb-1 hidden -translate-x-1/2 rounded-full bg-ink px-2 py-0.5 font-mono text-[10px] whitespace-nowrap text-paper group-hover:block">
+          {c?.name ?? d.id}
+        </span>
+      </a>
+    );
+  })}
+</div>

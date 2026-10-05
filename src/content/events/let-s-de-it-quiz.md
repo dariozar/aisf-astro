@@ -2,6 +2,7 @@
 id: let-s-de-it-quiz
 title: Let's De It - Quiz
 date: '2021-02-04'
+dateISO: '2021-02-04'
 endDate: '2021-02-04'
 location: Online
 type: eventonazionale

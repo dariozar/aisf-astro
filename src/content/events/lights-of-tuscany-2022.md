@@ -2,6 +2,7 @@
 id: lights-of-tuscany-2022
 title: Lights of Tuscany 2022
 date: '2022-05-13'
+dateISO: '2022-05-13'
 endDate: '2022-05-16'
 location: Pisa, Firenze
 type: eventonazionale

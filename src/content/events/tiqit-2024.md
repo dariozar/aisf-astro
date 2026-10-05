@@ -2,6 +2,7 @@
 id: tiqit-2024
 title: TIQIT 2024
 date: '2023-02-18'
+dateISO: '2023-02-18'
 endDate: '2023-02-24'
 location: Trento and Innsbruck
 type: eventonazionale

@@ -2,6 +2,7 @@
 id: plancks-2017
 title: PLANCKS 2017
 date: '2017-05-26'
+dateISO: '2017-05-26'
 endDate: '2017-05-28'
 location: Graz
 type: eventonazionale

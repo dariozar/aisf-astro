@@ -2,6 +2,7 @@
 id: lights-of-tuscany-2023
 title: Lights of Tuscany 2023
 date: '2023-04-28'
+dateISO: '2023-04-28'
 endDate: '2023-05-02'
 location: Pisa, Firenze
 type: eventonazionale

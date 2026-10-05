@@ -2,6 +2,7 @@
 id: light-of-tuscany-2019
 title: Light of Tuscany 2019
 date: '2019-04-11'
+dateISO: '2019-04-11'
 endDate: '2019-04-15'
 location: Pisa, Firenze
 type: eventonazionale

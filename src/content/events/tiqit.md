@@ -2,6 +2,7 @@
 id: tiqit
 title: TIQIT
 date: '2018-04-10'
+dateISO: '2018-04-10'
 endDate: '2018-04-13'
 location: Trento, Innsbruck
 type: eventonazionale

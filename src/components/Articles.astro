@@ -1,13 +1,13 @@
 ---
 import { getCollection } from "astro:content";
-import Tag from "./Tag.astro";
+import Eyebrow from "./Eyebrow.astro";
 import { Card } from "./starwind/card";
 
 const posts = (await getCollection("news")).slice(0, 3);
 ---
 
 <section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-20">
-  <Tag>05 &mdash; Dal blog</Tag>
+  <Eyebrow>Dal blog</Eyebrow>
   <h2 class="mt-2 font-display text-[clamp(28px,4vw,40px)] font-semibold tracking-[-0.015em]">Ultime notizie.</h2>
   <div class="mt-8 grid grid-cols-1 gap-5 min-[900px]:grid-cols-3">
     {posts.map((p) => (

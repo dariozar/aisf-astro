@@ -43,6 +43,23 @@ def dump(path, front, body):
                                          sort_keys=False) + "---\n" + body.lstrip())
 
 
+MONTHS = {"gen": "01", "feb": "02", "mar": "03", "apr": "04",
+          "mag": "05", "giu": "06", "lug": "07", "ago": "08",
+          "set": "09", "ott": "10", "nov": "11", "dic": "12"}
+
+
+def to_iso(s):
+    s = str(s).strip()
+    m = re.match(r"^(\d{4})-(\d{2})-(\d{2})", s)
+    if m:
+        return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
+    m = re.match(r"^(\d{1,2})\s+([a-zàé]+)\s+(\d{4})", s.lower())
+    if m and m.group(2)[:3] in MONTHS:
+        return f"{m.group(3)}-{MONTHS[m.group(2)[:3]]}-{int(m.group(1)):02d}"
+    m = re.match(r"^(\d{4})", s)
+    return f"{m.group(1)}-01-01" if m else "1900-01-01"
+
+
 def migrate_events():
     out = os.path.join(HERE, "src", "content", "events")
     n = 0
@@ -54,6 +71,7 @@ def migrate_events():
             "id": slugify(front.get("title", base)),
             "title": front.get("title", base),
             "date": date,
+            "dateISO": to_iso(date),
             "endDate": str(front.get("endingdate") or ""),
             "location": front.get("place") or "",
             "type": front.get("categories") or "evento",
@@ -84,13 +102,17 @@ def migrate_committees():
     rows = []
     for c in data:
         name = c.get("nome", "")
+        frozen = bool(c.get("congelato") or c.get("commissariato"))
         rows.append({
             "id": slugify(name),
             "name": name,
             "president": c.get("presidente") or "",
             "founded": str(c.get("fondazione") or ""),
             "email": ((c.get("mail") or "") + "@ai-sf.it") if c.get("mail") else "",
-            "status": "active",
+            "status": "frozen" if frozen else "active",
+            "past_presidents": str(c.get("ex") or ""),
+            "link": c.get("fb") or "",
+            "rules": c.get("regolamento") or "",
         })
     path = os.path.join(HERE, "src", "data", "committees.yml")
     os.makedirs(os.path.dirname(path), exist_ok=True)

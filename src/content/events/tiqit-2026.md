@@ -2,6 +2,7 @@
 id: tiqit-2026
 title: TIQIT 2026
 date: '2026-02-22'
+dateISO: '2026-02-22'
 endDate: '2026-02-28'
 location: Trento and Innsbruck
 type: eventonazionale

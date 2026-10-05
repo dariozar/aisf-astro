@@ -4,8 +4,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Tag from "../../components/Tag.astro";
 
 const all = await getCollection("events");
-const upcoming = all.filter((e) => e.data.status === "upcoming");
-const past = all.filter((e) => e.data.status === "past").reverse();
+const byDateDesc = (a: any, b: any) => (b.data.dateISO || "").localeCompare(a.data.dateISO || "");
+const upcoming = all.filter((e) => e.data.status === "upcoming").sort(byDateDesc);
+const past = all.filter((e) => e.data.status === "past").sort(byDateDesc);
 ---
 
 <BaseLayout title="Eventi — AISF">

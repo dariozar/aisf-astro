@@ -2,6 +2,7 @@
 id: 105-congresso-sif-sezione-giovani
 title: 105° Congresso SIF–Sezione Giovani
 date: '2019-09-25'
+dateISO: '2019-09-25'
 endDate: '2019-09-26'
 location: L'Aquila
 type: eventonazionale

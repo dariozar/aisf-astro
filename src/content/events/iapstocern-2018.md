@@ -2,6 +2,7 @@
 id: iapstocern-2018
 title: IAPStoCERN 2018
 date: '2018-03-06'
+dateISO: '2018-03-06'
 endDate: '2018-03-09'
 location: Ginevra
 type: eventonazionale

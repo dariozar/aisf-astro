@@ -7,6 +7,7 @@ const events = defineCollection({
     id: z.string(),
     title: z.string(),
     date: z.string(),
+    dateISO: z.string().optional().default(""),
     endDate: z.string().optional().default(""),
     location: z.string().optional().default(""),
     type: z.string().optional().default("evento"),
@@ -32,6 +33,9 @@ const committees = defineCollection({
     founded: z.string().optional().default(""),
     email: z.string().optional().default(""),
     status: z.string().optional().default("active"),
+    past_presidents: z.string().optional().default(""),
+    link: z.string().optional().default(""),
+    rules: z.string().optional().default(""),
   }),
 });
 

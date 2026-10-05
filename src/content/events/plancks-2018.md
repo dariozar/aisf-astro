@@ -2,6 +2,7 @@
 id: plancks-2018
 title: PLANCKS 2018
 date: '2018-05-11'
+dateISO: '2018-05-11'
 endDate: '2018-05-13'
 location: Zagabria
 type: eventonazionale

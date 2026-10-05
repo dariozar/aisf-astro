@@ -2,7 +2,7 @@
 import { Button } from "./starwind/button";
 
 const links = [
-  { label: "Chi siamo", href: "/#about" },
+  { label: "Chi siamo", href: "/chi-siamo" },
   { label: "Eventi", href: "/eventi" },
   { label: "Progetti", href: "/#projects" },
   { label: "Comitati", href: "/comitati" },
@@ -12,8 +12,9 @@ const links = [
 
 <nav id="site-nav" class="fixed inset-x-0 top-0 z-100 transition-all duration-300">
   <div class="mx-auto flex max-w-[1200px] items-center justify-between gap-6 px-[clamp(16px,4vw,32px)] py-4">
-    <a href="/" aria-label="AISF home">
-      <img src="/aisf-logo.png" alt="AISF" class="w-[clamp(32px,4.5vw,40px)]" />
+    <a href="/" aria-label="AISF home" class="flex items-center gap-2.5">
+      <img src="/aisf-logo.png" alt="AISF" class="w-[clamp(36px,4.5vw,48px)]" />
+      <span class="font-display text-[20px] font-semibold tracking-[-0.01em] text-ink" data-wordmark>AISF</span>
     </a>
     <div class="hidden items-center gap-[clamp(16px,2.2vw,28px)] min-[1100px]:flex" data-nav-links>
       {links.map((l) => (
@@ -24,7 +25,7 @@ const links = [
       <p class="hidden font-mono text-[11px] tracking-[0.1em] text-ink-soft uppercase min-[1100px]:block" data-lang>
         <strong>IT</strong> &middot; EN
       </p>
-      <Button href="#join" size="sm" class="max-[720px]:hidden">Iscriviti &rarr;</Button>
+      <Button href="/unisciti" size="sm" class="max-[720px]:hidden">Iscriviti &rarr;</Button>
     </div>
   </div>
 </nav>
@@ -50,6 +51,9 @@ const links = [
   }
   #site-nav.is-floating.over-dark [data-nav-links] a {
     color: rgba(247, 242, 236, 0.9);
+  }
+  #site-nav.is-floating.over-dark [data-wordmark] {
+    color: var(--color-paper);
   }
   #site-nav.is-floating.over-dark [data-lang] {
     color: rgba(247, 242, 236, 0.75);

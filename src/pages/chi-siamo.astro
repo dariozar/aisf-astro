@@ -1,0 +1,56 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Eyebrow from "../components/Eyebrow.astro";
+import { Button } from "../components/starwind/button";
+
+const committees = await getCollection("committees");
+const active = committees.filter((c) => c.data.status !== "frozen");
+---
+
+<BaseLayout title="Chi siamo — AISF">
+  <main>
+    <section data-dark class="rounded-b-[28px] bg-ink text-paper">
+      <div class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] pt-[140px] pb-20">
+        <Eyebrow dark>Chi siamo</Eyebrow>
+        <h1 class="mt-4 max-w-[18ch] font-display font-semibold" style="font-size: clamp(40px, 6vw, 80px); line-height: 1; letter-spacing: -0.02em;">
+          L'associazione degli studenti di fisica italiani.
+        </h1>
+      </div>
+    </section>
+    <section class="mx-auto max-w-[720px] px-[clamp(16px,4vw,24px)] py-16 font-display text-[17px] leading-[1.7]">
+      <p>
+        L'Associazione Italiana Studenti di Fisica (AISF) è un'organizzazione no-profit di volontariato
+        con finalità culturali, nata nell'agosto 2014 in occasione della conferenza internazionale degli
+        studenti di fisica a Heidelberg, e costituita legalmente nel novembre dello stesso anno.
+      </p>
+      <p class="mt-5">
+        Nei suoi primi anni ha raccolto più di 1400 membri e dato vita a {active.length} comitati locali
+        in tutto il paese, realizzando eventi per studenti e divulgazione scientifica e collaborando con
+        le principali realtà accademiche italiane ed estere.
+      </p>
+      <p class="mt-5">
+        AISF è il comitato nazionale per l'Italia dello IAPS, l'associazione internazionale degli
+        studenti di fisica. Il suo obiettivo: riunire gli studenti di fisica italiani in un network
+        nazionale, completare l'esperienza universitaria dei membri e promuovere la divulgazione
+        della scienza — a partire dall'incontro nazionale annuale, la Conferenza Italiana Studenti
+        di Fisica.
+      </p>
+      <h2 class="mt-12 font-display text-[28px] font-semibold tracking-[-0.015em]">Come siamo organizzati</h2>
+      <p class="mt-4">
+        L'organo amministrativo ed esecutivo è il Comitato Esecutivo, composto da 8 membri eletti
+        dall'Assemblea Generale. Sul territorio, l'associazione vive nei comitati locali, ciascuno
+        guidato da un presidente eletto tra gli studenti dell'ateneo.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <Button href="/esecutivo" variant="secondary">Il comitato esecutivo &rarr;</Button>
+        <Button href="/comitati" variant="outline">I comitati locali &rarr;</Button>
+      </div>
+      <h2 class="mt-12 font-display text-[28px] font-semibold tracking-[-0.015em]">Sede legale</h2>
+      <p class="mt-4 text-[15px] text-ink-soft">
+        Università degli Studi di Torino — Dipartimento di Fisica, Via P. Giuria 1, 10125 Torino.
+        C.F. 97787600010 · P.IVA 11237480014 · pec@pec.ai-sf.it
+      </p>
+    </section>
+  </main>
+</BaseLayout>

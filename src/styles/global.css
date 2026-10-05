@@ -41,12 +41,12 @@
   --card-foreground: var(--color-ink);
   --popover: var(--color-paper);
   --popover-foreground: var(--color-ink);
-  --primary: var(--color-tangerine);
+  --primary: var(--color-mint);
   --primary-foreground: var(--color-ink);
-  --primary-accent: var(--color-tangerine-deep);
-  --secondary: var(--color-mint);
+  --primary-accent: var(--color-mint-deep);
+  --secondary: var(--color-tangerine);
   --secondary-foreground: var(--color-ink);
-  --secondary-accent: var(--color-mint-deep);
+  --secondary-accent: var(--color-tangerine-deep);
   --muted: var(--color-paper-2);
   --muted-foreground: var(--color-ink-soft);
   --accent: var(--color-blush);

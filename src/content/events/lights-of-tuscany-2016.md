@@ -2,6 +2,7 @@
 id: lights-of-tuscany-2016
 title: Lights of Tuscany 2016
 date: '2016-12-15'
+dateISO: '2016-12-15'
 endDate: '2016-12-19'
 location: Pisa, Firenze
 type: eventonazionale

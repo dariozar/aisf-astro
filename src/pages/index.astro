@@ -1,8 +1,8 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Tag from "../components/Tag.astro";
-import { Button } from "../components/starwind/button";
-import Quicklinks from "../components/Quicklinks.astro";
+import { Button } from "../components/starwind/button";import Quicklinks from "../components/Quicklinks.astro";
 import About from "../components/About.astro";
 import EventsSection from "../components/EventsSection.astro";
 import Projects from "../components/Projects.astro";
@@ -10,6 +10,10 @@ import Chapters from "../components/Chapters.astro";
 import Articles from "../components/Articles.astro";
 import Stats from "../components/Stats.astro";
 import JoinCta from "../components/JoinCta.astro";
+
+const committeeCount = (await getCollection("committees")).length;
+const memberCount = "1.400+";
+const yearCount = new Date().getFullYear() - 2014;
 ---
 
 <BaseLayout>
@@ -40,20 +44,20 @@ import JoinCta from "../components/JoinCta.astro";
             studio e attivit&agrave; di divulgazione in quaranta atenei italiani.
           </p>
           <div class="mt-7 flex flex-wrap gap-3">
-            <Button href="#join">Unisciti ad AISF &rarr;</Button>
-            <Button href="#about" variant="outline" class="border-paper text-paper">Cosa facciamo</Button>
+            <Button href="#join" variant="primary">Unisciti ad AISF &rarr;</Button>
+            <Button href="/chi-siamo" variant="outline" class="border-paper/60 bg-transparent text-paper hover:bg-paper/10 hover:text-paper">Chi siamo</Button>
           </div>
           <div class="mt-10 flex flex-wrap gap-10 border-t border-paper/22 pt-6">
             <div class="flex flex-col gap-1">
-              <span class="font-display text-[28px] font-semibold text-paper">40</span>
+              <span class="font-display text-[28px] font-semibold text-paper">{committeeCount}</span>
               <span class="font-mono text-[11px] tracking-[0.12em] text-paper/75 uppercase">Comitati locali</span>
             </div>
             <div class="flex flex-col gap-1">
-              <span class="font-display text-[28px] font-semibold text-paper">1.200</span>
+              <span class="font-display text-[28px] font-semibold text-paper">{memberCount}</span>
               <span class="font-mono text-[11px] tracking-[0.12em] text-paper/75 uppercase">Membri attivi</span>
             </div>
             <div class="flex flex-col gap-1">
-              <span class="font-display text-[28px] font-semibold text-paper">12</span>
+              <span class="font-display text-[28px] font-semibold text-paper">{yearCount}</span>
               <span class="font-mono text-[11px] tracking-[0.12em] text-paper/75 uppercase">Anni di attivit&agrave;</span>
             </div>
           </div>

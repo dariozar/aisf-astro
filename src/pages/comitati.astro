@@ -1,43 +1,68 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Eyebrow from "../components/Eyebrow.astro";
 import Tag from "../components/Tag.astro";
+import ItalyMap from "../components/ItalyMap.astro";
 import { Card } from "../components/starwind/card";
-import { Button } from "../components/starwind/button";
 
 const committees = await getCollection("committees");
+const active = committees.filter((c) => c.data.status !== "frozen");
+const frozen = committees.filter((c) => c.data.status === "frozen");
 ---
 
 <BaseLayout title="Comitati locali — AISF">
   <main>
     <section data-dark class="rounded-b-[28px] bg-ink text-paper">
       <div class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] pt-[140px] pb-20">
-        <Tag tone="dark">Comitati locali</Tag>
+        <Eyebrow dark>Comitati locali</Eyebrow>
         <h1 class="mt-4 font-display font-semibold" style="font-size: clamp(48px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.03em;">
-          Quaranta citt&agrave;,<br /><span class="text-tangerine">una rete.</span>
+          Una rete,<br /><span class="text-tangerine">in tutta Italia.</span>
         </h1>
+        <p class="mt-4 max-w-[56ch] text-[18px] text-paper/70">
+          Ogni comitato è gestito da un direttivo di studenti del proprio ateneo.
+          {active.length} attivi oggi — se il tuo ateneo manca, puoi avviarlo tu.
+        </p>
       </div>
     </section>
     <section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-16">
-      <Tag>01 &mdash; Comitati attivi</Tag>
-      <div class="mt-6 grid grid-cols-1 gap-4 min-[900px]:grid-cols-3">
-        {committees.map((c) => (
-          <Card class="border-rule-light bg-paper p-6">
-            <h3 class="font-display text-[20px] font-semibold">{c.data.name}</h3>
-            {c.data.president && <p class="mt-1 text-sm text-ink-soft">{c.data.president}</p>}
-            <div class="mt-4 flex justify-between border-t border-rule-light pt-3 font-mono text-[11px] tracking-[0.08em] uppercase">
-              <span class="text-ink-soft">Est. {c.data.founded || "—"}</span>
-              {c.data.email && <a href={`mailto:${c.data.email}`} class="text-tangerine no-underline">{c.data.email}</a>}
+      <div class="grid grid-cols-1 gap-10 min-[1000px]:grid-cols-[420px_1fr]">
+        <div class="min-[1000px]:sticky min-[1000px]:top-24 min-[1000px]:self-start">
+          <ItalyMap committees={committees.map((c) => ({ id: c.id, name: c.data.name, status: c.data.status }))} />
+          <p class="mt-3 text-center font-mono text-[11px] tracking-[0.08em] text-ink-soft uppercase">
+            Tocca un punto per il comitato
+          </p>
+        </div>
+        <div class="flex flex-col gap-4">
+          {active.map((c) => (
+            <Card id={c.id} class="scroll-mt-28 border-rule-light bg-paper p-6">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="font-display text-[20px] font-semibold">{c.data.name}</h3>
+                {c.data.founded && (
+                  <span class="font-mono text-[11px] tracking-[0.08em] text-ink-soft uppercase">dal {c.data.founded}</span>
+                )}
+              </div>
+              {c.data.president && (
+                <p class="mt-1 text-sm">Presidente: <strong class="font-medium">{c.data.president}</strong></p>
+              )}
+              {c.data.past_presidents && (
+                <p class="mt-1 text-[13px] text-ink-soft">Già presidenti: {c.data.past_presidents}</p>
+              )}
+              <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[12px]">
+                {c.data.email && <a href={`mailto:${c.data.email}`} class="text-tangerine-deep no-underline">{c.data.email}</a>}
+                {c.data.link && <a href={c.data.link} target="_blank" rel="noopener" class="text-ink-soft no-underline">Social &rarr;</a>}
+                {c.data.rules && <a href={c.data.rules} target="_blank" rel="noopener" class="text-ink-soft no-underline">Regolamento &rarr;</a>}
+              </div>
+            </Card>
+          ))}
+          {frozen.length > 0 && (
+            <div class="mt-4">
+              <Eyebrow>Attualmente sospesi</Eyebrow>
+              <p class="mt-2 text-[15px] text-ink-soft">
+                {frozen.map((c) => c.data.name).join(" · ")} — in cerca di nuovi referenti per ripartire.
+              </p>
             </div>
-          </Card>
-        ))}
-      </div>
-      <div class="mt-16 rounded-[28px] bg-tangerine p-12 text-center">
-        <Tag tone="dark">02 &mdash; Nuovo comitato</Tag>
-        <h2 class="mt-3 font-display text-[clamp(28px,4vw,44px)] font-semibold">Non trovi il tuo ateneo?</h2>
-        <p class="mx-auto mt-2 max-w-[52ch]">Avviare un comitato locale &egrave; semplice — ti supportiamo in ogni fase.</p>
-        <div class="mt-6 flex justify-center gap-3">
-          <Button href="mailto:info@ai-sf.it" variant="outline">Scrivici &rarr;</Button>
+          )}
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 id: around-world-chat
 title: Around World Chat
 date: '2021-02-01'
+dateISO: '2021-02-01'
 endDate: ''
 location: Online
 type: eventonazionale
