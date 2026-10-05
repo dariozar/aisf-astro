@@ -5,9 +5,14 @@ import SiteNav from "../components/SiteNav.astro";
 interface Props {
   title?: string;
   lang?: string;
+  description?: string;
 }
 
-const { title = "AISF — Associazione Italiana Studenti di Fisica", lang = "it" } = Astro.props;
+const {
+  title = "AISF — Associazione Italiana Studenti di Fisica",
+  lang = "it",
+  description = "L'Associazione Italiana Studenti di Fisica riunisce gli studenti di fisica in quaranta atenei: eventi, comitati locali, rivista e divulgazione.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -16,6 +21,12 @@ const { title = "AISF — Associazione Italiana Studenti di Fisica", lang = "it"
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/group-photo.jpg" />
+    <link rel="icon" type="image/png" href="/aisf-logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

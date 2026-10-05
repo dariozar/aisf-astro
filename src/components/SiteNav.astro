@@ -26,6 +26,27 @@ const links = [
         <strong>IT</strong> &middot; EN
       </p>
       <Button href="/unisciti" size="sm" class="max-[720px]:hidden">Iscriviti &rarr;</Button>
+      <button
+        id="nav-toggle"
+        class="hidden size-11 items-center justify-center rounded-full border border-ink/15 bg-paper/70 max-[1100px]:inline-flex"
+        aria-expanded="false"
+        aria-controls="nav-drawer"
+        aria-label="Apri il menu"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="17" y2="6"></line>
+          <line x1="3" y1="10" x2="17" y2="10"></line>
+          <line x1="3" y1="14" x2="17" y2="14"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="nav-drawer" class="hidden px-[clamp(16px,4vw,32px)] pb-6" hidden>
+    <div class="flex flex-col gap-1 rounded-[16px] border border-ink/10 bg-paper p-3 shadow-lift">
+      {links.map((l) => (
+        <a href={l.href} class="rounded-[10px] px-4 py-3 font-display text-[17px] font-medium text-ink no-underline hover:bg-paper-2">{l.label}</a>
+      ))}
+      <a href="/unisciti" class="mt-2 rounded-full bg-mint px-4 py-3 text-center font-display text-[16px] font-medium text-ink no-underline">Iscriviti &rarr;</a>
     </div>
   </div>
 </nav>
@@ -62,9 +83,31 @@ const links = [
 
 <script>
   const nav = document.getElementById("site-nav");
+  const toggle = document.getElementById("nav-toggle");
+  const drawer = document.getElementById("nav-drawer");
+
+  const setDrawer = (open: boolean) => {
+    if (!drawer || !toggle) return;
+    drawer.classList.toggle("hidden", !open);
+    drawer.toggleAttribute("hidden", !open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Chiudi il menu" : "Apri il menu");
+    if (nav) nav.classList.add("is-floating");
+  };
+
+  toggle?.addEventListener("click", () => {
+    const open = drawer?.hasAttribute("hidden") ?? false;
+    setDrawer(open);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setDrawer(false);
+  });
+  drawer?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setDrawer(false)));
+
   const onScroll = () => {
     if (!nav) return;
-    nav.classList.toggle("is-floating", window.scrollY > 24);
+    const drawerOpen = drawer && !drawer.hasAttribute("hidden");
+    nav.classList.toggle("is-floating", window.scrollY > 24 || !!drawerOpen);
     const dark = document.querySelectorAll("[data-dark]");
     let overDark = false;
     dark.forEach((el) => {

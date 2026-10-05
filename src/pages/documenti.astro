@@ -4,8 +4,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Eyebrow from "../components/Eyebrow.astro";
 
 const docs = await getCollection("documents");
-const years = [...new Set(docs.map((d) => d.data.year))].sort().reverse();
 const groups = [...new Set(docs.map((d) => d.data.group))].sort();
+const yearLabel = (y: string) => (y === "statfond" ? "Atti fondativi" : y);
+const years = [...new Set(docs.map((d) => d.data.year))].sort((a, b) => {
+  const na = /^\d/.test(a);
+  const nb = /^\d/.test(b);
+  if (na && nb) return b.localeCompare(a);
+  return na ? -1 : 1;
+});
 const byYear = (y: string) => docs.filter((d) => d.data.year === y);
 ---
 
@@ -33,7 +39,7 @@ const byYear = (y: string) => docs.filter((d) => d.data.year === y);
         <div class="flex gap-3">
           <select id="doc-year" class="rounded-full border border-rule-light bg-paper px-4 py-3 font-display text-[15px]">
             <option value="">Tutti gli anni</option>
-            {years.map((y) => <option value={y}>{y}</option>)}
+            {years.map((y) => <option value={y}>{yearLabel(y)}</option>)}
           </select>
           <select id="doc-group" class="rounded-full border border-rule-light bg-paper px-4 py-3 font-display text-[15px]">
             <option value="">Tutti i tipi</option>
@@ -48,14 +54,14 @@ const byYear = (y: string) => docs.filter((d) => d.data.year === y);
       </div>
       {years.map((y) => (
         <div class="doc-year-group mb-10" data-year={y}>
-          <h2 class="mt-10 font-display text-[28px] font-semibold tracking-[-0.015em]">{y}</h2>
+          <h2 class="mt-10 font-display text-[28px] font-semibold tracking-[-0.015em]">{yearLabel(y)}</h2>
           <div class="mt-4 flex flex-col gap-2">
             {byYear(y).map((d) => (
               <a
                 href={d.data.url}
                 target="_blank"
                 rel="noopener"
-                class="doc-row flex items-center justify-between gap-4 rounded-[16px] border border-rule-light bg-paper px-5 py-4 no-underline transition-shadow hover:shadow-card"
+                class="doc-row flex items-center justify-between gap-4 rounded-[16px] border border-rule-light bg-paper px-5 py-4 no-underline transition-shadow hover:shadow-card min-h-[44px]"
                 data-name={(d.data.name + " " + d.data.group).toLowerCase()}
                 data-group={d.data.group}
               >
@@ -63,7 +69,7 @@ const byYear = (y: string) => docs.filter((d) => d.data.year === y);
                   <p class="font-display text-[15px] font-medium text-ink">{d.data.name}</p>
                   <p class="font-mono text-[11px] tracking-[0.06em] text-ink-soft uppercase">{d.data.group}</p>
                 </div>
-                <span class="shrink-0 font-mono text-[11px] tracking-[0.08em] text-tangerine uppercase">Scarica &rarr;</span>
+                <span class="shrink-0 font-mono text-[11px] tracking-[0.08em] text-tangerine-deep uppercase">Scarica &rarr;</span>
               </a>
             ))}
           </div>

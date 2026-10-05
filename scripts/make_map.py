@@ -90,12 +90,12 @@ const byId = new Map(committees.map((c) => [c.id, c]));
         href={`${linkBase}#${d.id}`}
         title={c?.name ?? d.id}
         aria-label={c?.name ?? d.id}
-        class="group absolute size-[14px] -translate-x-1/2 -translate-y-1/2"
+        class="group absolute -translate-x-1/2 -translate-y-1/2 before:absolute before:-inset-3 before:content-['']"
         style={`left: ${d.x}%; top: ${d.y}%;`}
       >
         <span
           class:list={[
-            "block size-full rounded-full border-2 border-paper shadow",
+            "block size-[12px] rounded-full border-2 border-paper shadow",
             frozen ? "bg-ink-soft" : "bg-tangerine",
           ]}
         ></span>
