@@ -11,7 +11,7 @@ const cards = [
 <div class="mx-auto -mt-12 grid max-w-[1200px] grid-cols-1 gap-4 px-[clamp(16px,4vw,24px)] min-[900px]:grid-cols-3">
   {cards.map((c) => (
     <Card class="border-rule-light bg-paper p-6 shadow-lift transition-transform hover:-translate-y-[3px]">
-      <span class={`inline-block size-2.5 rounded-full ${c.dot}`}></span>
+      <span data-dot-test class={`relative z-10 inline-block size-[10px] rounded-full ${c.dot}`}></span>
       <h3 class="mt-1 font-display text-[18px] font-semibold tracking-[-0.01em]">{c.title}</h3>
       <p class="text-sm leading-[1.5] text-ink-soft">{c.body}</p>
       <a href={c.href} class="mt-1.5 font-display text-[13px] font-medium text-ink">{c.more}</a>

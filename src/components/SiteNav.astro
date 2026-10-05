@@ -18,23 +18,18 @@ const links = [
   { label: "Documenti", href: "/documenti" },
 ];
 
-interface Props {
-  heroDark?: boolean;
-}
-
-const { heroDark = false } = Astro.props;
+interface Props {}
 ---
 
 <nav
   id="site-nav"
-  class:list={[
-    "fixed inset-x-0 top-0 z-100 transition-[top,width,background-color,border-color,box-shadow] duration-300",
-    heroDark && "aisf-nav-hero-dark",
-  ]}
+  class="aisf-nav-floating fixed inset-x-0 z-100"
 >
   <div class="mx-auto flex h-[76px] max-w-[1200px] items-center justify-between gap-6 px-[clamp(16px,4vw,32px)]">
     <a href="/" aria-label="AISF home" class="flex shrink-0 items-center">
-      <img src="/aisf-logo.png" alt="AISF" class="h-12 w-auto" data-logo />
+      <span class="flex size-11 items-center justify-center overflow-hidden rounded-full bg-ink p-1">
+        <img src="/aisf-mark.png" alt="AISF" class="h-full w-auto" />
+      </span>
     </a>
     <div class="hidden items-center gap-[clamp(16px,2.2vw,28px)] min-[1100px]:flex" data-nav-links>
       {links.map((l) => (
@@ -59,7 +54,9 @@ const { heroDark = false } = Astro.props;
           <SheetContent side="right" class="border-rule-light bg-paper">
             <SheetHeader>
               <SheetTitle>
-                <img src="/aisf-logo.png" alt="AISF" class="h-10 w-auto" />
+                <span class="flex size-10 items-center justify-center overflow-hidden rounded-full bg-ink p-1">
+                  <img src="/aisf-mark.png" alt="AISF" class="h-full w-auto" />
+                </span>
               </SheetTitle>
             </SheetHeader>
             <div class="flex flex-col px-4">
@@ -82,13 +79,3 @@ const { heroDark = false } = Astro.props;
     </div>
   </div>
 </nav>
-
-<script>
-  const nav = document.getElementById("site-nav");
-  const onScroll = () => {
-    if (!nav) return;
-    nav.classList.toggle("aisf-nav-floating", window.scrollY > 24);
-  };
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-</script>
