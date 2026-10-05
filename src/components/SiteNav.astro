@@ -17,36 +17,30 @@ const links = [
   { label: "Comitati", href: "/comitati" },
   { label: "Documenti", href: "/documenti" },
 ];
-
-interface Props {}
 ---
 
-<nav
-  id="site-nav"
-  class="aisf-nav-floating fixed inset-x-0 z-100"
->
-  <div class="mx-auto flex h-[76px] max-w-[1200px] items-center justify-between gap-6 px-[clamp(16px,4vw,32px)]">
-    <a href="/" aria-label="AISF home" class="flex shrink-0 items-center">
-      <span class="flex size-11 items-center justify-center overflow-hidden rounded-full bg-ink p-1">
-        <img src="/aisf-mark.png" alt="AISF" class="h-full w-auto" />
-      </span>
+<nav id="site-nav" class="fixed inset-x-0 top-0 z-100">
+  <div class="mx-auto flex h-[76px] max-w-[1200px] items-center gap-8 px-[clamp(16px,4vw,32px)]">
+    <a href="/" aria-label="AISF home" class="flex shrink-0 items-center rounded-[12px] bg-paper px-2.5 py-1.5">
+      <img src="/aisf-logo.png" alt="Associazione Italiana Studenti di Fisica" class="h-8 w-auto" />
     </a>
-    <div class="hidden items-center gap-[clamp(16px,2.2vw,28px)] min-[1100px]:flex" data-nav-links>
+    <div class="hidden items-center gap-[clamp(14px,2vw,24px)] min-[1100px]:flex" data-nav-links>
       {links.map((l) => (
-        <a href={l.href} class="font-display text-[15px] font-medium text-ink no-underline">{l.label}</a>
+        <a href={l.href} class="font-display text-[15px] font-medium no-underline">{l.label}</a>
       ))}
     </div>
-    <div class="flex items-center gap-3">
-      <p class="hidden font-mono text-[11px] tracking-[0.1em] text-ink-soft uppercase min-[1100px]:block" data-lang>
+    <div class="ml-auto flex items-center gap-3">
+      <p class="hidden font-mono text-[11px] tracking-[0.1em] uppercase min-[1100px]:block" data-lang>
         <strong>IT</strong> &middot; EN
       </p>
       <Button href="/unisciti" variant="primary" size="sm" class="max-[720px]:hidden">Iscriviti &rarr;</Button>
-      <span class="min-[1100px]:hidden">
+      <span class="min-[1100px]:hidden" data-menu>
         <Sheet>
           <SheetTrigger asChild>
             <button
-              class="flex size-11 items-center justify-center rounded-full border border-ink/15 bg-paper/70 text-ink"
+              class="flex size-11 items-center justify-center rounded-full border"
               aria-label="Apri il menu"
+              data-menu-btn
             >
               <IconMenu />
             </button>
@@ -54,8 +48,8 @@ interface Props {}
           <SheetContent side="right" class="border-rule-light bg-paper">
             <SheetHeader>
               <SheetTitle>
-                <span class="flex size-10 items-center justify-center overflow-hidden rounded-full bg-ink p-1">
-                  <img src="/aisf-mark.png" alt="AISF" class="h-full w-auto" />
+                <span class="inline-block rounded-[12px] bg-paper px-2.5 py-1.5">
+                  <img src="/aisf-logo.png" alt="AISF" class="h-8 w-auto" />
                 </span>
               </SheetTitle>
             </SheetHeader>
@@ -79,3 +73,69 @@ interface Props {}
     </div>
   </div>
 </nav>
+
+<style>
+  /* Melted state (top): transparent, light text for the dark hero */
+  #site-nav {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      border-radius 0.3s ease,
+      top 0.3s ease,
+      width 0.3s ease;
+  }
+  #site-nav [data-nav-links] a {
+    color: rgba(247, 242, 236, 0.85);
+    transition: color 0.2s ease;
+  }
+  #site-nav [data-nav-links] a:hover {
+    color: var(--color-paper);
+  }
+  #site-nav [data-lang] {
+    color: rgba(247, 242, 236, 0.7);
+  }
+  #site-nav [data-menu-btn] {
+    border-color: rgba(247, 242, 236, 0.4);
+    color: var(--color-paper);
+    background: transparent;
+  }
+  /* Floating glass pill (scrolled): light, dark text */
+  #site-nav.aisf-nav-floating {
+    top: 12px;
+    width: calc(100% - 24px);
+    max-width: 1200px;
+    margin-inline: auto;
+    border-radius: 16px;
+    background: rgba(247, 242, 236, 0.6);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    backdrop-filter: blur(20px) saturate(160%);
+    border-bottom: 1px solid rgba(14, 24, 48, 0.08);
+    box-shadow:
+      0 8px 32px -12px rgba(14, 24, 48, 0.18),
+      0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  }
+  #site-nav.aisf-nav-floating [data-nav-links] a {
+    color: var(--color-ink);
+  }
+  #site-nav.aisf-nav-floating [data-lang] {
+    color: var(--color-ink-soft);
+  }
+  #site-nav.aisf-nav-floating [data-menu-btn] {
+    border-color: rgba(14, 24, 48, 0.15);
+    color: var(--color-ink);
+    background: rgba(247, 242, 236, 0.7);
+  }
+</style>
+
+<script>
+  const nav = document.getElementById("site-nav");
+  const onScroll = () => {
+    if (!nav) return;
+    nav.classList.toggle("aisf-nav-floating", window.scrollY > 24);
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+</script>
