@@ -17,11 +17,20 @@ const links = [
   { label: "Comitati", href: "/comitati" },
   { label: "Documenti", href: "/documenti" },
 ];
+
+interface Props {
+  heroDark?: boolean;
+}
+
+const { heroDark = false } = Astro.props;
 ---
 
 <nav
   id="site-nav"
-  class="fixed inset-x-0 top-0 z-100 transition-[top,width,background-color,border-color,box-shadow] duration-300"
+  class:list={[
+    "fixed inset-x-0 top-0 z-100 transition-[top,width,background-color,border-color,box-shadow] duration-300",
+    heroDark && "aisf-nav-hero-dark",
+  ]}
 >
   <div class="mx-auto flex h-[76px] max-w-[1200px] items-center justify-between gap-6 px-[clamp(16px,4vw,32px)]">
     <a href="/" aria-label="AISF home" class="flex shrink-0 items-center">
@@ -76,25 +85,10 @@ const links = [
 
 <script>
   const nav = document.getElementById("site-nav");
-
-  // What background sits under the nav's vertical center?
-  const isOverDark = () => {
-    const probeY = 44;
-    const top = window.scrollY + probeY;
-    for (const el of document.querySelectorAll<HTMLElement>("[data-dark]")) {
-      const elTop = el.getBoundingClientRect().top + window.scrollY;
-      if (top >= elTop && top <= elTop + el.offsetHeight) return true;
-    }
-    return false;
-  };
-
   const onScroll = () => {
     if (!nav) return;
     nav.classList.toggle("aisf-nav-floating", window.scrollY > 24);
-    nav.classList.toggle("aisf-nav-ondark", isOverDark());
   };
-
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
   onScroll();
 </script>
