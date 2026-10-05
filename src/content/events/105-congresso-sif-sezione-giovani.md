@@ -1,0 +1,144 @@
+---
+id: 105-congresso-sif-sezione-giovani
+title: 105° Congresso SIF–Sezione Giovani
+date: '2019-09-25'
+endDate: '2019-09-26'
+location: L'Aquila
+type: eventonazionale
+cover: /img/photos/2019-SG/sif19-logo.png
+status: past
+---
+<style>
+* {
+box-sizing: border-box;
+}
+
+.column {
+float: left;
+width: 33.33%;
+padding: 5px;
+}
+
+.row::after {
+content: "";
+clear: both;
+display: table;
+}
+
+.float-my-children > * {
+float:left;
+margin-right:5px;
+}
+
+.clearfix {
+*zoom:1 /* for IE */
+}
+
+.clearfix:before,
+.clearfix:after {
+content: " ";
+display: table;
+}
+
+.clearfix:after {
+clear: both;
+}
+
+</style>
+
+Il Congresso Nazionale della [Società Italiana di Fisica](https://www.sif.it), che raccoglie per una settimana circa 600 fisici italiani, rappresenta il momento in cui una comunità scientifica omogenea, malgrado i diversi interessi culturali dovuti al largo spettro di settori in cui oggi si articola la fisica, ritrova se stessa. Il [105° Congresso Nazionale SIF](https://www.sif2019.it) avrà luogo presso la sede del Gran Sasso Science Institute, L'Aquila, dal 23 al 27 settembre 2019 e ospiterà, oltre alle sette canoniche sezioni scientifiche, la Sezione Giovani nella giorno di giovedì 26 settembre, organizzata in collaborazione con AISF.
+
+Studenti di Fisica provenienti da tutta Italia si ritroveranno nella stimolante cornice acquilana per partecipare attivamente ai lavori del Congresso Nazionale. Il programma della Sezione Giovani prevede una guest lecture sul mondo e le nuove prospettive offerte dai big data e una masterclass dedicata alla scrittura e all'editoria scientifica. I giovani congressisti potranno inoltre godere dell’escursione di giovedì 26 settembre pomeriggio ai Laboratori Nazionali del Gran Sasso e partecipare alla cena di gala, venendo realmente coinvolti nell’atmosfera del Congresso. La Sezione Giovani sarà dunque l’occasione perfetta per gli studenti per entrare in contatto con la grande comunità dei Fisici italiani, nonché per conoscere altri studenti italiani e scoprire l'affascinante città de L'Aquila.
+
+![alt text][banner]
+
+### Programma
+
+Il programma della Sezione Giovani si articola sulle giornate di mercoledì 25 e giovedì 26 settembre 2019.
+
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header"><i class="material-icons">touch_app</i>Mercoledì 25 settembre</div>
+<div class="collapsible-body">
+<p>09.00 - 16.30 &emsp;&emsp;&emsp; Arrivo dei partecipanti e registrazione<br><br>
+16.30 - 18.30 &emsp;&emsp;&emsp; <b>Visita de L'Aquila</b>, ritrovo presso GSSI<br><br>
+21.00 - 24.00 &emsp;&emsp;&emsp; <b>Cena sociale</b> presso <a href="http://www.magionepapale.it/it/home/">Magione Papale</a>, ristorante premiato con 1 stella Michelin<br><br>
+<i>Durante la giornata potrai comunque partecipare a tutte le attività del Congresso.</i></p>
+</div>
+</li>
+<li>
+<div class="collapsible-header"><i class="material-icons">touch_app</i>Giovedì 26 settembre</div>
+<div class="collapsible-body">
+<p>09.00 - 09.15 &emsp;&emsp;&emsp; Apertura della Sezione e presentazione AISF<br><br>
+09.15 - 12.00 &emsp;&emsp;&emsp; <b>Masterclass</b> <i>Editoria e Scrittura Scientifica</i><br><br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;‣ Christian Caron – Springer Physics<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <i>Find your way in scientific publishing</i><br><br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;‣ Stefano Bianco – Laboratori Nazionali di Frascati INFN<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <i>Verso un modello equo e sostenibile di editoria scientifica–Plan S, Luci & Ombre</i><br><br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;‣ Alessandro Bettini – Università degli Studi di Padova<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <i>Elementi per la composizione di un articolo scientifico</i><br><br>
+12.00 - 12.45 &emsp;&emsp;&emsp; <b>Relazione su invito</b>: Marco Drago – GSSI<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <i>Machine Learning for Gravitational Wave Research</i><br><br>
+12.45 - 14.30 &emsp;&emsp;&emsp; Pranzo e free time<br><br>
+14.30 - 17.30 &emsp;&emsp;&emsp; <b>Visita dei Laboratori Nazionali del Gran Sasso INFN</b>, partenza dal GSSI<br><br>
+17.30 - 24.00 &emsp;&emsp;&emsp; Serata libera</p>
+</div>
+</li>
+</ul>
+
+Gli orari possono variare.
+
+### Location
+
+Scopri le location del Congresso e della Sezione Giovani!
+
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header"><i class="material-icons">visibility</i>L'Aquila</div>
+<div class="collapsible-body">
+<p>I nuclei di Amiternum e Forcona, i principali centri urbani anticamente presenti nella zona dell'odierna <a href="https://it.wikipedia.org/wiki/L%27Aquila#Il_capoluogo_degli_Abruzzi">L'Aquila</a>, hanno origini sabino-vestine, trovandosi presso il confine dei territori occupati dai due popoli italici. Dopo la caduta dell'Impero romano d'Occidente, nella conca aquilana si formarono diversi piccoli agglomerati urbani, detti castelli, che secondo la leggenda si federarono per la fondazione della nuova città nel 1254. Sotto il dominio asburgico dei secoli XVI-XVII visse un periodo di altalenante crescita economica che sarà però bruscamente interrotta dal terremoto del 1703. La città conobbe un nuovo sviluppo economico e culturale soltanto nell'Ottocento fino a diventare un importante polo culturale e artistico dell'Italia contemporanea.<br><br>
+
+Oggi è ancora presente un ampio patrimonio storico che mostra un primo strato medievale testimoniato soprattutto dalle Mura cittadine, uno rinascimentale che caratterizza numerosi palazzi e chiese e infine il barocco e il neoclassico delle ricostruzioni post sisma settecentesche. Non mancano aree verdi e parchi cittadini, nonché importanti parchi nazionali come il Parco del Gran Sasso e Monti della Laga.</p>
+</div>
+</li>
+<li>
+<div class="collapsible-header"><i class="material-icons">visibility</i>Gran Sasso Science Institute</div>
+<div class="collapsible-body">
+<p>Il <a href="http://www.gssi.it">GSSI</a> è una scuola internazionale di dottorato e un centro di ricerca e formazione superiore, con lo statuto di Scuola Universitaria Superiore a Ordinamento Speciale. Il GSSI si propone di rafforzare l’eccellenza scientifica a L’Aquila grazie alla valorizzazione di competenze e strutture altamente specializzate presenti nel territorio–come i Laboratori Nazionali del Gran Sasso dell’Istituto Nazionale di Fisica Nucleare (INFN) e l’Università dell’Aquila–e di favorire l’attrazione di risorse di alto livello nel campo delle scienze di base e dell’intermediazione tra ricerca e impresa. I corsi di dottorato e le attività della ricerca promosse dal GSSI si articolano nelle aree di Fisica, Matematica, Informatica e Scienze Sociali.</p>
+</div>
+</li>
+<li>
+<div class="collapsible-header"><i class="material-icons">visibility</i>Laboratori Nazionali del Gran Sasso</div>
+<div class="collapsible-body">
+<p>Per dimensioni e ricchezza della strumentazione scientifica, i <a href="https://www.lngs.infn.it/it">Laboratori Nazionali del Gran Sasso</a> sono il centro di ricerca sotterraneo più grande e importante del mondo. I LNGS sono stati progettati e costruiti con lo scopo di sfruttare la protezione dalla radiazione cosmica, ottenuta con gli oltre mille e quattrocento metri di montagna sovrastanti, principale requisito per l’attività scientifica a cui sono dedicati. I LNGS sono finanziati dall’Istituto Nazionale di Fisica Nucleare (INFN), l’ente che in Italia coordina e finanzia la ricerca in fisica nucleare, subnucleare e della fisica delle particelle elementari.<br><br>
+
+Situati tra le città di L’Aquila e Teramo, a circa 120 km da Roma, i Laboratori  sono utilizzati come struttura a livello mondiale da scienziati provenienti  da 29 paesi diversi; attualmente ne sono presenti 1100 impegnati in circa 15 esperimenti in diverse fasi di realizzazione. Principali argomenti di ricerca dell’attuale programma sono: la fisica dei neutrini naturalmente prodotti nel Sole e in esplosioni di Supernova, la ricerca di particelle di materia oscura e lo  studio di reazioni nucleari di interesse astrofisico e decadimenti rari.</p>
+</div>
+</li>
+</ul>
+
+### Iscrizioni e quote
+
+_Leggi attentamente quanto segue!_
+
+La quota di partecipazione alla Sezione Giovani è di **10 €** e garantisce la partecipazione a tutte le attività del Congresso del 25 e 26 settembre. Sarà inoltre possibile partecipare (facoltativamente) alla cena sociale al prezzo agevolato di **25 €**. Sarà possibile pernottare a L'Aquila nelle notti del 25 e 26 così da partecipare con tranquillità a tutte le attività della Sezione Giovani. L'alloggio sarà fornito presso l'hotel [Porta Rivera](https://www.portariverahostel.it/it-it) al prezzo di soli **35 €** per le due notti.
+
+Al termine del periodo di iscrizione saranno inviate all'indirizzo email fornito le istruzione per il versamento della quota e tutte le ulteriori informazioni circa l'evento.
+
+_Le iscrizioni sono chiuse._
+
+Ti ricordiamo che la partecipazione è riservata ai membri AISF. Se non sei ancora membro AISF potrai perfezionare la tua membership al termine delle iscrizioni. Tutte le informazioni sulle quote e sulle modalità si trovano [qui](http://ai-sf.it/iscrizione/). Ti ricordiamo che, nonostante la membership sia relativa all'Anno Accademico, chi si iscrive ad AISF a partire dal 1 luglio manterrà la propria iscrizione anche per l'anno successivo!
+
+Le quote per la partecipazione all'intero Congresso sono indicate [qui](https://www.sif.it/attivita/congresso/105). In particolare, per i Soci Invitati, è prossibile effettuare la preiscrizione online al prezzo ridotto di 60 €.
+
+### Informazioni pratiche
+
+Il Gran Sasso Science Institute si trova in Viale Francesco Crispi 7, 67100 L'Aquila (AQ). Gli aeroporti più vicini alla città di L’Aquila sono quelli di Roma ([Aeroporto Internazionale di Roma–Ciampino "G. B. Pastine"](https://www.adr.it/ciampino) e [Aeroporto Internazionale di Roma–Fiumicino "Leonardo da Vinci"](https://www.adr.it/fiumicino)) e di Pescara ([Aeroporto Internazionale d'Abruzzo "Pasquale Liberi"](http://www.abruzzoairport.com/default.aspx?lang=it)). Gli aeroporti sono collegati alla città con bus diretti.
+
+Sono disponibili connessioni frequenti tramite bus dalla stazione ferroviaria Roma Tiburtina ad opera delle compagnie [TUA](https://www.tuabruzzo.it), [Flixbus](https://www.flixbus.it) e [Gaspari](https://www.gasparionline.it). I bus partono dall'entrata principale della stazione. I bus della linea TUA fermano alla fermata Collemaggio (a circa 500m dal GSSI), mentre i bus delle linee Flixbus e Gaspari fermano all'Hotel Amiternum.
+
+### Contatti
+
+Per ulteriori informazioni è possibile scrivere al [Comitato Esecutivo](mailto:esecutivo@ai-sf.it) AISF.
+
+[banner]: /img/photos/2019-SG/piazzaduomo.jpg

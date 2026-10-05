@@ -1,0 +1,161 @@
+---
+id: 104-congresso-sif-sezione-giovani
+title: 104° Congresso SIF - Sezione Giovani
+date: '2018-09-19'
+endDate: '2018-09-20'
+location: Arcavacata di Rende
+type: eventonazionale
+cover: https://www.primapagina.sif.it/thumbs.php?ID=821&maxW=630
+status: past
+---
+<style>
+* {
+box-sizing: border-box;
+}
+
+.column {
+float: left;
+width: 33.33%;
+padding: 5px;
+}
+
+.row::after {
+content: "";
+clear: both;
+display: table;
+}
+
+.float-my-children > * {
+float:left;
+margin-right:5px;
+}
+
+.clearfix {
+*zoom:1 /* for IE */
+}
+
+.clearfix:before,
+.clearfix:after {
+content: " ";
+display: table;
+}
+
+.clearfix:after {
+clear: both;
+}
+
+</style>
+
+Il Congresso Nazionale della [Società Italiana di Fisica](https://www.sif.it), che raccoglie per una settimana circa 600 fisici italiani, rappresenta il momento in cui una comunità scientifica omogenea, malgrado i diversi interessi culturali dovuti al largo spettro di settori in cui oggi si articola la fisica, ritrova se stessa. Il [104° Congresso Nazionale SIF](http://www.fis.unical.it/sif2018/) avrà luogo presso la sede dell'Università della Calabria, ad Arcavacata di Rende (Cs) dal 17 al 21 settembre 2018 e ospiterà, oltre alle sette canoniche sezioni scientifiche, la nuova Sezione Giovani che si svolgerà nella mattinata di giovedì 20 settembre, dalle ore 9.00 alle ore 13.00, organizzata in collaborazione con l’Associazione Italiana Studenti di Fisica (AISF).
+
+Ottanta studenti provenienti da tutta Italia si ritroveranno nella affascinante cornice cosentina per partecipare attivamente ai lavori del Congresso Nazionale. Il programma della Sezione Giovani prevede due guest lecture e una tavola rotonda SIF-AISF per stimolare il confronto tra le due realtà e costruire le future collaborazioni. Ampio spazio sarà dato anche agli studenti che presenteranno il proprio lavoro di tesi o di ricerca. I quattro vincitori dei premi miglior talk e miglior poster degli eventi nazionali AISF avranno infatti l’opportunità di proporre il proprio lavoro. Non è finita qui, i giovani congressisti potranno godere dell’escursione di mercoledì 19 al Castello Normanno Svevo e partecipare alla cena di gala, venendo realmente coinvolti nell’atmosfera del Congresso.
+
+La Sezione Giovani sarà dunque l’occasione perfetta per gli studenti per entrare in contatto con la comunità dei Fisici italiani, nonché la prima importante collaborazione tra SIF e AISF.
+
+![alt text][banner]
+
+### Programma
+
+Il programma della Sezione Giovani si articola sulle giornate di mercoledì 19 e giovedì 20 settembre 2018. Le attività di giovedì 20 si svolgeranno presso lo [University Club](http://www.unical.it/portale/campus/centrcongr/galleriafoto/university/) del Campus.
+
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header"><i class="material-icons">touch_app</i>Mercoledì 19 settembre</div>
+<div class="collapsible-body">
+<p>09.00 - 18.00 &emsp;&emsp;&emsp; Arrivo dei partecipanti e registrazione<br><br>
+18.00 - 19.00 &emsp;&emsp;&emsp; Escursione: MAB o Castello Normanno Svevo a scelta dei partecipanti<br><br>
+20.30 - 23.00 &emsp;&emsp;&emsp; <a href="http://www.fis.unical.it/sif2018/images/Cena_di_Gala_Parco_Enotri.pdf">Cena di gala</a></p>
+</div>
+</li>
+<li>
+<div class="collapsible-header"><i class="material-icons">touch_app</i>Giovedì 20 settembre</div>
+<div class="collapsible-body">
+<p>09.00 - 09.15 &emsp;&emsp;&emsp; Apertura della Sezione e presentazione AISF<br><br>
+09.15 - 10.30 &emsp;&emsp;&emsp; Guest Talk<br><br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a href="http://www.fisica.uniud.it/~deangeli/">‣ Alessandro De Angelis</a> - Università degli Studi di Udine, Politecnico di Lisbona<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <i>L'enigma dei raggi cosmici</i><br><br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a href="https://www.unibo.it/sitoweb/alberto.armigliato">‣ Alberto Armigliato</a> - Università degli Studi di Bologna<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <i>I maremoti lungo le coste italiane: come ne studiamo la pericolosità</i><br><br>
+10.30 - 12.00 &emsp;&emsp;&emsp; Tavola rotonda SIF-AISF<br><br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Modera Mattia Ivaldi (Università degli Studi di Torino)<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Intervengono Luisa Cifarelli (Presidente SIF - Università di Bologna), Marco Schioppa (Comitato<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Organizzatore Congresso - Università della Calabria), Valerio Peri (Presidente AISF - ETH Zürich)<br><br>
+12.00 - 13.00 &emsp;&emsp;&emsp; Talk AISF<br><br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;‣ Valerio Peri - ETH Zürich<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <i>A quantized quadrupole insulator in a mechanical metamaterial</i><br><br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;‣ Chiara Signorile Signorile - Università degli Studi di Torino<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <i>Infrared Singularities and Local Subtraction beyond NLO</i><br><br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;‣ Sergio Picella - Università degli Studi di Bari<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <i>Transistor ad effetto di campo con gate elettrolitico: applicazioni alla biosensoristica</i><br><br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;‣ Leonardo Pacciani - Università degli Studi di Padova<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <i>Fisica ed ecosistemi: il dilemma del rapporto stabilità-biodiversità</i><br><br>
+13.00 - 14.30 &emsp;&emsp;&emsp; Pranzo</p>
+</div>
+</li>
+</ul>
+
+Gli speaker della sessione Talk AISF sono i vincitori dei premi Best Poster e Best Talk degli eventi nazionali AISF tenutisi quest'anno, ovvero il [Biomedical Physics Lombard Event](http://ai-sf.it/biple/) e la [Conferenza Italiana Studenti di Fisica](http://ai-sf.it/cisf18/).
+
+### Location
+
+Scopri le location del Congresso e della Sezione Giovani!
+
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header"><i class="material-icons">visibility</i>Cosenza</div>
+<div class="collapsible-body">
+<p><a href="https://it.wikipedia.org/wiki/Cosenza">Cosenza</a> sorge lungo la Valle del Crati, alla confluenza col fiume Busento. Il centro storico è il tipico borgo meridionale, arroccato sul Colle Pancrazio e caratterizzato dalla presenza di vicoli stretti ed intrecciati che sfociano sul centralissimo Corso Bernardino Telesio, che attraversa l’intero quartiere dalla suggestiva Piazza Valdesi fino al Giardino Pubblico "Villa Vecchia". Lungo il Corso si trovano alcuni dei principali monumenti della città, come il Duomo, il Teatro Alfonso Rendano, il monumento a Bernardino Telesio e la Biblioteca Civica. Meritano particolare menzione la Galleria d’arte Nazionale "Palazzo Arnone", la pittoresca "Villa Rendano", la Chiesa di San Domenico, la statua in onore del Re Alarico e l’imponente Castello Normanno Svevo.<br><br>
+
+La città nuova sorge nella prima parte pianeggiante della Valle del Crati, sulla sponda sinistra del fiume. È attraversata nella prima parte dal Corso Giuseppe Mazzini, che collega Piazza dei Bruzi con la nuovissima Piazza Carlo Bilotti. Lungo il Corso si trovano negozi e locali che ospitano, insieme alla vicina Piazza Santa Teresa, la vita notturna cittadina, ed il famoso Museo all’Aperto Bilotti (MAB). La città è collegata alla sponda destra del fiume Crati da una serie di ponti, tra cui il Ponte Alarico, il Ponte Europa ed il recentissimo Ponte di Calatrava, intitolato a San Francesco di Paola, che con l’antenna di 100 metri rappresenta il ponte strallato più alto d’Europa. Sulla sponda destra del fiume saranno ultimati a breve i lavori di costruzione del Planetario.<br><br>
+
+Oggi è impossibile non rimanere affascinati dal litorale ionico e tirrenico cosentino: grotte scavate nella roccia, archi naturali, scogli che si ergono in mezzo alle acque azzurre. Cosenza custodisce un ricco patrimonio gastronomico fatto di pietanze, sapori e profumi tipici, antipasti a base di capicollo, soppressate, salsicce e funghi sott'olio.</p>
+</div>
+</li>
+<li>
+<div class="collapsible-header"><i class="material-icons">visibility</i>Rende</div>
+<div class="collapsible-body">
+<p><a href="http://www.fis.unical.it/sif2018/index.php/portfolio-details/item/3-comune-di-rende">Rende</a>, coi suoi 35 586 abitanti, è uno dei più grandi comuni della provincia di Cosenza. La parte bassa del comune, staccata dal centro storico, si sviluppa nell’aerea valliva sulla sinistra del fiume Crati come continuazione della città di Cosenza, ed è suddivisa nelle 3 principali frazioni di Roges, Commenda e Quattromiglia. Questa zona ospita una serie di locali per la vita notturna, è servita dalla stazione ferroviaria di Castiglione Cosentino e dall’uscita autostradale Rende-Cosenza Nord dell’autostrada A2. L’area ospita molti degli studenti fuori sede dell’Università della Calabria ed il più grande centro commerciale dell’area urbana cosentina. L’Università è sita nella contrada Arcavacata, raggiungibile da Quattromiglia in 30 minuti a piedi ed in 5-10 minuti di autobus.</p>
+</div>
+</li>
+<li>
+<div class="collapsible-header"><i class="material-icons">visibility</i>UniCal</div>
+<div class="collapsible-body">
+<p>L'<a href="http://www.fis.unical.it/sif2018/index.php/portfolio-details/item/6-universita-della-calabria">Università della Calabria</a> è una università statale italiana fondata nel 1972, la maggiore delle università calabresi. Tra i suoi fondatori vi furono Beniamino Andreatta, Giorgio Gagliani, Pietro Bucci e Paolo Sylos Labini. Dal 2013 il Rettore è Gino Mirocle Crisci, professore ordinario di Petrografia e Petrologia. La struttura, divisa tra Polifunzionale e Campus, si colloca tra i grandi atenei ed ospita 14 Dipartimenti, 8 quartieri residenziali per studenti fuori sede e 4 servizi mensa. Possiede una biblioteca strutturata in Area Umanistica, Area Tecnico-Scientifica ed Area Economico-Sociale, un’Aula Magna, molti laboratori didattici, il museo di paleontologia, un grande orto botanico ed il recente Laboratorio STAR, nato dal progetto MaTeRia presso il Dipartimento di Fisica. Nel 2018 ha ottenuto il secondo posto nella classifica stilata dal Censis si è collocata nella posizione 212 nella classifica internazionale elaborata dall'Università di Leiden.</p>
+</div>
+</li>
+<li>
+<div class="collapsible-header"><i class="material-icons">visibility</i>Castello Normanno Svevo</div>
+<div class="collapsible-body">
+<p>Il <a href="http://www.fis.unical.it/sif2018/index.php/portfolio-details/item/2-castello-svevo2">Castello Normanno Svevo</a> di Cosenza rappresenta il principale monumento della città dei Bruzi, che lo vede ergersi ormai da secoli su uno dei punti più alti della città: il colle Pancrazio. Le sue origini risalgono a Ruggero II di Sicilia nel 1132, che fece del castello una vera e propria roccaforte normanna. Nel 1184, come molti altri monumenti storici della città, fu gravemente danneggiato da un terremoto, fino alla sua completa ristrutturazione durante il XIII secolo da parte di Federico II di Svevia. Nel 1459 vi dimorò Re Alfonso II di Napoli, fino a quando gli spagnoli, nel XVI secolo, non gli restituirono la sua funzione bellica, rappresentando per tutto il 1500 il fortilizio militare più importante della Calabria settentrionale. Dopo i restauri degli ultimi anni il Castello presenta ben conservati: la torre ottagonale di epoca sveva, gli stemmi di età angioina incisi sugli archi svevi a costoloni, che si immettono nel corridoio detto "dei fiordalisi", lo scudo aragonese, le segrete e il cortile interno. Ad oggi il Castello è sede di eventi durante tutto l’anno, con mostre, festival concerti e osservazioni astronomiche.</p>
+</div>
+</li>
+<li>
+<div class="collapsible-header"><i class="material-icons">visibility</i>MAB</div>
+<div class="collapsible-body">
+<p>Il <a href="https://it.wikipedia.org/wiki/Museo_all%27aperto_Bilotti">Museo all'Aperto Bilotti</a> è collocato sull’arteria principale della parte nuova della città di Cosenza. Un sapiente progetto, realizzato grazie alle donazioni dei mecenati cosentini Carlo ed Enzo Bilotti, che vede opere di grandi maestri quali l’enigmatica e simbolica composizione di “San Giorgio ed il Dragone” di Dalì, diverse opere di Giorgio De Chirico, il “Lupo della Sila” dell’artista calabrese Mimmo Rotella ed ancora opere di Consagra, Manzù, Emilio Greco e Sasha Sosno. Una mostra all’aperto, lungo Corso Mazzini, che permette a chi lo attraversa di fruire l’arte en plein air. Il MAB, al di là del pregiato contenuto artistico, rappresenta anche un’efficace opportunità educativa: a Cosenza, è possibile passeggiare, facendo shopping, conversando e fruendo nel contempo di un percorso di elevato valore artistico, favorendo l’educazione alla consapevolezza del patrimonio comune e l’apertura dei sensi ad un’atmosfera densa di cultura e civiltà.</p>
+</div>
+</li>
+</ul>
+
+### Iscrizioni e quote
+
+La quota base di **10 €** comprende la partecipazione all'escursione di mercoledì pomeriggio e al programma di giovedì, pranzo incluso. Non comprende la partecipazione alla cena di gala e l'alloggio e dovrà essere versata direttamente all'arrivo al Congresso al momento della registrazione, presso la segreteria dell'evento.
+
+È possibile partecipare alla cena di gala di mercoledì sera al prezzo ridotto di **25 €** e soggiornare presso il Centro Residenziale del Campus al prezzo di **20 €** durante la notte di mercoledì. In fase di iscrizione ti sarà chiesto di indicare se intendi aggiungere la cena, l'alloggio, o entrambi al tuo pacchetto, nonché la scelta dell'escursione. Questa quota aggiuntiva dovrà essere pagata tramite bonifico bancario all'AISF seguendo le indicazioni che riceverai al termine del periodo di iscrizioni.
+
+Ti ricordiamo che la partecipazione è riservata ai membri AISF. Se non sei ancora membro AISF potrai perfezionare la tua membership al termine delle iscrizioni. Tutte le informazioni sulle quote e sulle modalità si trovano [qui](http://ai-sf.it/iscrizione/). Ti ricordiamo che, nonostante la membership sia relativa all'Anno Accademico, chi si iscrive ad AISF a partire dal 1 luglio manterrà la propria iscrizione anche per l'anno successivo!
+
+**Le iscrizioni sono chiuse.**
+
+Le quote per la partecipazione all'intero Congresso sono indicate [qui](https://www.sif.it/attivita/congresso/104). In particolare, per i Soci Invitati, è prossibile effettuare la preiscrizione online al prezzo ridotto di 60 €.
+
+### Informazioni pratiche
+
+L'Università della Calabria si trova in Via Pietro Bucci, 87036 Arcavacata di Rende (Cs). L'aeroporto più vicino è l'Aeroporto di Lamezia Terme "Sant'Eufemia" e le stazioni ferroviarie più vicine sono le stazioni di Paola e Castiglione Cosentino (Quattromiglia). Le informazioni per i servizi transfer da aeroporti e stazioni sono disponibili [qui](http://www.fis.unical.it/sif2018/index.php/servizi/transfer).
+
+### Contatti
+
+Per ulteriori informazioni è possibile scrivere al [Comitato Esecutivo](mailto:esecutivo@ai-sf.it) AISF.
+
+[banner]: /img/photos/2018-sezione-giovani/banner_cosenza.jpg
+[castello]: /img/photos/2018-sezione-giovani/castello.jpg

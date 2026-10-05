@@ -1,0 +1,78 @@
+# PagesCMS configuration — edit content at app.pagescms.org
+# Collections mirror src/content.config.ts loaders 1:1.
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: events
+    label: Eventi
+    type: collection
+    path: src/content/events
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+    fields:
+      - { name: title, label: Titolo, type: string, required: true }
+      - { name: date, label: Data, type: string, required: true }
+      - { name: endDate, label: Fine, type: string }
+      - { name: location, label: Luogo, type: string }
+      - { name: type, label: Tipo, type: string }
+      - { name: cover, label: Copertina, type: image }
+      - name: status
+        label: Stato
+        type: select
+        options:
+          values: [upcoming, past]
+      - { name: body, label: Testo, type: rich-text }
+
+  - name: news
+    label: Notizie
+    type: collection
+    path: src/content/news
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+    fields:
+      - { name: title, label: Titolo, type: string, required: true }
+      - { name: date, label: Data, type: string, required: true }
+      - { name: body, label: Testo, type: rich-text }
+
+  - name: committees
+    label: Comitati locali
+    type: file
+    path: src/data/committees.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: name, label: Nome, type: string, required: true }
+      - { name: president, label: Presidente, type: string }
+      - { name: founded, label: Fondazione, type: string }
+      - { name: email, label: Email, type: string }
+
+  - name: executive
+    label: Esecutivo
+    type: file
+    path: src/data/executive.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: name, label: Nome, type: string, required: true }
+      - { name: role, label: Ruolo, type: string, required: true }
+      - { name: bio, label: Bio, type: text }
+      - { name: email, label: Email, type: string }
+      - { name: photo, label: Foto, type: image }
+
+  - name: documents
+    label: Documenti
+    type: file
+    path: src/data/documents.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: year, label: Anno, type: string, required: true }
+      - { name: group, label: Gruppo, type: string, required: true }
+      - { name: name, label: Nome, type: string, required: true }
+      - { name: url, label: Link, type: string, required: true }

@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Tag from "../../components/Tag.astro";
+
+const all = await getCollection("events");
+const upcoming = all.filter((e) => e.data.status === "upcoming");
+const past = all.filter((e) => e.data.status === "past").reverse();
+---
+
+<BaseLayout title="Eventi — AISF">
+  <main>
+    <section data-dark class="rounded-b-[28px] bg-ink text-paper">
+      <div class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] pt-[140px] pb-20">
+        <Tag tone="dark">Eventi</Tag>
+        <h1 class="mt-4 font-display font-semibold" style="font-size: clamp(48px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.03em;">
+          Dove ci<br /><span class="text-tangerine">troviamo.</span>
+        </h1>
+      </div>
+    </section>
+    <section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-16">
+      <Tag>Prossimi</Tag>
+      <div class="mt-6 grid grid-cols-1 gap-5 min-[900px]:grid-cols-3">
+        {upcoming.length === 0 && <p class="text-ink-soft">Nessun evento in programma — torna presto.</p>}
+        {upcoming.map((e) => (
+          <a href={`/eventi/${e.id}/`} class="flex min-h-[240px] flex-col gap-4 rounded-[22px] bg-sky p-7 text-ink no-underline">
+            <span class="self-start rounded-full bg-tangerine px-2.5 py-1 font-mono text-[11px] tracking-[0.12em] uppercase">{e.data.date}</span>
+            <h3 class="font-display text-[24px] leading-[1.1] font-semibold">{e.data.title}</h3>
+            <div class="mt-auto flex justify-between border-t border-ink/15 pt-4 font-mono text-[11px] tracking-[0.08em] uppercase">
+              <span>{e.data.type}</span><span>{e.data.location}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="mt-16"><Tag>Passati ({past.length})</Tag></div>
+      <div class="mt-6 grid grid-cols-1 gap-4 min-[900px]:grid-cols-3">
+        {past.map((e) => (
+          <a href={`/eventi/${e.id}/`} class="rounded-[16px] border border-rule-light bg-paper p-5 no-underline">
+            <p class="font-mono text-[11px] tracking-[0.08em] text-ink-soft uppercase">{e.data.date} · {e.data.location}</p>
+            <h3 class="mt-1 font-display text-[18px] font-semibold text-ink">{e.data.title}</h3>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

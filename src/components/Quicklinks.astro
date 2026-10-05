@@ -1,0 +1,20 @@
+---
+import { Card } from "./starwind/card";
+
+const cards = [
+  { dot: "bg-tangerine", title: "Chi è AISF?", body: "Una rete volontaria che collega gli studenti di fisica delle università italiane.", more: "Leggi il manifesto →", href: "/#about" },
+  { dot: "bg-mint", title: "Cosa facciamo", body: "Strumenti open-source, una rivista, divulgazione nelle scuole e un congresso annuale.", more: "Vedi i progetti →", href: "/#projects" },
+  { dot: "bg-blush", title: "Come partecipare", body: "Unisciti al comitato locale, proponi un workshop, o avvia una nuova sede.", more: "Partecipa →", href: "#join" },
+];
+---
+
+<div class="mx-auto -mt-12 grid max-w-[1200px] grid-cols-1 gap-4 px-[clamp(16px,4vw,24px)] min-[900px]:grid-cols-3">
+  {cards.map((c) => (
+    <Card class="border-rule-light bg-paper p-6 shadow-lift transition-transform hover:-translate-y-[3px]">
+      <span class={`inline-block size-2.5 rounded-full ${c.dot}`}></span>
+      <h3 class="mt-1 font-display text-[18px] font-semibold tracking-[-0.01em]">{c.title}</h3>
+      <p class="text-sm leading-[1.5] text-ink-soft">{c.body}</p>
+      <a href={c.href} class="mt-1.5 font-display text-[13px] font-medium text-ink">{c.more}</a>
+    </Card>
+  ))}
+</div>

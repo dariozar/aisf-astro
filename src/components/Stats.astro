@@ -1,0 +1,26 @@
+---
+import Tag from "./Tag.astro";
+
+const stats = [
+  { num: "1.200+", label: "Studenti nella rete" },
+  { num: "40", label: "Atenei coinvolti" },
+  { num: "12", label: "Anni di attività" },
+  { num: "6", label: "Eventi nazionali / anno" },
+];
+---
+
+<section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-10">
+  <div data-dark class="rounded-[28px] bg-ink px-[clamp(20px,4vw,48px)] py-[clamp(32px,5vw,56px)] text-paper">
+    <Tag tone="dark">06 &mdash; Numeri</Tag>
+    <div class="mt-6 grid grid-cols-2 gap-8 min-[900px]:grid-cols-4">
+      {stats.map((s) => (
+        <div>
+          <p class="font-display font-semibold text-tangerine" style="font-size: clamp(40px, 6vw, 64px); line-height: 1;">
+            {s.num}
+          </p>
+          <p class="mt-2 font-mono text-[11px] tracking-[0.12em] text-paper/60 uppercase">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

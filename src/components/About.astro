@@ -1,0 +1,32 @@
+---
+import Tag from "./Tag.astro";
+---
+
+<section id="about" class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-20" data-dark-section="false">
+  <Tag>01 &mdash; Chi siamo</Tag>
+  <h2 class="mt-2 font-display text-[clamp(28px,4vw,40px)] font-semibold tracking-[-0.015em]">
+    Chi siamo, e<br />cosa facciamo davvero.
+  </h2>
+  <div class="mt-8 grid grid-cols-1 gap-5 min-[900px]:grid-cols-2">
+    <div class="flex min-h-[280px] flex-col rounded-[22px] bg-tangerine p-8">
+      <h3 class="font-display text-[28px] font-semibold">Chi siamo</h3>
+      <p class="mt-3 text-[16px] leading-[1.55] text-ink/80">
+        Una rete volontaria di studenti universitari di fisica da quaranta atenei italiani. Indipendente,
+        apartitica, gestita da studenti per studenti, con un consiglio eletto ogni anno.
+      </p>
+      <a href="/esecutivo" class="mt-auto pt-6 font-display text-sm font-medium text-ink underline underline-offset-[6px]">
+        Leggi di pi&ugrave; &rarr;
+      </a>
+    </div>
+    <div class="flex min-h-[280px] flex-col rounded-[22px] bg-blush p-8">
+      <h3 class="font-display text-[28px] font-semibold">Cosa facciamo</h3>
+      <p class="mt-3 text-[16px] leading-[1.55] text-ink/80">
+        Pubblichiamo una rivista trimestrale, organizziamo il pi&ugrave; grande congresso studentesco di fisica
+        in Italia, facciamo divulgazione nelle scuole e manteniamo un archivio pubblico di appunti ed esercizi.
+      </p>
+      <a href="/#projects" class="mt-auto pt-6 font-display text-sm font-medium text-ink underline underline-offset-[6px]">
+        I nostri programmi &rarr;
+      </a>
+    </div>
+  </div>
+</section>

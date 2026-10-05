@@ -1,0 +1,27 @@
+---
+import { Badge } from "./starwind/badge";
+
+type Tone = "default" | "tangerine" | "mint" | "blush" | "dark";
+
+interface Props {
+  tone?: Tone;
+}
+
+const { tone = "default" } = Astro.props;
+
+const toneClass: Record<Tone, string> = {
+  default: "bg-ink/6 text-ink",
+  tangerine: "bg-tangerine text-ink",
+  mint: "bg-mint text-ink",
+  blush: "bg-blush text-ink",
+  dark: "bg-paper/8 text-paper",
+};
+---
+
+<Badge
+  size="sm"
+  eyebrow
+  class:list={["font-mono text-[11px] tracking-[0.08em]", toneClass[tone]]}
+>
+  <slot />
+</Badge>

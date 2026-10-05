@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Tag from "../components/Tag.astro";
+
+const docs = await getCollection("documents");
+const years = [...new Set(docs.map((d) => d.data.year))].sort().reverse();
+const byYear = (y: string) => docs.filter((d) => d.data.year === y);
+---
+
+<BaseLayout title="Documenti — AISF">
+  <main>
+    <section data-dark class="rounded-b-[28px] bg-ink text-paper">
+      <div class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] pt-[140px] pb-20">
+        <Tag tone="dark">Documenti</Tag>
+        <h1 class="mt-4 font-display font-semibold" style="font-size: clamp(48px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.03em;">
+          Trasparenza<br /><span class="text-tangerine">totale.</span>
+        </h1>
+      </div>
+    </section>
+    <section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-16">
+      {years.map((y) => (
+        <div class="mb-12">
+          <Tag>{y}</Tag>
+          <div class="mt-4 flex flex-col gap-2">
+            {byYear(y).map((d) => (
+              <a
+                href={d.data.url}
+                target="_blank"
+                rel="noopener"
+                class="flex items-center justify-between gap-4 rounded-[16px] border border-rule-light bg-paper px-5 py-4 no-underline transition-shadow hover:shadow-card"
+              >
+                <div>
+                  <p class="font-display text-[15px] font-medium text-ink">{d.data.name}</p>
+                  <p class="font-mono text-[11px] tracking-[0.06em] text-ink-soft uppercase">{d.data.group}</p>
+                </div>
+                <span class="shrink-0 font-mono text-[11px] tracking-[0.08em] text-tangerine uppercase">Scarica &rarr;</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+  </main>
+</BaseLayout>

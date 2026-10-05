@@ -1,0 +1,79 @@
+@import "./starwind.css";
+
+@theme {
+  /* AISF brand — verbatim from prototype styles.css :root */
+  --color-paper: #f7f2ec;
+  --color-paper-2: #efe7dc;
+  --color-ink: #0e1830;
+  --color-ink-2: #1a2748;
+  --color-ink-3: #243358;
+  --color-ink-soft: #5a6580;
+  --color-ink-faint: #8a92a8;
+  --color-tangerine: #f08a1e;
+  --color-tangerine-deep: #d9750a;
+  --color-mint: #7fd8b0;
+  --color-mint-deep: #4fb890;
+  --color-blush: #f4b8c2;
+  --color-blush-deep: #e090a0;
+  --color-sky: #b8d4f0;
+  --color-rule: #1f2c4d;
+  --color-rule-light: #e2d8c8;
+
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-serif: "Newsreader", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+
+  --shadow-card: 0 1px 0 rgba(14, 24, 48, 0.04), 0 8px 24px -12px rgba(14, 24, 48, 0.18);
+  --shadow-lift: 0 2px 0 rgba(14, 24, 48, 0.04), 0 18px 40px -16px rgba(14, 24, 48, 0.28);
+  --shadow-dark: 0 8px 40px -12px rgba(0, 0, 0, 0.35);
+}
+
+/* Starwind → AISF: point the library's semantic vars at brand tokens */
+:root {
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+  --card: var(--color-paper);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-paper);
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-tangerine);
+  --primary-foreground: var(--color-ink);
+  --primary-accent: var(--color-tangerine-deep);
+  --secondary: var(--color-mint);
+  --secondary-foreground: var(--color-ink);
+  --secondary-accent: var(--color-mint-deep);
+  --muted: var(--color-paper-2);
+  --muted-foreground: var(--color-ink-soft);
+  --accent: var(--color-blush);
+  --accent-foreground: var(--color-ink);
+  --info: var(--color-sky);
+  --info-foreground: var(--color-ink);
+  --success: var(--color-mint);
+  --success-foreground: var(--color-ink);
+  --warning: var(--color-tangerine);
+  --warning-foreground: var(--color-ink);
+  --border: var(--color-rule-light);
+  --input: var(--color-rule-light);
+  --radius: 1.375rem;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-paper);
+    background-image:
+      radial-gradient(60% 50% at 18% 12%, rgba(140, 200, 240, 0.85) 0%, rgba(140, 200, 240, 0) 70%),
+      radial-gradient(55% 45% at 50% 4%, rgba(255, 250, 245, 0.95) 0%, rgba(255, 250, 245, 0) 65%),
+      radial-gradient(60% 55% at 88% 14%, rgba(232, 168, 168, 0.85) 0%, rgba(232, 168, 168, 0) 70%),
+      radial-gradient(70% 60% at 95% 90%, rgba(210, 60, 100, 0.75) 0%, rgba(210, 60, 100, 0) 70%),
+      radial-gradient(70% 65% at 8% 95%, rgba(120, 80, 160, 0.75) 0%, rgba(120, 80, 160, 0) 70%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: var(--font-display);
+    color: var(--color-ink);
+  }
+}

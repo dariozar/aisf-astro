@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Tag from "../components/Tag.astro";
+import { Card } from "../components/starwind/card";
+
+const members = await getCollection("executive");
+const past = await getCollection("executivePast");
+---
+
+<BaseLayout title="Esecutivo — AISF">
+  <main>
+    <section data-dark class="rounded-b-[28px] bg-ink text-paper">
+      <div class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] pt-[140px] pb-20">
+        <Tag tone="dark">Esecutivo</Tag>
+        <h1 class="mt-4 font-display font-semibold" style="font-size: clamp(48px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.03em;">
+          Chi guida<br /><span class="text-tangerine">la rete.</span>
+        </h1>
+      </div>
+    </section>
+    <section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-16">
+      <Tag>Mandato corrente</Tag>
+      <div class="mt-6 grid grid-cols-1 gap-4 min-[900px]:grid-cols-2">
+        {members.map((m) => (
+          <Card class="border-rule-light bg-paper p-6">
+            <p class="font-mono text-[11px] tracking-[0.1em] text-tangerine uppercase">{m.data.role}</p>
+            <h3 class="mt-1 font-display text-[22px] font-semibold">{m.data.name}</h3>
+            {m.data.bio && <p class="mt-2 text-[14px] leading-[1.6] text-ink-soft">{m.data.bio}</p>}
+            {m.data.email && <a href={`mailto:${m.data.email}`} class="mt-3 inline-block font-mono text-[12px] text-tangerine-deep no-underline">{m.data.email}</a>}
+          </Card>
+        ))}
+      </div>
+      <div class="mt-16"><Tag>Mandati passati</Tag></div>
+      <div class="mt-6 flex flex-col gap-6">
+        {past.map((p) => (
+          <div>
+            <p class="font-mono text-[12px] tracking-[0.12em] text-ink-soft uppercase">{p.data.mandate}</p>
+            <p class="mt-1 text-[15px]">{p.data.members.map((m) => `${m.name} (${m.role})`).join(" · ")}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

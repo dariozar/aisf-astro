@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import Tag from "./Tag.astro";
+import { Button } from "./starwind/button";
+
+const upcoming = (await getCollection("events", ({ data }) => data.status === "upcoming")).slice(0, 3);
+const cards = upcoming.length > 0 ? upcoming : (await getCollection("events")).slice(0, 3);
+---
+
+<section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-10">
+  <div data-dark class="rounded-[28px] bg-ink px-[clamp(20px,4vw,48px)] py-[clamp(32px,5vw,64px)] text-paper">
+    <div class="mb-8 flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-[720px]">
+        <Tag tone="dark">02 &mdash; Eventi</Tag>
+        <h2 class="mt-2 font-display text-[clamp(28px,4vw,40px)] font-semibold tracking-[-0.015em]">
+          I nostri eventi,<br />in giro per l'Italia.
+        </h2>
+        <p class="mt-2 max-w-[60ch] text-[15px] text-paper/60">
+          Sei eventi principali all'anno, oltre agli incontri mensili in ogni sede. Quasi tutti aperti anche ai non soci.
+        </p>
+      </div>
+      <Button href="/eventi" variant="primary">Tutti gli eventi &rarr;</Button>
+    </div>
+    <div class="grid grid-cols-1 gap-5 min-[900px]:grid-cols-3">
+      {cards.map((e) => (
+        <a
+          href={`/eventi/${e.id}/`}
+          class="flex min-h-[260px] flex-col gap-4 rounded-[22px] p-7 text-ink no-underline"
+          style="background: linear-gradient(155deg, #DCE9F7 0%, #B8D4F0 50%, #94B8DA 100%)"
+        >
+          <span class="self-start rounded-full bg-tangerine px-2.5 py-1 font-mono text-[11px] tracking-[0.12em] text-ink uppercase">
+            {e.data.date}
+          </span>
+          <h3 class="font-display text-[24px] leading-[1.1] font-semibold tracking-[-0.015em]">{e.data.title}</h3>
+          <div class="mt-auto flex justify-between border-t border-ink/15 pt-4 font-mono text-[11px] tracking-[0.08em] text-ink/70 uppercase">
+            <span>{e.data.type}</span>
+            <span>{e.data.location}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

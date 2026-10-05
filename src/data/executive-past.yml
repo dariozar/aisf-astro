@@ -1,0 +1,176 @@
+- mandate: 2025-2026
+  members:
+  - name: Alessandro Terranova
+    role: Presidente
+  - name: Lorenzo Rocchi
+    role: Segretario
+  - name: Valerio Tinari
+    role: Tesoriere
+  - name: Giorgia Stefania Cantore
+    role: Responsabile Relazioni con Membri e Comitati Locali
+  - name: Federico Canterucci
+    role: Responsabile Eventi
+  - name: Dario Zarcone
+    role: IT Manager
+  - name: Gabriele de Cosmo
+    role: Concept Manager
+  - name: Sabrina Pascale
+    role: Vicepresidente e PR Manager
+  id: 2025-2026
+- mandate: 2024-2025
+  members:
+  - name: Alessandro Terranova
+    role: Presidente
+  - name: Lorenzo Rocchi
+    role: Segretario
+  - name: Pietro Castronovo
+    role: Tesoriere
+  - name: Giorgia Stefania Cantore
+    role: Responsabile Relazioni con Membri e Comitati Locali
+  - name: Federico Canterucci
+    role: Responsabile Eventi
+  - name: Andrea Gerhard Lutz
+    role: Vicepresidente e IT Manager
+  - name: Gabriele de Cosmo
+    role: Concept Manager
+  - name: Sabrina Pascale
+    role: PR Manager
+  id: 2024-2025
+- mandate: 2023-2024
+  members:
+  - name: Matteo Vismara
+    role: Presidente
+  - name: Pietro Castronovo
+    role: Segretario
+  - name: Nicolò Salerno
+    role: Tesoriere
+  - name: Santi Macaluso
+    role: Vicepresidente e Responsabile Relazioni con Membri e Comitati Locali
+  - name: Giulio Carotta
+    role: Responsabile Eventi
+  - name: Andrea Gerhard Lutz
+    role: IT Manager
+  - name: Arianna Paparella
+    role: PR Manager
+  id: 2023-2024
+- mandate: 2022-2023
+  members:
+  - name: Matteo Vismara
+    role: Presidente
+  - name: Stefania Caragnano
+    role: Segretario
+  - name: Francesco Paolo Nerini
+    role: Tesoriere
+  - name: Santi Macaluso
+    role: Responsabile Relazioni con Membri e Comitati Locali
+  - name: Giulio Carotta
+    role: Responsabile Eventi
+  - name: Roberto Ciccarelli
+    role: IT Manager
+  - name: Arianna Paparella
+    role: Vicepresidente e Responsabile Pubbliche Relazioni
+  id: 2022-2023
+- mandate: 2021-2022
+  members:
+  - name: Federica De Domenico
+    role: Presidente
+  - name: Stefania Caragnano
+    role: Segretario
+  - name: Francesco Paolo Nerini
+    role: Tesoriere
+  - name: Andrea Lo Sasso
+    role: Vicepresidente e Responsabile Relazioni con Membri e Comitati Locali
+  - name: Elisa Radaelli
+    role: Responsabile Eventi
+  - name: Roberto Ciccarelli
+    role: IT Manager
+  - name: Arianna Paparella
+    role: Responsabile Pubbliche Relazioni
+  id: 2021-2022
+- mandate: 2020-2021
+  members:
+  - name: Federica De Domenico
+    role: Presidente
+  - name: Matteo Barbetti
+    role: Segretario
+  - name: Maria Vittoria Zanchettin
+    role: Tesoriere
+  - name: Andrea Lo Sasso
+    role: Responsabile Relazioni con Membri e Comitati Locali
+  - name: Elisa Radaelli
+    role: Responsabile Eventi
+  - name: Roberto Ciccarelli
+    role: IT Manager
+  - name: Nicolò Antolini
+    role: Responsabile Pubbliche Relazioni
+  id: 2020-2021
+- mandate: 2019-2020
+  members:
+  - name: Mattia Ivaldi
+    role: Presidente
+  - name: Matteo Barbetti
+    role: Segretario
+  - name: Maria Vittoria Zanchettin
+    role: Tesoriere
+  - name: Sergio Picella
+    role: Responsabile Relazioni con Membri e Comitati Locali
+  - name: Elisa Garabello
+    role: Responsabile Eventi
+  - name: Giovanni Stagnitto
+    role: IT Manager
+  - name: Nicolò Antolini
+    role: Responsabile Pubbliche Relazioni
+  id: 2019-2020
+- mandate: 2018-2019
+  members:
+  - name: Mattia Ivaldi
+    role: Presidente
+  - name: Leonardo Pacciani
+    role: Segretario e Vice Presidente
+  - name: Chiara Signorile Signorile
+    role: Tesoriere
+  - name: Sergio Picella
+    role: Responsabile Relazioni con Membri e Comitati Locali
+  - name: Elisa Garabello
+    role: Responsabile Eventi
+  - name: Giovanni Stagnitto
+    role: IT Manager
+  - name: Alessandra Lorenzo
+    role: Responsabile Pubbliche Relazioni (fino a maggio 2019)
+  - name: Nicolò Antolini
+    role: Responsabile Pubbliche Relazioni (da giugno 2019)
+  id: 2018-2019
+- mandate: 2017-2018
+  members:
+  - name: Valerio Peri
+    role: Presidente
+  - name: Marianna D'Amato
+    role: Vicepresidente e Responsabile relazioni con membri e comitati locali
+  - name: Leonardo Pacciani
+    role: Segretario
+  - name: Chiara Signorile Signorile
+    role: Tesoriere
+  - name: Marco Morrone
+    role: Coordinatore Eventi
+  - name: Gabriele Di Ubaldo
+    role: IT Manager
+  - name: Mattia Ivaldi
+    role: Responsabile PR
+  id: 2017-2018
+- mandate: 2016-2017
+  members:
+  - name: Valerio Peri
+    role: Presidente
+  - name: Marianna D'Amato
+    role: Vicepresidente e Responsabile relazioni con membri e comitati locali
+  - name: Vittorio Erba
+    role: Segretario
+  - name: Michele Re Fiorentin
+    role: Tesoriere
+  - name: Marco Morrone
+    role: Coordinatore Eventi
+  - name: Gabriele Di Ubaldo
+    role: IT Manager
+  - name: Lucio Maria Milanese
+    role: Responsabile progetto FERMI
+  id: 2016-2017

@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Tag from "../components/Tag.astro";
+import { Button } from "../components/starwind/button";
+import Quicklinks from "../components/Quicklinks.astro";
+import About from "../components/About.astro";
+import EventsSection from "../components/EventsSection.astro";
+import Projects from "../components/Projects.astro";
+import Chapters from "../components/Chapters.astro";
+import Articles from "../components/Articles.astro";
+import Stats from "../components/Stats.astro";
+import JoinCta from "../components/JoinCta.astro";
+---
+
+<BaseLayout>
+  <main>
+    <!-- HERO -->
+    <section class="relative overflow-hidden rounded-b-[28px] bg-ink text-paper">
+      <img
+        src="/group-photo.jpg"
+        alt="CISF 2025 — foto di gruppo"
+        class="absolute inset-0 h-full w-full object-cover object-[center_35%]"
+      />
+      <div
+        class="absolute inset-0"
+        style="background: linear-gradient(180deg, rgba(14,24,48,0.55) 0%, rgba(14,24,48,0.35) 35%, rgba(14,24,48,0.55) 65%, rgba(14,24,48,0.92) 100%)"
+      ></div>
+      <div class="relative mx-auto grid min-h-[720px] max-w-[1200px] items-end px-[clamp(16px,4vw,24px)] pt-[120px] pb-[112px]">
+        <div class="max-w-[780px]">
+          <Tag tone="dark">Una rete di 1.200 studenti di fisica</Tag>
+          <h1
+            class="mt-7 font-display font-semibold text-paper"
+            style="font-size: clamp(64px, 8.5vw, 128px); line-height: 0.92; letter-spacing: -0.035em;"
+          >
+            Studenti<br /><span class="font-serif font-normal italic">per</span>
+            <span class="text-tangerine">studenti.</span>
+          </h1>
+          <p class="mt-6 max-w-[560px] text-[19px] leading-[1.5] text-paper/92">
+            AISF &egrave; una comunit&agrave; di studenti universitari di fisica che organizza conferenze, gruppi di
+            studio e attivit&agrave; di divulgazione in quaranta atenei italiani.
+          </p>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <Button href="#join">Unisciti ad AISF &rarr;</Button>
+            <Button href="#about" variant="outline" class="border-paper text-paper">Cosa facciamo</Button>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-10 border-t border-paper/22 pt-6">
+            <div class="flex flex-col gap-1">
+              <span class="font-display text-[28px] font-semibold text-paper">40</span>
+              <span class="font-mono text-[11px] tracking-[0.12em] text-paper/75 uppercase">Comitati locali</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="font-display text-[28px] font-semibold text-paper">1.200</span>
+              <span class="font-mono text-[11px] tracking-[0.12em] text-paper/75 uppercase">Membri attivi</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="font-display text-[28px] font-semibold text-paper">12</span>
+              <span class="font-mono text-[11px] tracking-[0.12em] text-paper/75 uppercase">Anni di attivit&agrave;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Quicklinks />
+    <About />
+    <EventsSection />
+    <Projects />
+    <Chapters />
+    <Articles />
+    <Stats />
+    <JoinCta />
+  </main>
+</BaseLayout>

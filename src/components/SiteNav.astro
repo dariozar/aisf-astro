@@ -1,0 +1,74 @@
+---
+import { Button } from "./starwind/button";
+
+const links = [
+  { label: "Chi siamo", href: "/#about" },
+  { label: "Eventi", href: "/eventi" },
+  { label: "Progetti", href: "/#projects" },
+  { label: "Comitati", href: "/comitati" },
+  { label: "Documenti", href: "/documenti" },
+];
+---
+
+<nav id="site-nav" class="fixed inset-x-0 top-0 z-100 transition-all duration-300">
+  <div class="mx-auto flex max-w-[1200px] items-center justify-between gap-6 px-[clamp(16px,4vw,32px)] py-4">
+    <a href="/" aria-label="AISF home">
+      <img src="/aisf-logo.png" alt="AISF" class="w-[clamp(32px,4.5vw,40px)]" />
+    </a>
+    <div class="hidden items-center gap-[clamp(16px,2.2vw,28px)] min-[1100px]:flex" data-nav-links>
+      {links.map((l) => (
+        <a href={l.href} class="font-display text-[15px] text-ink no-underline">{l.label}</a>
+      ))}
+    </div>
+    <div class="flex items-center gap-3">
+      <p class="hidden font-mono text-[11px] tracking-[0.1em] text-ink-soft uppercase min-[1100px]:block" data-lang>
+        <strong>IT</strong> &middot; EN
+      </p>
+      <Button href="#join" size="sm" class="max-[720px]:hidden">Iscriviti &rarr;</Button>
+    </div>
+  </div>
+</nav>
+
+<style>
+  #site-nav.is-floating {
+    top: 12px;
+    width: calc(100% - 24px);
+    max-width: 1200px;
+    margin-inline: auto;
+    border-radius: 16px;
+    background: rgba(247, 242, 236, 0.6);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(14, 24, 48, 0.08);
+    box-shadow:
+      0 8px 32px -12px rgba(14, 24, 48, 0.18),
+      0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  }
+  #site-nav.is-floating.over-dark {
+    background: rgba(14, 24, 48, 0.32);
+    border-color: rgba(247, 242, 236, 0.18);
+  }
+  #site-nav.is-floating.over-dark [data-nav-links] a {
+    color: rgba(247, 242, 236, 0.9);
+  }
+  #site-nav.is-floating.over-dark [data-lang] {
+    color: rgba(247, 242, 236, 0.75);
+  }
+</style>
+
+<script>
+  const nav = document.getElementById("site-nav");
+  const onScroll = () => {
+    if (!nav) return;
+    nav.classList.toggle("is-floating", window.scrollY > 24);
+    const dark = document.querySelectorAll("[data-dark]");
+    let overDark = false;
+    dark.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < 80 && r.bottom > 80) overDark = true;
+    });
+    nav.classList.toggle("over-dark", overDark && nav.classList.contains("is-floating"));
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+</script>

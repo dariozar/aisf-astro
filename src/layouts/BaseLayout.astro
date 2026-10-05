@@ -1,0 +1,73 @@
+---
+import "../styles/global.css";
+import SiteNav from "../components/SiteNav.astro";
+
+interface Props {
+  title?: string;
+  lang?: string;
+}
+
+const { title = "AISF — Associazione Italiana Studenti di Fisica", lang = "it" } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,wght@1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <SiteNav />
+    <slot />
+    <footer class="mt-20 bg-ink text-paper">
+      <div class="mx-auto grid max-w-[1200px] gap-6 px-6 py-14 min-[640px]:grid-cols-[37.5%_20.8%_20.8%_20.8%]">
+        <div>
+          <img src="/aisf-logo.png" alt="AISF" class="w-10 brightness-0 invert" />
+          <p class="mt-5 max-w-[38ch] text-sm text-paper/70">
+            Associazione Italiana Studenti di Fisica — rete volontaria di studenti in quaranta atenei italiani.
+          </p>
+        </div>
+        <div>
+          <p class="font-mono text-[11px] tracking-[0.14em] text-paper/55 uppercase">Associazione</p>
+          <div class="mt-5 flex flex-col gap-3 text-sm">
+            <a href="/#about" class="text-paper no-underline">Chi siamo</a>
+            <a href="/esecutivo" class="text-paper no-underline">Esecutivo</a>
+            <a href="/documenti" class="text-paper no-underline">Documenti</a>
+          </div>
+        </div>
+        <div>
+          <p class="font-mono text-[11px] tracking-[0.14em] text-paper/55 uppercase">Attività</p>
+          <div class="mt-5 flex flex-col gap-3 text-sm">
+            <a href="/eventi" class="text-paper no-underline">Eventi</a>
+            <a href="/#projects" class="text-paper no-underline">Progetti</a>
+            <a href="/comitati" class="text-paper no-underline">Comitati</a>
+          </div>
+        </div>
+        <div>
+          <p class="font-mono text-[11px] tracking-[0.14em] text-paper/55 uppercase">Contatti</p>
+          <div class="mt-5 flex flex-col gap-3 text-sm">
+            <a href="mailto:info@ai-sf.it" class="text-paper no-underline">info@ai-sf.it</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-paper/15">
+        <div class="mx-auto flex max-w-[1200px] flex-wrap gap-2 px-6 py-5 font-mono text-[11px] text-paper/55">
+          <span>© AISF — Associazione Italiana Studenti di Fisica</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  footer a:hover {
+    color: var(--color-tangerine);
+  }
+</style>

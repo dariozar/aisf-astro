@@ -1,0 +1,126 @@
+- id: bari
+  name: Bari
+  president: Raimondo Lucariello
+  founded: 05/2015
+  email: bari@ai-sf.it
+  status: active
+- id: bologna
+  name: Bologna
+  president: Marta Grenno
+  founded: 06/2016
+  email: bologna@ai-sf.it
+  status: active
+- id: calabria
+  name: Calabria
+  president: Giusi Guarascio
+  founded: 05/2018
+  email: calabria@ai-sf.it
+  status: active
+- id: ferrara
+  name: Ferrara
+  president: Ashanty Marchi
+  founded: 05/2025
+  email: ferrara@ai-sf.it
+  status: active
+- id: firenze
+  name: Firenze
+  president: Elena Abati
+  founded: 11/2016
+  email: firenze@ai-sf.it
+  status: active
+- id: genova
+  name: Genova
+  president: Asia Tiby
+  founded: 08/2015
+  email: genova@ai-sf.it
+  status: active
+- id: milano
+  name: Milano
+  president: Davide Perillo
+  founded: 05/2015
+  email: milano@ai-sf.it
+  status: active
+- id: milano-bicocca
+  name: Milano Bicocca
+  president: Lorenzo Sparaneo
+  founded: 05/2018
+  email: milano.bicocca@ai-sf.it
+  status: active
+- id: napoli-e-caserta
+  name: Napoli e Caserta
+  president: Bruno Vinciguerra
+  founded: 11/2019
+  email: napoli@ai-sf.it
+  status: active
+- id: padova
+  name: Padova
+  president: Pasquale Andreacchio
+  founded: 05/2016
+  email: padova@ai-sf.it
+  status: active
+- id: palermo
+  name: Palermo
+  president: Salvatore Gelsomino
+  founded: 04/2019
+  email: palermo@ai-sf.it
+  status: active
+- id: pavia
+  name: Pavia
+  president: Alessandro Oberti
+  founded: 11/2016
+  email: pavia@ai-sf.it
+  status: active
+- id: perugia
+  name: Perugia
+  president: Andrea Duca
+  founded: 12/2017
+  email: perugia@ai-sf.it
+  status: active
+- id: pisa
+  name: Pisa
+  president: Manuel Antonio Pianini
+  founded: 07/2015
+  email: pisa@ai-sf.it
+  status: active
+- id: roma-sapienza
+  name: Roma Sapienza
+  president: Lorenzo Silvestri
+  founded: 05/2018
+  email: roma.sapienza@ai-sf.it
+  status: active
+- id: roma-tor-vergata
+  name: Roma Tor Vergata
+  president: ''
+  founded: 05/2016
+  email: romatorvergata@ai-sf.it
+  status: active
+- id: roma-tre
+  name: Roma Tre
+  president: Alessandro Trudu
+  founded: 04/2019
+  email: roma.tre@ai-sf.it
+  status: active
+- id: salerno
+  name: Salerno
+  president: Piero Paduano
+  founded: 05/2015
+  email: salerno@ai-sf.it
+  status: active
+- id: torino
+  name: Torino
+  president: Luca Attinà
+  founded: 06/2015
+  email: torino@ai-sf.it
+  status: active
+- id: trento
+  name: Trento
+  president: Michele Tognoni
+  founded: 12/2015
+  email: trento@ai-sf.it
+  status: active
+- id: trieste
+  name: Trieste
+  president: Nicholas Pregarc
+  founded: 04/2018
+  email: trieste@ai-sf.it
+  status: active
