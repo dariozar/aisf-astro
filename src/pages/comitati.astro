@@ -4,7 +4,6 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Eyebrow from "../components/Eyebrow.astro";
 import ItalyMap from "../components/ItalyMap.astro";
-import { Card } from "../components/starwind/card";
 
 const committees = await getCollection("committees");
 const active = committees.filter((c) => c.data.status !== "frozen");
@@ -33,90 +32,98 @@ const pin = (c: (typeof committees)[number]) => ({
       </div>
     </section>
 
-    <section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] pt-14">
-      <ItalyMap committees={committees.map(pin)} />
-    </section>
-
     <section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-12">
-      <div class="flex flex-col gap-3 min-[800px]:flex-row min-[800px]:items-center">
-        <input
-          id="lc-search"
-          type="search"
-          placeholder="Cerca per città o presidente…"
-          class="w-full rounded-full border border-rule-light bg-paper px-5 py-3 font-display text-[15px] text-ink outline-none placeholder:text-ink-faint focus:border-tangerine"
-        />
-        <div class="flex shrink-0 gap-2" role="group" aria-label="Filtra per stato">
-          <button type="button" data-lc-filter="all" aria-pressed="true" class="rounded-full bg-ink px-4 py-2.5 font-display text-[14px] font-medium text-paper">Tutti</button>
-          <button type="button" data-lc-filter="active" aria-pressed="false" class="rounded-full border border-rule-light bg-paper px-4 py-2.5 font-display text-[14px] font-medium text-ink">Attivi</button>
-          <button type="button" data-lc-filter="frozen" aria-pressed="false" class="rounded-full border border-rule-light bg-paper px-4 py-2.5 font-display text-[14px] font-medium text-ink">Sospesi</button>
+      <div class="grid grid-cols-1 gap-10 min-[1000px]:grid-cols-[420px_1fr]">
+        <div class="min-[1000px]:sticky min-[1000px]:top-24 min-[1000px]:self-start">
+          <ItalyMap committees={committees.map(pin)} />
+        </div>
+        <div>
+          <div class="flex flex-col gap-3 min-[800px]:flex-row min-[800px]:items-center">
+            <input
+              id="lc-search"
+              type="search"
+              placeholder="Cerca per città o presidente…"
+              class="w-full rounded-full border border-rule-light bg-paper px-5 py-3 font-display text-[15px] text-ink outline-none placeholder:text-ink-faint focus:border-tangerine"
+            />
+            <div class="flex shrink-0 gap-2" role="group" aria-label="Filtra per stato">
+              <button type="button" data-lc-filter="all" aria-pressed="true" class="rounded-full bg-ink px-4 py-2.5 font-display text-[14px] font-medium text-paper">Tutti</button>
+              <button type="button" data-lc-filter="active" aria-pressed="false" class="rounded-full border border-rule-light bg-paper px-4 py-2.5 font-display text-[14px] font-medium text-ink">Attivi</button>
+              <button type="button" data-lc-filter="frozen" aria-pressed="false" class="rounded-full border border-rule-light bg-paper px-4 py-2.5 font-display text-[14px] font-medium text-ink">Sospesi</button>
+            </div>
+          </div>
+          <p id="lc-count" class="mt-4 font-mono text-[12px] tracking-[0.08em] text-ink-soft uppercase" aria-live="polite"></p>
+
+          <div id="lc-list" class="mt-4 flex flex-col gap-2">
+            {committees.map((c) => (
+              <details
+                id={c.id}
+                data-committee-card
+                data-status={c.data.status}
+                data-search={(c.data.name + " " + (c.data.president ?? "")).toLowerCase()}
+                class="group rounded-[16px] border border-rule-light bg-paper transition-shadow open:shadow-card"
+              >
+                <summary class="flex cursor-pointer list-none items-center gap-3 px-4 py-3 [&::-webkit-details-marker]:hidden">
+                  {c.data.photo ? (
+                    <img
+                      src={u(c.data.photo)}
+                      alt=""
+                      loading="lazy"
+                      class="size-10 shrink-0 rounded-full object-cover object-[center_top]"
+                    />
+                  ) : (
+                    <span aria-hidden="true" class="flex size-10 shrink-0 items-center justify-center rounded-full bg-ink font-display text-[14px] font-semibold text-paper">
+                      {c.data.name.slice(0, 1)}
+                    </span>
+                  )}
+                  <span class="min-w-0 flex-1">
+                    <span class="block truncate font-display text-[16px] font-semibold leading-tight">{c.data.name}</span>
+                    {c.data.president && (
+                      <span class="block truncate text-[13px] text-ink-soft">{c.data.president}</span>
+                    )}
+                  </span>
+                  {c.data.status === "frozen" && (
+                    <span class="shrink-0 rounded-full bg-paper-2 px-2.5 py-1 font-mono text-[10px] tracking-[0.08em] text-ink-soft uppercase">Sospeso</span>
+                  )}
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" class="shrink-0 text-ink-soft transition-transform group-open:rotate-180">
+                    <path d="M4 6l4 4 4-4" />
+                  </svg>
+                </summary>
+                <div class="px-4 pb-4 pl-[68px]">
+                  {(c.data.founded || c.data.past_presidents) && (
+                    <p class="text-[13px] leading-[1.6] text-ink-soft">
+                      {c.data.founded && <span class="font-mono text-[11px] tracking-[0.06em] uppercase">{c.data.status === "frozen" ? `Fondato ${c.data.founded}` : `Attivo dal ${c.data.founded}`}</span>}
+                      {c.data.founded && c.data.past_presidents && <br />}
+                      {c.data.past_presidents && <span>Già presidenti: {c.data.past_presidents}</span>}
+                    </p>
+                  )}
+                  <div class="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-rule-light pt-2.5 font-mono text-[11px]">
+                    <button type="button" data-locate={c.id} class="inline-flex items-center gap-1 text-tangerine-deep">
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 14s5-4.6 5-8a5 5 0 1 0-10 0c0 3.4 5 8 5 8z"/><circle cx="8" cy="6" r="1.6"/></svg>
+                      Mappa
+                    </button>
+                    {c.data.email && <a href={`mailto:${c.data.email}`} class="text-tangerine-deep no-underline">{c.data.email}</a>}
+                    {c.data.link && <a href={c.data.link} target="_blank" rel="noopener" class="text-ink-soft no-underline">Social &rarr;</a>}
+                    {c.data.rules && <a href={c.data.rules} target="_blank" rel="noopener" class="text-ink-soft no-underline">Regolamento &rarr;</a>}
+                  </div>
+                </div>
+              </details>
+            ))}
+          </div>
+          <div id="lc-empty" class="hidden rounded-[16px] bg-paper-2 p-8 text-center">
+            <p class="font-display text-[18px] font-medium">Nessun comitato trovato.</p>
+            <p class="mt-1 text-[15px] text-ink-soft">Prova a cercare un'altra città.</p>
+          </div>
+
+          {frozen.length > 0 && (
+            <div class="mt-8 rounded-[22px] bg-paper-2 p-6 text-[14px] text-ink-soft">
+              <strong class="font-medium text-ink">Comitati sospesi:</strong>{" "}
+              {frozen.map((c) => c.data.name).join(" · ")} — in cerca di nuovi
+              referenti per ripartire. Vuoi riavviarne uno?{" "}
+              <a href="mailto:info@ai-sf.it" class="text-tangerine-deep no-underline">Scrivici &rarr;</a>
+            </div>
+          )}
         </div>
       </div>
-      <p id="lc-count" class="mt-4 font-mono text-[12px] tracking-[0.08em] text-ink-soft uppercase" aria-live="polite"></p>
-
-      <div id="lc-grid" class="mt-6 grid grid-cols-1 gap-4 min-[800px]:grid-cols-2 min-[1200px]:grid-cols-3">
-        {committees.map((c) => (
-          <Card
-            id={c.id}
-            data-committee-card
-            data-status={c.data.status}
-            data-search={(c.data.name + " " + (c.data.president ?? "")).toLowerCase()}
-            class="scroll-mt-28 border-rule-light bg-paper p-5"
-          >
-            <div class="flex items-center gap-3">
-              {c.data.photo ? (
-                <img
-                  src={u(c.data.photo)}
-                  alt={c.data.president || c.data.name}
-                  loading="lazy"
-                  class="size-11 shrink-0 rounded-full object-cover object-[center_top]"
-                />
-              ) : (
-                <span aria-hidden="true" class="flex size-11 shrink-0 items-center justify-center rounded-full bg-ink font-display text-[15px] font-semibold text-paper">
-                  {c.data.name.slice(0, 1)}
-                </span>
-              )}
-              <div class="min-w-0">
-                <h3 class="truncate font-display text-[18px] leading-tight font-semibold">{c.data.name}</h3>
-                {c.data.president && (
-                  <p class="truncate text-[13px] text-ink-soft">{c.data.president}</p>
-                )}
-              </div>
-              {c.data.status === "frozen" && (
-                <span class="ml-auto shrink-0 rounded-full bg-paper-2 px-2.5 py-1 font-mono text-[10px] tracking-[0.08em] text-ink-soft uppercase">Sospeso</span>
-              )}
-            </div>
-            {(c.data.founded || c.data.past_presidents) && (
-              <p class="mt-3 text-[13px] leading-[1.55] text-ink-soft">
-                {c.data.founded && <span class="font-mono text-[11px] tracking-[0.06em] uppercase">{c.data.status === "frozen" ? `Fondato ${c.data.founded}` : `Attivo dal ${c.data.founded}`}</span>}
-                {c.data.founded && c.data.past_presidents && <span> · </span>}
-                {c.data.past_presidents && <span>Già presidenti: {c.data.past_presidents}</span>}
-              </p>
-            )}
-            <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-rule-light pt-3 font-mono text-[11px]">
-              <button type="button" data-locate={c.id} class="inline-flex items-center gap-1 text-tangerine-deep">
-                <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 14s5-4.6 5-8a5 5 0 1 0-10 0c0 3.4 5 8 5 8z"/><circle cx="8" cy="6" r="1.6"/></svg>
-                Mappa
-              </button>
-              {c.data.email && <a href={`mailto:${c.data.email}`} class="text-tangerine-deep no-underline">{c.data.email}</a>}
-              {c.data.link && <a href={c.data.link} target="_blank" rel="noopener" class="text-ink-soft no-underline">Social &rarr;</a>}
-              {c.data.rules && <a href={c.data.rules} target="_blank" rel="noopener" class="text-ink-soft no-underline">Regolamento &rarr;</a>}
-            </div>
-          </Card>
-        ))}
-      </div>
-      <div id="lc-empty" class="hidden rounded-[16px] bg-paper-2 p-8 text-center">
-        <p class="font-display text-[18px] font-medium">Nessun comitato trovato.</p>
-        <p class="mt-1 text-[15px] text-ink-soft">Prova a cercare un'altra città.</p>
-      </div>
-
-      {frozen.length > 0 && (
-        <div class="mt-10 rounded-[22px] bg-paper-2 p-6 text-[14px] text-ink-soft">
-          <strong class="font-medium text-ink">Comitati sospesi:</strong>{" "}
-          {frozen.map((c) => c.data.name).join(" · ")} — in cerca di nuovi
-          referenti per ripartire. Vuoi riavviarne uno?{" "}
-          <a href="mailto:info@ai-sf.it" class="text-tangerine-deep no-underline">Scrivici &rarr;</a>
-        </div>
-      )}
     </section>
   </main>
 </BaseLayout>

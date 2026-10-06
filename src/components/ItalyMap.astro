@@ -187,6 +187,7 @@ const clusters = CLUSTERS.map((ids) => {
       if (say) captionFor(id);
       const card = cardOf(id);
       if (card) {
+        if (card.tagName === "DETAILS") card.open = true;
         if (scroll) card.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
       } else if (linkBase) {
         window.location.href = `${linkBase}#${id}`;
