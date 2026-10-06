@@ -14,8 +14,10 @@ content:
     view:
       primary: title
     fields:
+      - { name: id, label: Slug univoco (minuscole-trattini), type: string, required: true }
       - { name: title, label: Titolo, type: string, required: true }
-      - { name: date, label: Data, type: string, required: true }
+      - { name: date, label: Data (testo, es. "13 apr 2026"), type: string, required: true }
+      - { name: dateISO, label: Data ordinamento (AAAA-MM-GG), type: date, required: true }
       - { name: endDate, label: Fine, type: string }
       - { name: location, label: Luogo, type: string }
       - { name: type, label: Tipo, type: string }
@@ -47,10 +49,17 @@ content:
     format: yaml
     list: true
     fields:
+      - { name: id, label: Slug univoco, type: string, required: true }
       - { name: name, label: Nome, type: string, required: true }
       - { name: president, label: Presidente, type: string }
-      - { name: founded, label: Fondazione, type: string }
+      - { name: founded, label: Fondazione (MM/AAAA), type: string }
       - { name: email, label: Email, type: string }
+      - { name: status, label: Stato (active/frozen), type: string }
+      - { name: photo, label: Foto presidente, type: image }
+      - { name: logo, label: Logo, type: image }
+      - { name: past_presidents, label: Presidenti passati, type: text }
+      - { name: link, label: Link social, type: string }
+      - { name: rules, label: Link regolamento, type: string }
 
   - name: executive
     label: Esecutivo
@@ -59,6 +68,7 @@ content:
     format: yaml
     list: true
     fields:
+      - { name: id, label: Slug univoco, type: string, required: true }
       - { name: name, label: Nome, type: string, required: true }
       - { name: role, label: Ruolo, type: string, required: true }
       - { name: bio, label: Bio, type: text }
@@ -72,6 +82,7 @@ content:
     format: yaml
     list: true
     fields:
+      - { name: id, label: Slug univoco, type: string, required: true }
       - { name: year, label: Anno (vuoto per press kit e libro), type: string }
       - { name: group, label: Gruppo (Press kit, Documenti, tipo di riunione…), type: string, required: true }
       - { name: name, label: Nome, type: string, required: true }
