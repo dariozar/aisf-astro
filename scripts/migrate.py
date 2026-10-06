@@ -166,6 +166,13 @@ def migrate_documents():
                         "year": year, "group": verb.get("tipo", "Verbali"),
                         "name": meeting.get("dettagli") or meeting.get("data", ""),
                         "url": meeting.get("link", "")})
+    seen = {}
+    for r in rows:
+        if r["id"] in seen:
+            seen[r["id"]] += 1
+            r["id"] = f"{r['id']}-{seen[r['id']]}"
+        else:
+            seen[r["id"]] = 0
     path = os.path.join(HERE, "src", "data", "documents.yml")
     yaml.safe_dump(rows, open(path, "w"), allow_unicode=True, sort_keys=False)
     print(f"documents: {len(rows)}")
