@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import fs from "node:fs";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Tag from "../../components/Tag.astro";
 import EventDate from "../../components/EventDate.astro";
@@ -9,6 +10,9 @@ const all = await getCollection("events");
 const byDateDesc = (a: any, b: any) => (b.data.dateISO || "").localeCompare(a.data.dateISO || "");
 const upcoming = all.filter((e) => e.data.status === "upcoming").sort(byDateDesc);
 const past = all.filter((e) => e.data.status === "past").sort(byDateDesc);
+
+const coverOf = (cover?: string) =>
+  cover?.startsWith("/") && fs.existsSync(`public${cover}`) ? cover : "";
 ---
 
 <BaseLayout title="Eventi — AISF">
@@ -19,30 +23,55 @@ const past = all.filter((e) => e.data.status === "past").sort(byDateDesc);
         <h1 class="mt-4 font-display font-semibold" style="font-size: clamp(48px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.03em;">
           Dove ci<br /><span class="text-tangerine">troviamo.</span>
         </h1>
+        <p class="mt-4 max-w-[56ch] text-[18px] text-paper/70">
+          Conferenze, scuole e incontri in tutta Italia — quasi sempre aperti anche ai non soci.{" "}
+          {past.length + upcoming.length} eventi in archivio e in programma.
+        </p>
       </div>
     </section>
     <section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-16">
       <Tag>Prossimi</Tag>
       <div class="mt-6 grid grid-cols-1 gap-5 min-[900px]:grid-cols-3">
         {upcoming.length === 0 && <p class="text-ink-soft">Nessun evento in programma — torna presto.</p>}
-        {upcoming.map((e) => (
-          <a href={`/eventi/${e.id}/`} class="flex min-h-[240px] flex-col gap-4 rounded-[22px] bg-sky p-7 text-ink no-underline">
-            <span class="self-start rounded-full bg-tangerine px-2.5 py-1 font-mono text-[11px] tracking-[0.12em] uppercase"><EventDate iso={e.data.dateISO} fallback={e.data.date} /></span>
-            <h3 class="font-display text-[24px] leading-[1.1] font-semibold">{e.data.title}</h3>
-            <div class="mt-auto flex justify-between border-t border-ink/15 pt-4 font-mono text-[11px] tracking-[0.08em] uppercase">
-              <span><EventType value={e.data.type} /></span><span>{e.data.location}</span>
+        {upcoming.map((e) => {
+          const cover = coverOf(e.data.cover);
+          return (
+          <a href={`/eventi/${e.id}/`} class="flex min-h-[240px] flex-col overflow-hidden rounded-[22px] bg-sky text-ink no-underline">
+            {cover && (
+              <div class="relative h-36 shrink-0 overflow-hidden">
+                <img src={cover} alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
+                <span class="absolute bottom-3 left-4 rounded-full bg-tangerine px-2.5 py-1 font-mono text-[11px] tracking-[0.12em] uppercase"><EventDate iso={e.data.dateISO} fallback={e.data.date} /></span>
+              </div>
+            )}
+            <div class="flex flex-1 flex-col gap-4 p-7">
+              {!cover && (
+                <span class="self-start rounded-full bg-tangerine px-2.5 py-1 font-mono text-[11px] tracking-[0.12em] uppercase"><EventDate iso={e.data.dateISO} fallback={e.data.date} /></span>
+              )}
+              <h3 class="font-display text-[24px] leading-[1.1] font-semibold">{e.data.title}</h3>
+              <div class="mt-auto flex justify-between border-t border-ink/15 pt-4 font-mono text-[11px] tracking-[0.08em] uppercase">
+                <span><EventType value={e.data.type} /></span><span>{e.data.location}</span>
+              </div>
             </div>
           </a>
-        ))}
+          );
+        })}
       </div>
       <div class="mt-16"><Tag>Passati ({past.length})</Tag></div>
       <div class="mt-6 grid grid-cols-1 gap-4 min-[900px]:grid-cols-3">
-        {past.map((e) => (
-          <a href={`/eventi/${e.id}/`} class="rounded-[16px] border border-rule-light bg-paper p-5 no-underline">
-            <p class="font-mono text-[11px] tracking-[0.08em] text-ink-soft uppercase"><EventDate iso={e.data.dateISO} fallback={e.data.date} /> · {e.data.location}</p>
-            <h3 class="mt-1 font-display text-[18px] font-semibold text-ink">{e.data.title}</h3>
+        {past.map((e) => {
+          const cover = coverOf(e.data.cover);
+          return (
+          <a href={`/eventi/${e.id}/`} class="flex items-center gap-4 rounded-[16px] border border-rule-light bg-paper p-4 no-underline">
+            {cover && (
+              <img src={cover} alt="" loading="lazy" class="h-[76px] w-28 shrink-0 rounded-[10px] object-cover" />
+            )}
+            <div class="min-w-0 py-1">
+              <p class="truncate font-mono text-[11px] tracking-[0.08em] text-ink-soft uppercase"><EventDate iso={e.data.dateISO} fallback={e.data.date} /> · {e.data.location}</p>
+              <h3 class="mt-1 font-display text-[18px] leading-snug font-semibold text-ink">{e.data.title}</h3>
+            </div>
           </a>
-        ))}
+          );
+        })}
       </div>
     </section>
   </main>

@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import fs from "node:fs";
 import Eyebrow from "./Eyebrow.astro";
 import EventDate from "./EventDate.astro";
 import EventType from "./EventType.astro";
@@ -8,6 +9,9 @@ import { Button } from "./starwind/button";
 const byDateDesc = (a: any, b: any) => (b.data.dateISO || "").localeCompare(a.data.dateISO || "");
 const upcoming = (await getCollection("events", ({ data }) => data.status === "upcoming")).sort(byDateDesc).slice(0, 3);
 const cards = upcoming.length > 0 ? upcoming : (await getCollection("events")).sort(byDateDesc).slice(0, 3);
+
+const coverOf = (cover?: string) =>
+  cover?.startsWith("/") && fs.existsSync(`public${cover}`) ? cover : "";
 ---
 
 <section class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-10">
@@ -15,7 +19,7 @@ const cards = upcoming.length > 0 ? upcoming : (await getCollection("events")).s
     <div class="mb-8 flex flex-wrap items-end justify-between gap-6">
       <div class="max-w-[720px]">
         <Eyebrow dark>Eventi</Eyebrow>
-        <h2 class="mt-2 font-display text-[clamp(28px,4vw,40px)] font-semibold tracking-[-0.015em]">
+        <h2 class="mt-3 font-display text-[clamp(28px,4vw,40px)] font-semibold tracking-[-0.015em]">
           I nostri eventi,<br />in giro per l'Italia.
         </h2>
         <p class="mt-2 max-w-[60ch] text-[15px] text-paper/60">
@@ -25,22 +29,36 @@ const cards = upcoming.length > 0 ? upcoming : (await getCollection("events")).s
       <Button href="/eventi" variant="secondary">Tutti gli eventi &rarr;</Button>
     </div>
     <div class="grid grid-cols-1 gap-5 min-[900px]:grid-cols-3">
-      {cards.map((e) => (
-        <a
-          href={`/eventi/${e.id}/`}
-          class="flex min-h-[260px] flex-col gap-4 rounded-[22px] p-7 text-ink no-underline"
-          style="background: linear-gradient(155deg, #DCE9F7 0%, #B8D4F0 50%, #94B8DA 100%)"
-        >
-          <span class="self-start rounded-full bg-tangerine px-2.5 py-1 font-mono text-[11px] tracking-[0.12em] text-ink uppercase">
-            <EventDate iso={e.data.dateISO} fallback={e.data.date} />
-          </span>
-          <h3 class="font-display text-[24px] leading-[1.1] font-semibold tracking-[-0.015em]">{e.data.title}</h3>
-          <div class="mt-auto flex justify-between border-t border-ink/15 pt-4 font-mono text-[11px] tracking-[0.08em] text-ink/70 uppercase">
-            <span><EventType value={e.data.type} /></span>
-            <span>{e.data.location}</span>
-          </div>
-        </a>
-      ))}
+      {cards.map((e) => {
+        const cover = coverOf(e.data.cover);
+        return (
+          <a
+            href={`/eventi/${e.id}/`}
+            class="flex min-h-[260px] flex-col overflow-hidden rounded-[22px] text-ink no-underline"
+            style="background: linear-gradient(155deg, #DCE9F7 0%, #B8D4F0 50%, #94B8DA 100%)"
+          >
+            {cover ? (
+              <div class="relative h-36 shrink-0 overflow-hidden">
+                <img src={cover} alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
+                <span class="absolute bottom-3 left-4 rounded-full bg-tangerine px-2.5 py-1 font-mono text-[11px] tracking-[0.12em] text-ink uppercase">
+                  <EventDate iso={e.data.dateISO} fallback={e.data.date} />
+                </span>
+              </div>
+            ) : (
+              <span class="mx-7 mt-7 self-start rounded-full bg-tangerine px-2.5 py-1 font-mono text-[11px] tracking-[0.12em] text-ink uppercase">
+                <EventDate iso={e.data.dateISO} fallback={e.data.date} />
+              </span>
+            )}
+            <div class="flex flex-1 flex-col gap-4 p-7">
+              <h3 class="font-display text-[24px] leading-[1.1] font-semibold tracking-[-0.015em]">{e.data.title}</h3>
+              <div class="mt-auto flex justify-between gap-2 border-t border-ink/15 pt-4 font-mono text-[11px] tracking-[0.08em] text-ink/70 uppercase">
+                <span class="shrink-0"><EventType value={e.data.type} /></span>
+                <span class="truncate text-right">{e.data.location}</span>
+              </div>
+            </div>
+          </a>
+        );
+      })}
     </div>
   </div>
 </section>
