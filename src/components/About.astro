@@ -1,5 +1,6 @@
 ---
 import Eyebrow from "./Eyebrow.astro";
+import { u } from "../lib/url";
 ---
 
 <section id="about" class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-20">
@@ -15,7 +16,7 @@ import Eyebrow from "./Eyebrow.astro";
         AISF riunisce gli studenti di fisica italiani in un network nazionale: oltre 1400 membri, comitati
         locali in quaranta atenei, e il ruolo di comitato nazionale italiano dello IAPS.
       </p>
-      <a href="/chi-siamo" class="mt-auto pt-6 font-display text-sm font-medium text-ink underline underline-offset-[6px]">
+      <a href={u("/chi-siamo")} class="mt-auto pt-6 font-display text-sm font-medium text-ink underline underline-offset-[6px]">
         La nostra storia &rarr;
       </a>
     </div>
@@ -25,7 +26,7 @@ import Eyebrow from "./Eyebrow.astro";
         La Conferenza Italiana Studenti di Fisica ogni anno, una rivista trimestrale scritta dagli studenti,
         divulgazione nelle scuole superiori e un archivio aperto di appunti, esercizi e tesi.
       </p>
-      <a href="/#projects" class="mt-auto pt-6 font-display text-sm font-medium text-ink underline underline-offset-[6px]">
+      <a href={u("/#projects")} class="mt-auto pt-6 font-display text-sm font-medium text-ink underline underline-offset-[6px]">
         Progetti ed eventi &rarr;
       </a>
     </div>

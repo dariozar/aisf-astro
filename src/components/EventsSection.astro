@@ -5,6 +5,7 @@ import Eyebrow from "./Eyebrow.astro";
 import EventDate from "./EventDate.astro";
 import EventType from "./EventType.astro";
 import { Button } from "./starwind/button";
+import { u } from "../lib/url";
 
 const byDateDesc = (a: any, b: any) => (b.data.dateISO || "").localeCompare(a.data.dateISO || "");
 const upcoming = (await getCollection("events", ({ data }) => data.status === "upcoming")).sort(byDateDesc).slice(0, 3);
@@ -26,20 +27,20 @@ const coverOf = (cover?: string) =>
           Sei eventi principali all'anno, oltre agli incontri mensili in ogni sede. Quasi tutti aperti anche ai non soci.
         </p>
       </div>
-      <Button href="/eventi" variant="secondary">Tutti gli eventi &rarr;</Button>
+      <Button href={u("/eventi")} variant="secondary">Tutti gli eventi &rarr;</Button>
     </div>
     <div class="grid grid-cols-1 gap-5 min-[900px]:grid-cols-3">
       {cards.map((e) => {
         const cover = coverOf(e.data.cover);
         return (
           <a
-            href={`/eventi/${e.id}/`}
+            href={u(`/eventi/${e.id}/`)}
             class="flex min-h-[260px] flex-col overflow-hidden rounded-[22px] text-ink no-underline"
             style="background: linear-gradient(155deg, #DCE9F7 0%, #B8D4F0 50%, #94B8DA 100%)"
           >
             {cover ? (
               <div class="relative h-36 shrink-0 overflow-hidden">
-                <img src={cover} alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
+                <img src={u(cover)} alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
                 <span class="absolute bottom-3 left-4 rounded-full bg-tangerine px-2.5 py-1 font-mono text-[11px] tracking-[0.12em] text-ink uppercase">
                   <EventDate iso={e.data.dateISO} fallback={e.data.date} />
                 </span>

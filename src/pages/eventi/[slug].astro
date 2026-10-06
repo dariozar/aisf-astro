@@ -5,6 +5,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Tag from "../../components/Tag.astro";
 import EventDate from "../../components/EventDate.astro";
 import EventType from "../../components/EventType.astro";
+import { u } from "../../lib/url";
 
 export async function getStaticPaths() {
   const events = await getCollection("events");
@@ -22,7 +23,7 @@ const cover = event.data.cover?.startsWith("/") && fs.existsSync(`public${event.
   <main>
     <section data-dark class="relative overflow-hidden rounded-b-[28px] bg-ink text-paper">
       {cover && (
-        <img src={cover} alt="" class="absolute inset-0 h-full w-full object-cover" />
+        <img src={u(cover)} alt="" class="absolute inset-0 h-full w-full object-cover" />
       )}
       <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(14,24,48,0.55) 0%, rgba(14,24,48,0.9) 100%)"></div>
       <div class="relative mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] pt-[140px] pb-16">

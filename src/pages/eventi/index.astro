@@ -5,6 +5,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Tag from "../../components/Tag.astro";
 import EventDate from "../../components/EventDate.astro";
 import EventType from "../../components/EventType.astro";
+import { u } from "../../lib/url";
 
 const all = await getCollection("events");
 const byDateDesc = (a: any, b: any) => (b.data.dateISO || "").localeCompare(a.data.dateISO || "");
@@ -36,10 +37,10 @@ const coverOf = (cover?: string) =>
         {upcoming.map((e) => {
           const cover = coverOf(e.data.cover);
           return (
-          <a href={`/eventi/${e.id}/`} class="flex min-h-[240px] flex-col overflow-hidden rounded-[22px] bg-sky text-ink no-underline">
+          <a href={u(`/eventi/${e.id}/`)} class="flex min-h-[240px] flex-col overflow-hidden rounded-[22px] bg-sky text-ink no-underline">
             {cover && (
               <div class="relative h-36 shrink-0 overflow-hidden">
-                <img src={cover} alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
+                <img src={u(cover)} alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
                 <span class="absolute bottom-3 left-4 rounded-full bg-tangerine px-2.5 py-1 font-mono text-[11px] tracking-[0.12em] uppercase"><EventDate iso={e.data.dateISO} fallback={e.data.date} /></span>
               </div>
             )}
@@ -61,9 +62,9 @@ const coverOf = (cover?: string) =>
         {past.map((e) => {
           const cover = coverOf(e.data.cover);
           return (
-          <a href={`/eventi/${e.id}/`} class="flex items-center gap-4 rounded-[16px] border border-rule-light bg-paper p-4 no-underline">
+          <a href={u(`/eventi/${e.id}/`)} class="flex items-center gap-4 rounded-[16px] border border-rule-light bg-paper p-4 no-underline">
             {cover && (
-              <img src={cover} alt="" loading="lazy" class="h-[76px] w-28 shrink-0 rounded-[10px] object-cover" />
+              <img src={u(cover)} alt="" loading="lazy" class="h-[76px] w-28 shrink-0 rounded-[10px] object-cover" />
             )}
             <div class="min-w-0 py-1">
               <p class="truncate font-mono text-[11px] tracking-[0.08em] text-ink-soft uppercase"><EventDate iso={e.data.dateISO} fallback={e.data.date} /> · {e.data.location}</p>

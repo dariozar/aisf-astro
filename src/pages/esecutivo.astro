@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Tag from "../components/Tag.astro";
 import { Card } from "../components/starwind/card";
+import { u } from "../lib/url";
 
 const members = await getCollection("executive");
 const past = await getCollection("executivePast");
@@ -26,7 +27,7 @@ const past = await getCollection("executivePast");
             <div class="flex items-start gap-4">
               {m.data.photo ? (
                 <img
-                  src={m.data.photo}
+                  src={u(m.data.photo)}
                   alt={m.data.name}
                   loading="lazy"
                   class="size-14 shrink-0 rounded-full object-cover object-[center_top]"

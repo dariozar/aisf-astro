@@ -138,11 +138,12 @@ def migrate_executive():
     os.makedirs(d, exist_ok=True)
     yaml.safe_dump(members, open(os.path.join(d, "executive.yml"), "w"),
                    allow_unicode=True, sort_keys=False)
-    past_rows = [{"mandate": p.get("anno", ""),
-                  "members": [{"name": m.get("nome", ""),
-                               "role": m.get("ruolo", "")}
-                              for m in p.get("membri", [])]}
-                 for p in past]
+    past_rows = [{"id": slugify(f"mandato-{p.get('anno', '')}"),
+                    "mandate": p.get("anno", ""),
+                    "members": [{"name": m.get("nome", ""),
+                                 "role": m.get("ruolo", "")}
+                                for m in p.get("membri", [])]}
+                   for p in past]
     yaml.safe_dump(past_rows, open(os.path.join(d, "executive-past.yml"), "w"),
                    allow_unicode=True, sort_keys=False)
     print(f"executive: {len(members)} current, {len(past_rows)} past mandates")

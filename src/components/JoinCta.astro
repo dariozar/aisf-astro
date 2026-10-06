@@ -1,6 +1,7 @@
 ---
 import Eyebrow from "./Eyebrow.astro";
 import { Button } from "./starwind/button";
+import { u } from "../lib/url";
 ---
 
 <section id="join" class="mx-auto max-w-[1200px] px-[clamp(16px,4vw,24px)] py-20">
@@ -16,7 +17,7 @@ import { Button } from "./starwind/button";
       Trova il comitato del tuo ateneo — o avviane uno nuovo con il nostro supporto.
     </p>
     <div class="mt-7 flex flex-wrap justify-center gap-3">
-      <Button href="/comitati">Trova il tuo comitato &rarr;</Button>
+      <Button href={u("/comitati")}>Trova il tuo comitato &rarr;</Button>
       <Button href="mailto:info@ai-sf.it" variant="outline">Scrivici</Button>
     </div>
   </div>

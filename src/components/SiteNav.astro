@@ -7,6 +7,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/starwind/sheet";
+import { u } from "../lib/url";
 
 const links = [
   { label: "Chi siamo", href: "/chi-siamo" },
@@ -19,19 +20,19 @@ const links = [
 
 <nav id="site-nav" class="fixed inset-x-0 top-0 z-100">
   <div class="nav-inner relative z-[70] mx-auto flex h-[76px] max-w-[1200px] items-center gap-8 px-[clamp(16px,4vw,32px)]">
-    <a href="/" aria-label="AISF home" class="flex shrink-0 items-center rounded-[12px] bg-paper px-2.5 py-1.5">
-      <img src="/aisf-logo.png" alt="Associazione Italiana Studenti di Fisica" class="h-8 w-auto" width="88" height="32" fetchpriority="high" />
+    <a href={u("/")} aria-label="AISF home" class="flex shrink-0 items-center rounded-[12px] bg-paper px-2.5 py-1.5">
+      <img src={u("/aisf-logo.png")} alt="Associazione Italiana Studenti di Fisica" class="h-8 w-auto" width="88" height="32" fetchpriority="high" />
     </a>
     <div class="hidden items-center gap-[clamp(14px,2vw,24px)] min-[1100px]:flex" data-nav-links>
       {links.map((l) => (
-        <a href={l.href} class="font-display text-[15px] font-medium no-underline">{l.label}</a>
+        <a href={u(l.href)} class="font-display text-[15px] font-medium no-underline">{l.label}</a>
       ))}
     </div>
     <div class="ml-auto flex items-center gap-3">
       <p class="hidden font-mono text-[11px] tracking-[0.1em] uppercase min-[1100px]:block" data-lang>
         <strong>IT</strong> &middot; EN
       </p>
-      <Button href="/unisciti" variant="primary" size="sm" class="max-[720px]:hidden">Iscriviti &rarr;</Button>
+      <Button href={u("/unisciti")} variant="primary" size="sm" class="max-[720px]:hidden">Iscriviti &rarr;</Button>
       <span class="min-[1100px]:hidden" data-menu>
         <SheetTrigger targetId="mobile-menu" asChild>
           <button
@@ -50,7 +51,7 @@ const links = [
       <div class="flex flex-col px-4 pt-28">
         {links.map((l) => (
           <SheetClose asChild>
-            <a href={l.href} class="-mx-3 rounded-[10px] px-3 py-2.5 font-display text-lg font-medium text-ink no-underline hover:bg-paper-2">
+            <a href={u(l.href)} class="-mx-3 rounded-[10px] px-3 py-2.5 font-display text-lg font-medium text-ink no-underline hover:bg-paper-2">
               {l.label}
             </a>
           </SheetClose>
@@ -58,7 +59,7 @@ const links = [
       </div>
       <div class="px-4 pb-4">
         <SheetClose asChild>
-          <Button href="/unisciti" variant="primary" class="w-full">Iscriviti &rarr;</Button>
+          <Button href={u("/unisciti")} variant="primary" class="w-full">Iscriviti &rarr;</Button>
         </SheetClose>
       </div>
     </SheetContent>

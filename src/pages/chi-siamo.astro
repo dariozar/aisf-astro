@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Eyebrow from "../components/Eyebrow.astro";
 import { Button } from "../components/starwind/button";
+import { u } from "../lib/url";
 
 const committees = await getCollection("committees");
 const active = committees.filter((c) => c.data.status !== "frozen");
@@ -44,8 +45,8 @@ const active = committees.filter((c) => c.data.status !== "frozen");
         guidato da un presidente eletto tra gli studenti dell'ateneo.
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <Button href="/esecutivo" variant="secondary">Il comitato esecutivo &rarr;</Button>
-        <Button href="/comitati" variant="outline">I comitati locali &rarr;</Button>
+        <Button href={u("/esecutivo")} variant="secondary">Il comitato esecutivo &rarr;</Button>
+        <Button href={u("/comitati")} variant="outline">I comitati locali &rarr;</Button>
       </div>
       <h2 class="mt-12 font-display text-[28px] font-semibold tracking-[-0.015em]">Sede legale</h2>
       <p class="mt-4 text-[15px] text-ink-soft">

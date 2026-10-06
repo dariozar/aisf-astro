@@ -1,10 +1,11 @@
 ---
+import { u } from "../lib/url";
 interface Props {
   committees?: Array<{ id: string; name: string; status?: string }>;
   linkBase?: string;
 }
 
-const { committees = [], linkBase = "/comitati" } = Astro.props;
+const { committees = [], linkBase = u("/comitati") } = Astro.props;
 
 const dots = [
     { id: "bari", x: 75.28, y: 52.23 },
@@ -34,7 +35,7 @@ const byId = new Map(committees.map((c) => [c.id, c]));
 ---
 
 <div class="relative mx-auto w-full max-w-[520px]">
-  <img src="/italy-map.svg" alt="Italia — comitati locali AISF" class="w-full" />
+  <img src={u("/italy-map.svg")} alt="Italia — comitati locali AISF" class="w-full" />
   {dots.map((d) => {
     const c = byId.get(d.id);
     const frozen = c?.status === "frozen";

@@ -5,6 +5,7 @@ import Eyebrow from "../components/Eyebrow.astro";
 import Tag from "../components/Tag.astro";
 import ItalyMap from "../components/ItalyMap.astro";
 import { Card } from "../components/starwind/card";
+import { u } from "../lib/url";
 
 const committees = await getCollection("committees");
 const active = committees.filter((c) => c.data.status !== "frozen");
@@ -39,7 +40,7 @@ const frozen = committees.filter((c) => c.data.status === "frozen");
               <div class="flex items-center gap-4">
                 {c.data.photo ? (
                   <img
-                    src={c.data.photo}
+                    src={u(c.data.photo)}
                     alt={c.data.president || c.data.name}
                     loading="lazy"
                     class="size-12 shrink-0 rounded-full object-cover object-[center_top]"

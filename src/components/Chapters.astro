@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Eyebrow from "./Eyebrow.astro";
 import ItalyMap from "./ItalyMap.astro";
+import { u } from "../lib/url";
 
 const committees = await getCollection("committees");
 const active = committees.filter((c) => c.data.status !== "frozen");
@@ -13,7 +14,7 @@ const active = committees.filter((c) => c.data.status !== "frozen");
     {active.length} comitati, una rete.
   </h2>
   <div class="mt-8 grid grid-cols-1 items-center gap-8 min-[900px]:grid-cols-2">
-    <ItalyMap committees={committees.map((c) => ({ id: c.id, name: c.data.name, status: c.data.status }))} linkBase="/comitati" />
+    <ItalyMap committees={committees.map((c) => ({ id: c.id, name: c.data.name, status: c.data.status }))} linkBase={u("/comitati")} />
     <div>
       <p class="max-w-[46ch] text-[16px] leading-[1.6] text-ink-soft">
         Da Torino a Palermo, ogni comitato organizza seminari, gruppi di studio e aperitivi scientifici
@@ -22,7 +23,7 @@ const active = committees.filter((c) => c.data.status !== "frozen");
       <p class="mt-4 font-display text-[15px] font-medium">
         {active.map((c) => c.data.name).join(" · ")}
       </p>
-      <a href="/comitati" class="mt-5 inline-block font-display text-sm font-medium text-ink underline underline-offset-[6px]">
+      <a href={u("/comitati")} class="mt-5 inline-block font-display text-sm font-medium text-ink underline underline-offset-[6px]">
         Tutti i comitati &rarr;
       </a>
     </div>
