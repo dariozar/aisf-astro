@@ -167,6 +167,8 @@ def migrate_documents():
                         "name": meeting.get("dettagli") or meeting.get("data", ""),
                         "url": meeting.get("link", "")})
     seen = {}
+    for i, r in enumerate(rows):
+        r["ord"] = i
     for r in rows:
         if r["id"] in seen:
             seen[r["id"]] += 1

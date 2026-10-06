@@ -57,6 +57,7 @@ const documents = defineCollection({
   loader: file("src/data/documents.yml"),
   schema: z.object({
     id: z.string(),
+    ord: z.number().optional().default(0),
     year: z.string(),
     group: z.string(),
     name: z.string(),

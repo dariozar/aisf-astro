@@ -6,25 +6,39 @@ import { Button } from "../components/starwind/button";
 
 const docs = await getCollection("documents");
 
-const isOfficial = (d: (typeof docs)[number]) => d.data.group === "Documenti";
-const isAssembly = (d: (typeof docs)[number]) =>
-  d.data.group.startsWith("Assemblea") || d.data.group.startsWith("AGA");
-const isMeeting = (d: (typeof docs)[number]) => !isOfficial(d) && !isAssembly(d);
+// Source files are newest-first; the collection loader doesn't guarantee
+// order, so sort everything by the migration sequence number.
+const byOrd = (a: (typeof docs)[number], b: (typeof docs)[number]) =>
+  (a.data.ord ?? 0) - (b.data.ord ?? 0);
+const ordered = [...docs].sort(byOrd);
 
-const official = docs.filter(isOfficial);
-const assemblies = docs.filter(isAssembly);
-const meetings = docs.filter(isMeeting);
+const isOfficial = (d: (typeof ordered)[number]) => d.data.group === "Documenti";
+const official = ordered.filter(isOfficial);
+const minutes = ordered.filter((d) => !isOfficial(d));
 
 const yearLabel = (y: string) => (y === "statfond" ? "Atti fondativi" : y);
-const sortYears = (a: string, b: string) => {
-  const na = /^\d/.test(a);
-  const nb = /^\d/.test(b);
-  if (na && nb) return b.localeCompare(a);
-  return na ? -1 : 1;
-};
-const meetingYears = [...new Set(meetings.map((d) => d.data.year))].sort(sortYears);
-const allYears = [...new Set(docs.map((d) => d.data.year))].sort(sortYears);
-const byYear = (y: string) => meetings.filter((d) => d.data.year === y);
+
+// File order is newest-first in both source files — preserve it.
+const yearOrder = (rows: typeof ordered) => [...new Set(rows.map((d) => d.data.year))];
+
+const numericYears = [...new Set(official.map((d) => d.data.year))].filter((y) => /^\d+$/.test(y));
+const latestYear = numericYears.sort().reverse()[0];
+
+const founding = official.filter((d) => d.data.year === "statfond");
+const current = official.filter((d) => d.data.year === latestYear);
+const pastOfficial = official.filter((d) => d.data.year !== "statfond" && d.data.year !== latestYear);
+const pastYears = yearOrder(pastOfficial);
+
+const minuteYears = yearOrder(minutes);
+const minutesOf = (y: string) => minutes.filter((d) => d.data.year === y);
+const typesOf = (y: string) => [...new Set(minutesOf(y).map((d) => d.data.group))];
+
+const PRESS_KIT = [
+  { name: "Flyer AISF", url: "https://drive.google.com/file/d/1MvvBdEfrkAJUPbWm7aULKVYEyK-7jbdH/view?usp=sharing" },
+  { name: "Flyer verticale AISF", url: "https://drive.google.com/file/d/1oit9c9RRuonS0B54syB_qmrapjIuTItX/view?usp=sharing" },
+  { name: "Poster AISF", url: "https://drive.google.com/file/d/1JFLHtNyb2JqeQBeJ1sGMtbZ2akTTeQ9z/view?usp=sharing" },
+];
+const VOLUNTEER_BOOK = "https://drive.google.com/file/d/1sTT_SZs0jZAiUlGKASXv6L1VZM0g1fE3/view?ts=6a11d09e";
 ---
 
 <BaseLayout title="Documenti — AISF">
@@ -36,7 +50,7 @@ const byYear = (y: string) => meetings.filter((d) => d.data.year === y);
           Trasparenza<br /><span class="text-tangerine">totale.</span>
         </h1>
         <p class="mt-4 max-w-[56ch] text-[18px] text-paper/70">
-          Statuto, regolamenti, bilanci e verbali: tutti i documenti ufficiali, liberamente scaricabili.
+          Statuto, regolamenti e verbali: tutti i documenti ufficiali, liberamente scaricabili.
         </p>
       </div>
     </section>
@@ -49,9 +63,9 @@ const byYear = (y: string) => meetings.filter((d) => d.data.year === y);
           placeholder="Cerca per nome…"
           class="w-full rounded-full border border-rule-light bg-paper px-5 py-3 font-display text-[15px] text-ink outline-none placeholder:text-ink-faint focus:border-tangerine"
         />
-        <select id="doc-year" class="rounded-full border border-rule-light bg-paper px-4 py-3 font-display text-[15px]">
+        <select id="doc-year" class="shrink-0 rounded-full border border-rule-light bg-paper px-4 py-3 font-display text-[15px]">
           <option value="">Tutti gli anni</option>
-          {allYears.map((y) => <option value={y}>{yearLabel(y)}</option>)}
+          {yearOrder(ordered).map((y) => <option value={y}>{yearLabel(y)}</option>)}
         </select>
       </div>
       <p id="doc-count" class="mt-4 font-mono text-[12px] tracking-[0.08em] text-ink-soft uppercase" aria-live="polite"></p>
@@ -60,87 +74,146 @@ const byYear = (y: string) => meetings.filter((d) => d.data.year === y);
         <p class="mt-1 text-[15px] text-ink-soft">Prova a cercare «statuto» o a cambiare anno.</p>
       </div>
 
-      {/* ── Documenti ufficiali ── */}
-      <div class="doc-section mt-10" data-section="ufficiali">
+      {/* ── Press kit ── */}
+      <div class="doc-section mt-10" data-section="press">
+        <h2 class="font-display text-[28px] font-semibold tracking-[-0.015em]">Press kit</h2>
+        <p class="mt-1 max-w-[62ch] text-[15px] text-ink-soft">Materiale informativo per pubblicizzare l'associazione presso università e istituti di ricerca.</p>
+        <div class="mt-4 grid grid-cols-1 gap-2 min-[800px]:grid-cols-3">
+          {PRESS_KIT.map((p) => (
+            <div
+              class="doc-row flex items-center gap-4 rounded-[16px] border border-rule-light bg-paper px-5 py-3"
+              data-name={p.name.toLowerCase()}
+              data-year=""
+            >
+              <p class="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink">{p.name}</p>
+              <Button href={p.url} target="_blank" rel="noopener" variant="secondary" size="sm" class="w-28 shrink-0 justify-center">Scarica</Button>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Statuto e atto fondativo ── */}
+      <div class="doc-section mt-12" data-section="fondativi">
+        <h2 class="font-display text-[28px] font-semibold tracking-[-0.015em]">Statuto e atto fondativo</h2>
+        <p class="mt-1 max-w-[62ch] text-[15px] text-ink-soft">Lo statuto è il documento fondamentale: a esso fanno riferimento regolamenti, decisioni e azioni dell'associazione.</p>
+        <div class="mt-4 flex flex-col gap-2">
+          {founding.map((d) => (
+            <div
+              class="doc-row flex items-center gap-4 rounded-[16px] border border-rule-light bg-paper px-5 py-3"
+              data-name={(d.data.name + " statuto atto fondativo").toLowerCase()}
+              data-year={d.data.year}
+            >
+              <p class="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink">{d.data.name}</p>
+              <Button href={d.data.url} target="_blank" rel="noopener" variant="secondary" size="sm" class="w-28 shrink-0 justify-center">Scarica</Button>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Regolamenti in vigore ── */}
+      <div class="doc-section mt-12" data-section="vigore">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
-          <h2 class="font-display text-[28px] font-semibold tracking-[-0.015em]">Documenti ufficiali</h2>
-          <span class="font-mono text-[12px] text-ink-soft">{official.length} file</span>
+          <h2 class="font-display text-[28px] font-semibold tracking-[-0.015em]">Regolamenti in vigore</h2>
+          <span class="font-mono text-[12px] text-ink-soft">{latestYear} · {current.length} file</span>
         </div>
         <div class="mt-4 flex flex-col gap-2">
-          {official.map((d) => (
+          {current.map((d) => (
             <div
               class="doc-row flex items-center gap-4 rounded-[16px] border border-rule-light bg-paper px-5 py-3"
               data-name={(d.data.name + " " + d.data.year).toLowerCase()}
               data-year={d.data.year}
             >
-              <div class="min-w-0 flex-1">
-                <p class="truncate font-display text-[15px] font-medium text-ink">{d.data.name}</p>
-                <p class="font-mono text-[11px] tracking-[0.06em] text-ink-soft uppercase">{yearLabel(d.data.year)}</p>
-              </div>
+              <p class="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink">{d.data.name}</p>
               <Button href={d.data.url} target="_blank" rel="noopener" variant="secondary" size="sm" class="w-28 shrink-0 justify-center">Scarica</Button>
             </div>
           ))}
         </div>
       </div>
 
-      {/* ── Assemblee generali ── */}
-      <div class="doc-section mt-12" data-section="assemblee">
-        <div class="flex flex-wrap items-baseline justify-between gap-2">
-          <h2 class="font-display text-[28px] font-semibold tracking-[-0.015em]">Assemblee generali</h2>
-          <span class="font-mono text-[12px] text-ink-soft">{assemblies.length} file</span>
-        </div>
-        <div class="mt-4 flex flex-col gap-2">
-          {assemblies.map((d) => (
-            <div
-              class="doc-row flex items-center gap-4 rounded-[16px] border border-rule-light bg-paper px-5 py-3"
-              data-name={(d.data.name + " " + d.data.group + " " + d.data.year).toLowerCase()}
-              data-year={d.data.year}
-            >
-              <div class="min-w-0 flex-1">
-                <p class="truncate font-display text-[15px] font-medium text-ink">{d.data.name}</p>
-                <p class="font-mono text-[11px] tracking-[0.06em] text-ink-soft uppercase">{d.data.group} · {yearLabel(d.data.year)}</p>
-              </div>
-              <Button href={d.data.url} target="_blank" rel="noopener" variant="secondary" size="sm" class="w-28 shrink-0 justify-center">Scarica</Button>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ── Verbali riunioni, collapsible by year ── */}
+      {/* ── Verbali, by year then meeting type ── */}
       <div class="doc-section mt-12" data-section="verbali">
-        <div class="flex flex-wrap items-baseline justify-between gap-2">
-          <h2 class="font-display text-[28px] font-semibold tracking-[-0.015em]">Verbali delle riunioni</h2>
-          <span class="font-mono text-[12px] text-ink-soft">{meetings.length} file</span>
-        </div>
+        <h2 class="font-display text-[28px] font-semibold tracking-[-0.015em]">Verbali</h2>
+        <p class="mt-1 max-w-[62ch] text-[15px] text-ink-soft">I verbali delle assemblee e delle riunioni sono di pubblico dominio e liberamente consultabili.</p>
         <div class="mt-4 flex flex-col gap-3">
-          {meetingYears.map((y, i) => (
+          {minuteYears.map((y, i) => (
             <details class="doc-year-group rounded-[16px] border border-rule-light bg-paper" data-year={y} open={i === 0 ? true : undefined}>
               <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 [&::-webkit-details-marker]:hidden">
-                <span class="font-display text-[17px] font-semibold">{yearLabel(y)}</span>
+                <span class="font-display text-[17px] font-semibold">Anno {yearLabel(y)}</span>
                 <span class="flex items-center gap-3">
-                  <span class="font-mono text-[11px] text-ink-soft">{byYear(y).length} file</span>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" class="text-ink-soft transition-transform open:rotate-180 [[open]_&]:rotate-180">
+                  <span class="font-mono text-[11px] text-ink-soft">{minutesOf(y).length} file</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" class="text-ink-soft transition-transform [[open]_&]:rotate-180">
                     <path d="M4 6l4 4 4-4" />
                   </svg>
                 </span>
               </summary>
-              <div class="flex flex-col gap-1.5 px-3 pb-3">
-                {byYear(y).map((d) => (
-                  <div
-                    class="doc-row flex items-center gap-3 rounded-[12px] px-3 py-2 hover:bg-paper-2"
-                    data-name={(d.data.name + " " + d.data.group).toLowerCase()}
-                    data-year={d.data.year}
-                  >
-                    <div class="min-w-0 flex-1">
-                      <p class="truncate text-[14px] font-medium">{d.data.name}</p>
-                      <p class="truncate font-mono text-[10px] tracking-[0.06em] text-ink-soft uppercase">{d.data.group}</p>
+              <div class="flex flex-col gap-5 px-5 pb-4">
+                {typesOf(y).map((t) => (
+                  <div class="doc-type-group" data-type={t}>
+                    <p class="font-mono text-[11px] tracking-[0.1em] text-ink-soft uppercase">{t}</p>
+                    <div class="mt-2 flex flex-col gap-1.5">
+                      {minutesOf(y).filter((d) => d.data.group === t).map((d) => (
+                        <div
+                          class="doc-row flex items-center gap-3 rounded-[12px] px-3 py-2 hover:bg-paper-2"
+                          data-name={(d.data.name + " " + d.data.group).toLowerCase()}
+                          data-year={d.data.year}
+                        >
+                          <p class="min-w-0 flex-1 truncate text-[14px] font-medium">{d.data.name}</p>
+                          <Button href={d.data.url} target="_blank" rel="noopener" variant="outline" size="sm" class="w-24 shrink-0 justify-center">PDF</Button>
+                        </div>
+                      ))}
                     </div>
-                    <Button href={d.data.url} target="_blank" rel="noopener" variant="outline" size="sm" class="w-24 shrink-0 justify-center">PDF</Button>
                   </div>
                 ))}
               </div>
             </details>
           ))}
+        </div>
+      </div>
+
+      {/* ── Past official docs ── */}
+      <div class="doc-section mt-12" data-section="passati">
+        <h2 class="font-display text-[28px] font-semibold tracking-[-0.015em]">Documenti ufficiali passati</h2>
+        <div class="mt-4 flex flex-col gap-3">
+          {pastYears.map((y) => (
+            <details class="doc-year-group rounded-[16px] border border-rule-light bg-paper" data-year={y}>
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 [&::-webkit-details-marker]:hidden">
+                <span class="font-display text-[17px] font-semibold">Regolamenti {yearLabel(y)}</span>
+                <span class="flex items-center gap-3">
+                  <span class="font-mono text-[11px] text-ink-soft">{pastOfficial.filter((d) => d.data.year === y).length} file</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" class="text-ink-soft transition-transform [[open]_&]:rotate-180">
+                    <path d="M4 6l4 4 4-4" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="flex flex-col gap-2 px-3 pb-3">
+                {pastOfficial.filter((d) => d.data.year === y).map((d) => (
+                  <div
+                    class="doc-row flex items-center gap-4 rounded-[12px] px-3 py-2 hover:bg-paper-2"
+                    data-name={(d.data.name + " " + d.data.year).toLowerCase()}
+                    data-year={d.data.year}
+                  >
+                    <p class="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink">{d.data.name}</p>
+                    <Button href={d.data.url} target="_blank" rel="noopener" variant="outline" size="sm" class="w-28 shrink-0 justify-center">Scarica</Button>
+                  </div>
+                ))}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Volunteer book ── */}
+      <div class="doc-section mt-12" data-section="libro">
+        <h2 class="font-display text-[28px] font-semibold tracking-[-0.015em]">Libro dei volontari</h2>
+        <div class="mt-4">
+          <div
+            class="doc-row flex items-center gap-4 rounded-[16px] border border-rule-light bg-paper px-5 py-3"
+            data-name="libro dei volontari"
+            data-year=""
+          >
+            <p class="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink">Libro dei volontari</p>
+            <Button href={VOLUNTEER_BOOK} target="_blank" rel="noopener" variant="secondary" size="sm" class="w-28 shrink-0 justify-center">Scarica</Button>
+          </div>
         </div>
       </div>
     </section>
@@ -154,6 +227,7 @@ const byYear = (y: string) => meetings.filter((d) => d.data.year === y);
   const empty = document.getElementById("doc-empty")!;
   const rows = [...document.querySelectorAll<HTMLElement>(".doc-row")];
   const yearGroups = [...document.querySelectorAll<HTMLDetailsElement>("details.doc-year-group")];
+  const typeGroups = [...document.querySelectorAll<HTMLElement>(".doc-type-group")];
   const sections = [...document.querySelectorAll<HTMLElement>(".doc-section")];
   const total = rows.length;
 
@@ -168,17 +242,18 @@ const byYear = (y: string) => meetings.filter((d) => d.data.year === y);
       r.classList.toggle("hidden", !ok);
       if (ok) visible++;
     });
+    typeGroups.forEach((g) => {
+      g.classList.toggle("hidden", [...g.querySelectorAll(".doc-row:not(.hidden)")].length === 0);
+    });
     yearGroups.forEach((g) => {
       const anyVisible = [...g.querySelectorAll(".doc-row:not(.hidden)")].length > 0;
       const yearMatch = !yearSel.value || g.dataset.year === yearSel.value;
       g.classList.toggle("hidden", !anyVisible || !yearMatch);
       if (filtering) g.open = anyVisible && yearMatch;
-      else if (g.dataset.year === yearGroups[0]?.dataset.year) g.open = true;
+      else g.open = g === yearGroups[0];
     });
     sections.forEach((s) => {
-      if (s.dataset.section === "verbali") return;
-      const anyVisible = [...s.querySelectorAll(".doc-row:not(.hidden)")].length > 0;
-      s.classList.toggle("hidden", !anyVisible);
+      s.classList.toggle("hidden", [...s.querySelectorAll(".doc-row:not(.hidden)")].length === 0);
     });
     count.textContent = filtering ? `${visible} di ${total} documenti` : `${total} documenti`;
     empty.classList.toggle("hidden", visible > 0);
