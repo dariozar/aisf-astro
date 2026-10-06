@@ -148,8 +148,25 @@ def migrate_executive():
     print(f"executive: {len(members)} current, {len(past_rows)} past mandates")
 
 
+PRESS_KIT = [
+    ("Flyer AISF", "https://drive.google.com/file/d/1MvvBdEfrkAJUPbWm7aULKVYEyK-7jbdH/view?usp=sharing"),
+    ("Flyer verticale AISF", "https://drive.google.com/file/d/1oit9c9RRuonS0B54syB_qmrapjIuTItX/view?usp=sharing"),
+    ("Poster AISF", "https://drive.google.com/file/d/1JFLHtNyb2JqeQBeJ1sGMtbZ2akTTeQ9z/view?usp=sharing"),
+]
+VOLUNTEER_BOOK = (
+    "Libro dei volontari",
+    "https://drive.google.com/file/d/1sTT_SZs0jZAiUlGKASXv6L1VZM0g1fE3/view?ts=6a11d09e",
+)
+
+
 def migrate_documents():
     rows = []
+    for name, url in PRESS_KIT:
+        rows.append({"id": slugify(f"press-{name}"), "year": "",
+                     "group": "Press kit", "name": name, "url": url})
+    rows.append({"id": "libro-dei-volontari", "year": "",
+                 "group": "Libro dei volontari", "name": VOLUNTEER_BOOK[0],
+                 "url": VOLUNTEER_BOOK[1]})
     for fname in ("documenti.yml", "verbali.yml"):
         data = yaml.safe_load(open(os.path.join(SRC, "_data", fname)))
         for group in data or []:

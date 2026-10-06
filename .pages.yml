@@ -72,7 +72,8 @@ content:
     format: yaml
     list: true
     fields:
-      - { name: year, label: Anno, type: string, required: true }
-      - { name: group, label: Gruppo, type: string, required: true }
+      - { name: year, label: Anno (vuoto per press kit e libro), type: string }
+      - { name: group, label: Gruppo (Press kit, Documenti, tipo di riunione…), type: string, required: true }
       - { name: name, label: Nome, type: string, required: true }
       - { name: url, label: Link, type: string, required: true }
+      - { name: ord, label: Ordinamento (solo per anni nuovi, numero alto = in fondo), type: number }

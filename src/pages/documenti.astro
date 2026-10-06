@@ -13,8 +13,12 @@ const byOrd = (a: (typeof docs)[number], b: (typeof docs)[number]) =>
 const ordered = [...docs].sort(byOrd);
 
 const isOfficial = (d: (typeof ordered)[number]) => d.data.group === "Documenti";
+const isPress = (d: (typeof ordered)[number]) => d.data.group === "Press kit";
+const isBook = (d: (typeof ordered)[number]) => d.data.group === "Libro dei volontari";
 const official = ordered.filter(isOfficial);
-const minutes = ordered.filter((d) => !isOfficial(d));
+const pressKit = ordered.filter(isPress);
+const volunteerBook = ordered.filter(isBook);
+const minutes = ordered.filter((d) => !isOfficial(d) && !isPress(d) && !isBook(d));
 
 const yearLabel = (y: string) => (y === "statfond" ? "Atti fondativi" : y);
 
@@ -33,12 +37,6 @@ const minuteYears = yearOrder(minutes);
 const minutesOf = (y: string) => minutes.filter((d) => d.data.year === y);
 const typesOf = (y: string) => [...new Set(minutesOf(y).map((d) => d.data.group))];
 
-const PRESS_KIT = [
-  { name: "Flyer AISF", url: "https://drive.google.com/file/d/1MvvBdEfrkAJUPbWm7aULKVYEyK-7jbdH/view?usp=sharing" },
-  { name: "Flyer verticale AISF", url: "https://drive.google.com/file/d/1oit9c9RRuonS0B54syB_qmrapjIuTItX/view?usp=sharing" },
-  { name: "Poster AISF", url: "https://drive.google.com/file/d/1JFLHtNyb2JqeQBeJ1sGMtbZ2akTTeQ9z/view?usp=sharing" },
-];
-const VOLUNTEER_BOOK = "https://drive.google.com/file/d/1sTT_SZs0jZAiUlGKASXv6L1VZM0g1fE3/view?ts=6a11d09e";
 ---
 
 <BaseLayout title="Documenti — AISF">
@@ -65,7 +63,7 @@ const VOLUNTEER_BOOK = "https://drive.google.com/file/d/1sTT_SZs0jZAiUlGKASXv6L1
         />
         <select id="doc-year" class="shrink-0 rounded-full border border-rule-light bg-paper px-4 py-3 font-display text-[15px]">
           <option value="">Tutti gli anni</option>
-          {yearOrder(ordered).map((y) => <option value={y}>{yearLabel(y)}</option>)}
+          {yearOrder(ordered).filter((y) => y !== "").map((y) => <option value={y}>{yearLabel(y)}</option>)}
         </select>
       </div>
       <p id="doc-count" class="mt-4 font-mono text-[12px] tracking-[0.08em] text-ink-soft uppercase" aria-live="polite"></p>
@@ -79,14 +77,14 @@ const VOLUNTEER_BOOK = "https://drive.google.com/file/d/1sTT_SZs0jZAiUlGKASXv6L1
         <h2 class="font-display text-[28px] font-semibold tracking-[-0.015em]">Press kit</h2>
         <p class="mt-1 max-w-[62ch] text-[15px] text-ink-soft">Materiale informativo per pubblicizzare l'associazione presso università e istituti di ricerca.</p>
         <div class="mt-4 grid grid-cols-1 gap-2 min-[800px]:grid-cols-3">
-          {PRESS_KIT.map((p) => (
+          {pressKit.map((p) => (
             <div
               class="doc-row flex items-center gap-4 rounded-[16px] border border-rule-light bg-paper px-5 py-3"
-              data-name={p.name.toLowerCase()}
+              data-name={p.data.name.toLowerCase()}
               data-year=""
             >
-              <p class="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink">{p.name}</p>
-              <Button href={p.url} target="_blank" rel="noopener" variant="secondary" size="sm" class="w-28 shrink-0 justify-center">Scarica</Button>
+              <p class="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink">{p.data.name}</p>
+              <Button href={p.data.url} target="_blank" rel="noopener" variant="secondary" size="sm" class="w-28 shrink-0 justify-center">Scarica</Button>
             </div>
           ))}
         </div>
@@ -205,15 +203,17 @@ const VOLUNTEER_BOOK = "https://drive.google.com/file/d/1sTT_SZs0jZAiUlGKASXv6L1
       {/* ── Volunteer book ── */}
       <div class="doc-section mt-12" data-section="libro">
         <h2 class="font-display text-[28px] font-semibold tracking-[-0.015em]">Libro dei volontari</h2>
-        <div class="mt-4">
-          <div
-            class="doc-row flex items-center gap-4 rounded-[16px] border border-rule-light bg-paper px-5 py-3"
-            data-name="libro dei volontari"
-            data-year=""
-          >
-            <p class="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink">Libro dei volontari</p>
-            <Button href={VOLUNTEER_BOOK} target="_blank" rel="noopener" variant="secondary" size="sm" class="w-28 shrink-0 justify-center">Scarica</Button>
-          </div>
+        <div class="mt-4 flex flex-col gap-2">
+          {volunteerBook.map((b) => (
+            <div
+              class="doc-row flex items-center gap-4 rounded-[16px] border border-rule-light bg-paper px-5 py-3"
+              data-name={b.data.name.toLowerCase()}
+              data-year=""
+            >
+              <p class="min-w-0 flex-1 truncate font-display text-[15px] font-medium text-ink">{b.data.name}</p>
+              <Button href={b.data.url} target="_blank" rel="noopener" variant="secondary" size="sm" class="w-28 shrink-0 justify-center">Scarica</Button>
+            </div>
+          ))}
         </div>
       </div>
     </section>

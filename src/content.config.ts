@@ -57,7 +57,9 @@ const documents = defineCollection({
   loader: file("src/data/documents.yml"),
   schema: z.object({
     id: z.string(),
-    ord: z.number().optional().default(0),
+    // Rows added via PagesCMS lack ord → they sort last (appended at the
+    // end of their year group, which is where new meetings belong).
+    ord: z.number().optional().default(Number.MAX_SAFE_INTEGER),
     year: z.string(),
     group: z.string(),
     name: z.string(),
