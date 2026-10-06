@@ -1,72 +1,64 @@
 ---
+interface Committee {
+  id: string;
+  name: string;
+  status?: string;
+  lat?: number | null;
+  lon?: number | null;
+}
+
 interface Props {
-  committees?: Array<{ id: string; name: string; status?: string }>;
+  committees?: Array<Committee>;
   linkBase?: string;
 }
 
 const { committees = [], linkBase = "/comitati" } = Astro.props;
 import { u } from "../lib/url";
 
-const dots = [
-    { id: "bari", x: 75.28, y: 52.23 },
-    { id: "bologna", x: 42.84, y: 25.79 },
-    { id: "calabria", x: 71.64, y: 66.04 },
-    { id: "ferrara", x: 44.54, y: 23.05 },
-    { id: "firenze", x: 42.31, y: 31.44 },
-    { id: "genova", x: 28.71, y: 26.42 },
-    { id: "milano", x: 30.05, y: 18.18 },
-    { id: "milano-bicocca", x: 30.47, y: 17.71 },
-    { id: "napoli-e-caserta", x: 60.03, y: 54.35 },
-    { id: "padova", x: 46.01, y: 18.58 },
-    { id: "palermo", x: 54.69, y: 75.76 },
-    { id: "pavia", x: 29.88, y: 20.38 },
-    { id: "perugia", x: 49.0, y: 36.62 },
-    { id: "pisa", x: 37.33, y: 31.83 },
-    { id: "roma-sapienza", x: 49.7, y: 46.11 },
-    { id: "roma-tor-vergata", x: 50.35, y: 46.5 },
-    { id: "roma-tre", x: 49.41, y: 46.42 },
-    { id: "salerno", x: 62.96, y: 55.68 },
-    { id: "torino", x: 21.43, y: 21.24 },
-    { id: "trento", x: 41.55, y: 13.4 },
-    { id: "trieste", x: 57.15, y: 16.69 },
-];
-
-// Cities sharing one spot become a numbered cluster instead of
-// stacked, untappable dots.
+// lon/lat → % of the 1000×1000 Italy SVG viewBox. Constants fitted once
+// against the SVG's own calibration dots (see git history: make_map.py).
+// Committees sharing one spot are listed in CLUSTERS instead of stacking.
+const AX = 58.65740495803866;
+const BX = -236.75628547448636;
+const AY = -78.44513716855866;
+const BY = 3747.9549161163013;
 const CLUSTERS: Array<Array<string>> = [
   ["milano", "milano-bicocca"],
   ["roma-sapienza", "roma-tor-vergata", "roma-tre"],
 ];
 
+const project = (lat: number, lon: number) => ({
+  x: (AX * lon + BX) / 10,
+  y: (AY * lat + BY) / 10,
+});
+
 const byId = new Map(committees.map((c) => [c.id, c]));
 const clusteredIds = new Set(CLUSTERS.flat());
-const singles = dots.filter((d) => !clusteredIds.has(d.id));
+const singles = committees.filter(
+  (c) => !clusteredIds.has(c.id) && c.lat != null && c.lon != null,
+);
 const clusters = CLUSTERS.map((ids) => {
   const pts = ids
-    .map((id) => dots.find((d) => d.id === id))
-    .filter((p) => p !== undefined);
+    .map((id) => byId.get(id))
+    .filter((c) => c?.lat != null && c?.lon != null)
+    .map((c) => project(c!.lat!, c!.lon!));
   return {
     ids,
     x: pts.reduce((s, p) => s + p.x, 0) / pts.length,
     y: pts.reduce((s, p) => s + p.y, 0) / pts.length,
   };
-});
+}).filter((c) => c.ids.length > 0);
 ---
 
-<div class="relative mx-auto w-full max-w-[520px]" data-committee-map data-link-base={linkBase}>
-  <img src={u("/italy-map.svg")} alt="Italia — comitati locali AISF" class="w-full" />
-  {singles.map((d) => {
-    const c = byId.get(d.id);
-    const frozen = c?.status === "frozen";
-    return (
-      <button
-        type="button"
-        data-dot={d.id}
-        title={c?.name ?? d.id}
-        aria-label={c?.name ?? `${d.id} — mostra la scheda`}
-        class="absolute -translate-x-1/2 -translate-y-1/2 p-3"
-        style={`left: ${d.x}%; top: ${d.y}%;`}
-      >
+<div class="mx-auto w-full max-w-[520px]" data-committee-map data-link-base={linkBase}>
+  {/* Dots are positioned against the image wrapper — never the outer box,
+      or the caption below would shift every percentage. */}
+  <div class="relative">
+    <img src={u("/italy-map.svg")} alt="Italia — comitati locali AISF" class="w-full" />
+    {singles.map((c) => {
+      const p = project(c.lat!, c.lon!);
+      const frozen = c?.status === "frozen";
+      const dot = (
         <span
           data-dot-visual
           class:list={[
@@ -74,22 +66,43 @@ const clusters = CLUSTERS.map((ids) => {
             frozen ? "bg-ink-soft" : "bg-tangerine",
           ]}
         ></span>
+      );
+      return frozen ? (
+        <span
+          title={`${c.name} (sospeso)`}
+          aria-label={`${c.name}, comitato sospeso`}
+          class="absolute -translate-x-1/2 -translate-y-1/2 p-3"
+          style={`left: ${p.x}%; top: ${p.y}%;`}
+        >
+          {dot}
+        </span>
+      ) : (
+        <button
+          type="button"
+          data-dot={c.id}
+          title={c.name}
+          aria-label={`${c.name} — mostra la scheda`}
+          class="absolute -translate-x-1/2 -translate-y-1/2 p-3"
+          style={`left: ${p.x}%; top: ${p.y}%;`}
+        >
+          {dot}
+        </button>
+      );
+    })}
+    {clusters.map((c, i) => (
+      <button
+        type="button"
+        data-cluster={i}
+        data-cluster-ids={JSON.stringify(c.ids)}
+        aria-label={`${c.ids.length} comitati — mostra l'elenco`}
+        aria-expanded="false"
+        class="absolute flex size-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-paper bg-ink font-mono text-[11px] font-medium text-paper shadow transition-transform"
+        style={`left: ${c.x}%; top: ${c.y}%;`}
+      >
+        {c.ids.length}
       </button>
-    );
-  })}
-  {clusters.map((c, i) => (
-    <button
-      type="button"
-      data-cluster={i}
-      data-cluster-ids={JSON.stringify(c.ids)}
-      aria-label={`${c.ids.length} comitati — mostra l'elenco`}
-      aria-expanded="false"
-      class="absolute flex size-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-paper bg-ink font-mono text-[11px] font-medium text-paper shadow transition-transform"
-      style={`left: ${c.x}%; top: ${c.y}%;`}
-    >
-      {c.ids.length}
-    </button>
-  ))}
+    ))}
+  </div>
   <div
     data-map-caption
     class="mt-2 min-h-[28px] text-center font-mono text-[12px] tracking-[0.06em] text-ink-soft"

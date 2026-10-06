@@ -98,14 +98,32 @@ def migrate_news():
     print(f"news: {n}")
 
 
+CITY_COORDS = {
+    "bari": (41.12, 16.87), "bologna": (44.49, 11.34),
+    "calabria": (39.36, 16.25), "ferrara": (44.84, 11.63),
+    "firenze": (43.77, 11.25), "genova": (44.41, 8.93),
+    "milano": (45.46, 9.16), "milano-bicocca": (45.52, 9.23),
+    "napoli-e-caserta": (40.85, 14.27), "padova": (45.41, 11.88),
+    "palermo": (38.12, 13.36), "pavia": (45.18, 9.13),
+    "perugia": (43.11, 12.39), "pisa": (43.72, 10.40),
+    "roma-sapienza": (41.90, 12.51), "roma-tor-vergata": (41.85, 12.62),
+    "roma-tre": (41.86, 12.46), "salerno": (40.68, 14.77),
+    "torino": (45.07, 7.69), "trento": (46.07, 11.12),
+    "trieste": (45.65, 13.78),
+}
+
+
 def migrate_committees():
     data = yaml.safe_load(open(os.path.join(SRC, "_data", "LC.yml")))
     rows = []
     for c in data:
         name = c.get("nome", "")
         frozen = bool(c.get("congelato") or c.get("commissariato"))
+        cid = slugify(name)
+        lat, lon = CITY_COORDS.get(cid, (None, None))
         rows.append({
-            "id": slugify(name),
+            "id": cid,
+            "lat": lat, "lon": lon,
             "name": name,
             "president": c.get("presidente") or "",
             "founded": str(c.get("fondazione") or ""),

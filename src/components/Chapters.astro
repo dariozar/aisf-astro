@@ -14,7 +14,7 @@ const active = committees.filter((c) => c.data.status !== "frozen");
     {active.length} comitati, una rete.
   </h2>
   <div class="mt-8 grid grid-cols-1 items-center gap-8 min-[900px]:grid-cols-2">
-    <ItalyMap committees={committees.map((c) => ({ id: c.id, name: c.data.name, status: c.data.status }))} linkBase={u("/comitati")} />
+    <ItalyMap committees={committees.map((c) => ({ id: c.id, name: c.data.name, status: c.data.status, lat: c.data.lat ?? null, lon: c.data.lon ?? null }))} linkBase={u("/comitati")} />
     <div>
       <p class="max-w-[46ch] text-[16px] leading-[1.6] text-ink-soft">
         Da Torino a Palermo, ogni comitato organizza seminari, gruppi di studio e aperitivi scientifici

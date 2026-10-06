@@ -50,11 +50,17 @@ content:
     list: true
     fields:
       - { name: id, label: Slug univoco, type: string, required: true }
-      - { name: name, label: Nome, type: string, required: true }
+      - { name: name, label: Nome (città), type: string, required: true }
+      - { name: lat, label: Latitudine (pin sulla mappa), type: number, required: true }
+      - { name: lon, label: Longitudine (pin sulla mappa), type: number, required: true }
       - { name: president, label: Presidente, type: string }
       - { name: founded, label: Fondazione (MM/AAAA), type: string }
       - { name: email, label: Email, type: string }
-      - { name: status, label: Stato (active/frozen), type: string }
+      - name: status
+        label: Stato
+        type: select
+        options:
+          values: [active, frozen]
       - { name: photo, label: Foto presidente, type: image }
       - { name: logo, label: Logo, type: image }
       - { name: past_presidents, label: Presidenti passati, type: text }

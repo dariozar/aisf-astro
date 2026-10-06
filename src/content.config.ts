@@ -28,6 +28,8 @@ const committees = defineCollection({
   loader: file("src/data/committees.yml"),
   schema: z.object({
     id: z.string(),
+    lat: z.number().nullable().optional(),
+    lon: z.number().nullable().optional(),
     name: z.string(),
     president: z.string().optional().default(""),
     founded: z.string().optional().default(""),

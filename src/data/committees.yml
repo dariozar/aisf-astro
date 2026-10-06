@@ -1,4 +1,6 @@
 - id: bari
+  lat: 41.12
+  lon: 16.87
   name: Bari
   president: Raimondo Lucariello
   founded: 05/2015
@@ -12,6 +14,8 @@
   link: https://www.facebook.com/AISF-Bari-419162114940421/
   rules: https://drive.google.com/file/d/1snta9RWywF3epTVW0PrmmB9PfooN50cn/view?usp=sharing
 - id: bologna
+  lat: 44.49
+  lon: 11.34
   name: Bologna
   president: Marta Grenno
   founded: 06/2016
@@ -24,6 +28,8 @@
   link: https://www.facebook.com/aisflcbologna
   rules: https://drive.google.com/file/d/0BzGkQdYyAM4qOUxpOEMtbzVYWlU/view?usp=sharing
 - id: calabria
+  lat: 39.36
+  lon: 16.25
   name: Calabria
   president: Giusi Guarascio
   founded: 05/2018
@@ -35,6 +41,8 @@
   link: https://www.facebook.com/AISF-UniCal-938404002996014/
   rules: https://drive.google.com/open?id=1ANC0gCzM-Eh2AnvvUhcsLiFuTU193DhE
 - id: ferrara
+  lat: 44.84
+  lon: 11.63
   name: Ferrara
   president: Ashanty Marchi
   founded: 05/2025
@@ -46,6 +54,8 @@
   link: ''
   rules: ''
 - id: firenze
+  lat: 43.77
+  lon: 11.25
   name: Firenze
   president: Elena Abati
   founded: 11/2016
@@ -58,6 +68,8 @@
   link: https://www.facebook.com/AISFComitatoLocaleFirenze/
   rules: https://drive.google.com/file/d/0B494AF3MCZKJSS1scjl3aXV6cmc/view?usp=drive_link&resourcekey=0-2WYGu0ayk_HZzbYdFDmK1w
 - id: genova
+  lat: 44.41
+  lon: 8.93
   name: Genova
   president: Asia Tiby
   founded: 08/2015
@@ -70,6 +82,8 @@
   link: https://www.facebook.com/geAISF
   rules: https://drive.google.com/open?id=1p3YS2K5hoVb7LndlXLi_xNlsEOeEBlDj
 - id: milano
+  lat: 45.46
+  lon: 9.16
   name: Milano
   president: Davide Perillo
   founded: 05/2015
@@ -82,6 +96,8 @@
   link: https://www.facebook.com/aisfunimi
   rules: https://drive.google.com/file/d/0BzGkQdYyAM4qRW0wajc3cjN6aGM/view?usp=drive_link&resourcekey=0-J61H0SawbHbd7js0H_J7CQ
 - id: milano-bicocca
+  lat: 45.52
+  lon: 9.23
   name: Milano Bicocca
   president: Lorenzo Sparaneo
   founded: 05/2018
@@ -94,6 +110,8 @@
   link: https://www.facebook.com/AISFMilanoBICOCCA/
   rules: https://drive.google.com/open?id=1dydqJjkCizciicWn8dav_yA1uC3Xwq-s
 - id: napoli-e-caserta
+  lat: 40.85
+  lon: 14.27
   name: Napoli e Caserta
   president: Bruno Vinciguerra
   founded: 11/2019
@@ -105,6 +123,8 @@
   link: ''
   rules: ''
 - id: padova
+  lat: 45.41
+  lon: 11.88
   name: Padova
   president: Pasquale Andreacchio
   founded: 05/2016
@@ -117,6 +137,8 @@
   link: https://www.facebook.com/AISFPadova
   rules: https://drive.google.com/file/d/0BzGkQdYyAM4qNGY0X3BhdnM3Nnc/view?usp=drive_link&resourcekey=0-lBz7tsie8NRanMScay3jGQ
 - id: palermo
+  lat: 38.12
+  lon: 13.36
   name: Palermo
   president: Salvatore Gelsomino
   founded: 04/2019
@@ -129,6 +151,8 @@
   link: https://www.facebook.com/aisfpalermoLC/
   rules: https://drive.google.com/file/d/1u_lS7IglnDAy0pg8u9jYJsv5W_quzsdt/view?usp=sharing
 - id: pavia
+  lat: 45.18
+  lon: 9.13
   name: Pavia
   president: Alessandro Oberti
   founded: 11/2016
@@ -141,6 +165,8 @@
   link: https://www.facebook.com/aisfpavia/
   rules: https://drive.google.com/open?id=1VdEzh7IjZNHyAHaXW7EFfJqzOqKhkadD
 - id: perugia
+  lat: 43.11
+  lon: 12.39
   name: Perugia
   president: Andrea Duca
   founded: 12/2017
@@ -153,6 +179,8 @@
   link: https://www.facebook.com/aisfpg/
   rules: https://drive.google.com/file/d/1QpQkTS93nPj54E0aWPPU3vXC3xkPLrL_/view?usp=sharing
 - id: pisa
+  lat: 43.72
+  lon: 10.4
   name: Pisa
   president: Manuel Antonio Pianini
   founded: 07/2015
@@ -166,6 +194,8 @@
   link: https://www.facebook.com/ComitatoLocalePisa
   rules: https://drive.google.com/file/d/0BzGkQdYyAM4qU2pNR1hPMVRsVmc/view?usp=drive_link&resourcekey=0-d5T3Yl7S6nTL1EXr4Eb7Iw
 - id: roma-sapienza
+  lat: 41.9
+  lon: 12.51
   name: Roma Sapienza
   president: Lorenzo Silvestri
   founded: 05/2018
@@ -178,6 +208,8 @@
   link: https://www.facebook.com/AISF-Comitato-Locale-Roma-Sapienza-1369227109880296
   rules: ''
 - id: roma-tor-vergata
+  lat: 41.85
+  lon: 12.62
   name: Roma Tor Vergata
   president: ''
   founded: 05/2016
@@ -189,6 +221,8 @@
   link: https://www.facebook.com/AISF-Comitato-Locale-Roma-Tor-Vergata-1116282045100631
   rules: https://drive.google.com/open?id=1LLsoMrB4PcnaE0Z8B4NuPzKZWwvRuRLu
 - id: roma-tre
+  lat: 41.86
+  lon: 12.46
   name: Roma Tre
   president: Alessandro Trudu
   founded: 04/2019
@@ -201,6 +235,8 @@
   link: https://www.facebook.com/AISFRomaTre/
   rules: ''
 - id: salerno
+  lat: 40.68
+  lon: 14.77
   name: Salerno
   president: Piero Paduano
   founded: 05/2015
@@ -213,6 +249,8 @@
   link: ''
   rules: https://drive.google.com/open?id=1lLAvdU2mAFQp2cw21ShhC7tKQ8JGpvpx
 - id: torino
+  lat: 45.07
+  lon: 7.69
   name: Torino
   president: Luca Attinà
   founded: 06/2015
@@ -225,6 +263,8 @@
   link: https://www.facebook.com/AISF-Torino-1642147402727081/
   rules: https://drive.google.com/file/d/0B85S7yJHeRo6dWstUUlIeHJucGs/view?usp=drive_link&resourcekey=0-wB9ZtLMjB7yhdNk9RPZi8w
 - id: trento
+  lat: 46.07
+  lon: 11.12
   name: Trento
   president: Michele Tognoni
   founded: 12/2015
@@ -237,6 +277,8 @@
   link: https://www.facebook.com/AISF-Trento-958208697625956/
   rules: https://drive.google.com/file/d/0BzGkQdYyAM4qVnk2N2lOR2pHWmc/view?usp=drive_link&resourcekey=0-PXqasP2QVkNA8w_daNFTLA
 - id: trieste
+  lat: 45.65
+  lon: 13.78
   name: Trieste
   president: Nicholas Pregarc
   founded: 04/2018
