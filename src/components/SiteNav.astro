@@ -1,22 +1,8 @@
 ---
 import IconMenu from "@tabler/icons/outline/menu-2.svg";
 import { Button } from "@/components/starwind/button";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/starwind/sheet";
-
-const links = [
-  { label: "Chi siamo", href: "/chi-siamo" },
-  { label: "Eventi", href: "/eventi" },
-  { label: "Progetti", href: "/#projects" },
-  { label: "Comitati", href: "/comitati" },
-  { label: "Documenti", href: "/documenti" },
-];
+import { SheetTrigger } from "@/components/starwind/sheet";
+import { NAV_LINKS } from "../lib/nav";
 ---
 
 <nav id="site-nav" class="fixed inset-x-0 top-0 z-100">
@@ -25,7 +11,7 @@ const links = [
       <img src="/aisf-logo.png" alt="Associazione Italiana Studenti di Fisica" class="h-8 w-auto" />
     </a>
     <div class="hidden items-center gap-[clamp(14px,2vw,24px)] min-[1100px]:flex" data-nav-links>
-      {links.map((l) => (
+      {NAV_LINKS.map((l) => (
         <a href={l.href} class="font-display text-[15px] font-medium no-underline">{l.label}</a>
       ))}
     </div>
@@ -35,40 +21,15 @@ const links = [
       </p>
       <Button href="/unisciti" variant="primary" size="sm" class="max-[720px]:hidden">Iscriviti &rarr;</Button>
       <span class="min-[1100px]:hidden" data-menu>
-        <Sheet>
-          <SheetTrigger asChild>
-            <button
-              class="flex size-11 items-center justify-center rounded-full border"
-              aria-label="Apri il menu"
-              data-menu-btn
-            >
-              <IconMenu />
-            </button>
-          </SheetTrigger>
-          <SheetContent side="right" class="border-rule-light bg-paper">
-            <SheetHeader>
-              <SheetTitle>
-                <span class="inline-block rounded-[12px] bg-paper px-2.5 py-1.5">
-                  <img src="/aisf-logo.png" alt="AISF" class="h-8 w-auto" />
-                </span>
-              </SheetTitle>
-            </SheetHeader>
-            <div class="flex flex-col px-4">
-              {links.map((l) => (
-                <SheetClose asChild>
-                  <a href={l.href} class="-mx-3 rounded-[10px] px-3 py-2.5 font-display text-lg font-medium text-ink no-underline hover:bg-paper-2">
-                    {l.label}
-                  </a>
-                </SheetClose>
-              ))}
-            </div>
-            <div class="px-4 pb-4">
-              <SheetClose asChild>
-                <Button href="/unisciti" variant="primary" class="w-full">Iscriviti &rarr;</Button>
-              </SheetClose>
-            </div>
-          </SheetContent>
-        </Sheet>
+        <SheetTrigger targetId="mobile-menu" asChild>
+          <button
+            class="flex size-11 items-center justify-center rounded-full border"
+            aria-label="Apri il menu"
+            data-menu-btn
+          >
+            <IconMenu />
+          </button>
+        </SheetTrigger>
       </span>
     </div>
   </div>
