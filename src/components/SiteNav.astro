@@ -5,8 +5,6 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/starwind/sheet";
 
@@ -48,15 +46,8 @@ const links = [
     </div>
   </div>
   <Sheet id="mobile-menu">
-    <SheetContent side="right" class="z-[60] border-rule-light bg-paper pt-28">
-      <SheetHeader>
-        <SheetTitle>
-          <span class="inline-block rounded-[12px] bg-paper px-2.5 py-1.5">
-            <img src="/aisf-logo.png" alt="AISF" class="h-8 w-auto" />
-          </span>
-        </SheetTitle>
-      </SheetHeader>
-      <div class="flex flex-col px-4">
+    <SheetContent side="right" class="z-[60] border-rule-light bg-paper">
+      <div class="flex flex-col px-4 pt-28">
         {links.map((l) => (
           <SheetClose asChild>
             <a href={l.href} class="-mx-3 rounded-[10px] px-3 py-2.5 font-display text-lg font-medium text-ink no-underline hover:bg-paper-2">
