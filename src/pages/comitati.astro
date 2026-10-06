@@ -36,7 +36,7 @@ const frozen = committees.filter((c) => c.data.status === "frozen");
         <div class="flex flex-col gap-4">
           {active.map((c) => (
             <Card id={c.id} class="scroll-mt-28 border-rule-light bg-paper p-6">
-              <div class="flex items-start gap-4">
+              <div class="flex items-center gap-4">
                 {c.data.photo ? (
                   <img
                     src={c.data.photo}
@@ -50,14 +50,12 @@ const frozen = committees.filter((c) => c.data.status === "frozen");
                   </span>
                 )}
                 <div class="min-w-0">
-                  <div class="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 class="font-display text-[20px] font-semibold">{c.data.name}</h3>
-                    {c.data.founded && (
-                      <span class="font-mono text-[11px] tracking-[0.08em] text-ink-soft uppercase">dal {c.data.founded}</span>
-                    )}
-                  </div>
+                  <h3 class="font-display text-[20px] leading-tight font-semibold">{c.data.name}</h3>
                   {c.data.president && (
-                    <p class="mt-1 text-sm">Presidente: <strong class="font-medium">{c.data.president}</strong></p>
+                    <p class="mt-0.5 truncate text-sm">Presidente: <strong class="font-medium">{c.data.president}</strong></p>
+                  )}
+                  {c.data.founded && (
+                    <p class="mt-0.5 font-mono text-[11px] tracking-[0.08em] text-ink-soft uppercase">Attivo dal {c.data.founded}</p>
                   )}
                 </div>
               </div>
