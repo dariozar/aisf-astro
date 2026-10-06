@@ -1,17 +1,31 @@
 ---
 import IconMenu from "@tabler/icons/outline/menu-2.svg";
 import { Button } from "@/components/starwind/button";
-import { SheetTrigger } from "@/components/starwind/sheet";
-import { NAV_LINKS } from "../lib/nav";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/starwind/sheet";
+
+const links = [
+  { label: "Chi siamo", href: "/chi-siamo" },
+  { label: "Eventi", href: "/eventi" },
+  { label: "Progetti", href: "/#projects" },
+  { label: "Comitati", href: "/comitati" },
+  { label: "Documenti", href: "/documenti" },
+];
 ---
 
 <nav id="site-nav" class="fixed inset-x-0 top-0 z-100">
-  <div class="mx-auto flex h-[76px] max-w-[1200px] items-center gap-8 px-[clamp(16px,4vw,32px)]">
+  <div class="nav-inner relative z-[70] mx-auto flex h-[76px] max-w-[1200px] items-center gap-8 px-[clamp(16px,4vw,32px)]">
     <a href="/" aria-label="AISF home" class="flex shrink-0 items-center rounded-[12px] bg-paper px-2.5 py-1.5">
       <img src="/aisf-logo.png" alt="Associazione Italiana Studenti di Fisica" class="h-8 w-auto" />
     </a>
     <div class="hidden items-center gap-[clamp(14px,2vw,24px)] min-[1100px]:flex" data-nav-links>
-      {NAV_LINKS.map((l) => (
+      {links.map((l) => (
         <a href={l.href} class="font-display text-[15px] font-medium no-underline">{l.label}</a>
       ))}
     </div>
@@ -33,11 +47,36 @@ import { NAV_LINKS } from "../lib/nav";
       </span>
     </div>
   </div>
+  <Sheet id="mobile-menu">
+    <SheetContent side="right" class="z-[60] border-rule-light bg-paper pt-28">
+      <SheetHeader>
+        <SheetTitle>
+          <span class="inline-block rounded-[12px] bg-paper px-2.5 py-1.5">
+            <img src="/aisf-logo.png" alt="AISF" class="h-8 w-auto" />
+          </span>
+        </SheetTitle>
+      </SheetHeader>
+      <div class="flex flex-col px-4">
+        {links.map((l) => (
+          <SheetClose asChild>
+            <a href={l.href} class="-mx-3 rounded-[10px] px-3 py-2.5 font-display text-lg font-medium text-ink no-underline hover:bg-paper-2">
+              {l.label}
+            </a>
+          </SheetClose>
+        ))}
+      </div>
+      <div class="px-4 pb-4">
+        <SheetClose asChild>
+          <Button href="/unisciti" variant="primary" class="w-full">Iscriviti &rarr;</Button>
+        </SheetClose>
+      </div>
+    </SheetContent>
+  </Sheet>
 </nav>
 
 <style>
-  /* Melted state (top): transparent, light text for the dark hero */
-  #site-nav {
+  /* Melted state (top): transparent bar, light text for the dark hero */
+  #site-nav .nav-inner {
     background: transparent;
     border-bottom: 1px solid transparent;
     transition:
@@ -45,7 +84,7 @@ import { NAV_LINKS } from "../lib/nav";
       border-color 0.3s ease,
       box-shadow 0.3s ease,
       border-radius 0.3s ease,
-      top 0.3s ease,
+      margin-top 0.3s ease,
       width 0.3s ease;
   }
   #site-nav [data-nav-links] a {
@@ -64,11 +103,9 @@ import { NAV_LINKS } from "../lib/nav";
     background: transparent;
   }
   /* Floating glass pill (scrolled): light, dark text */
-  #site-nav.aisf-nav-floating {
-    top: 12px;
+  #site-nav.aisf-nav-floating .nav-inner {
+    margin-top: 12px;
     width: calc(100% - 24px);
-    max-width: 1200px;
-    margin-inline: auto;
     border-radius: 16px;
     background: rgba(247, 242, 236, 0.55);
     -webkit-backdrop-filter: blur(32px) saturate(180%);
