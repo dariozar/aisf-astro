@@ -1,6 +1,6 @@
 # AGENTS.md — aisf-astro
 
-Astro 5 SSG site for AISF (Associazione Italiana Studenti di Fisica).
+Astro 7 SSG site for AISF (Associazione Italiana Studenti di Fisica).
 Repo: `github.com/dariozar/aisf-astro` (branch `master`).
 Live: `https://dariozar.github.io/aisf-astro/` (GitHub Pages, auto-deploy on push).
 Design source of truth: `prototype/` HTML in the sibling WordPress Studio folder
@@ -8,7 +8,7 @@ Design source of truth: `prototype/` HTML in the sibling WordPress Studio folder
 
 ## Stack
 
-- Astro 5 (SSG, `npm run build` → `dist/`), strict TS
+- Astro 7 (SSG, `npm run build` → `dist/`), strict TS
 - Tailwind CSS v4 via `@tailwindcss/vite` — tokens in `src/styles/global.css` (`@theme`)
 - Starwind UI v3 vendored (`src/components/starwind/`, `starwind.config.json`):
   themed via `:root` var remap in `global.css`. Prefer themed Starwind
